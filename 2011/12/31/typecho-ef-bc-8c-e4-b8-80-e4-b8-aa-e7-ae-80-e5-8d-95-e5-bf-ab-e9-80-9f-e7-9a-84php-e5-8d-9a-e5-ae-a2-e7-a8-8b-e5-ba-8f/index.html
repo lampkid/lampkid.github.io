@@ -1,104 +1,374 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>#Typecho#，一个简单快速的PHP博客程序 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;#91;Typecho&amp;#93;&amp;#40;http://typecho.org/about#top&amp;amp;#41;
-Typecho
-名称的来历Typecho是由type和echo两个词合成的，来自于开发团队的头脑风暴。
-Type，有打字的意思，博客这个东西，正是一个让我们通过打字，在网络上表达自己的平台。Echo，意思是回声、反馈、共鸣，也是PHP里最常见、最重要的函数，相信大部分PHP爱好者">
-<meta property="og:type" content="article">
-<meta property="og:title" content="#Typecho#，一个简单快速的PHP博客程序">
-<meta property="og:url" content="http://lampkid.github.io/2011/12/31/typecho-ef-bc-8c-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e5-bf-ab-e9-80-9f-e7-9a-84php-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&amp;#91;Typecho&amp;#93;&amp;#40;http://typecho.org/about#top&amp;amp;#41;
-Typecho
-名称的来历Typecho是由type和echo两个词合成的，来自于开发团队的头脑风暴。
-Type，有打字的意思，博客这个东西，正是一个让我们通过打字，在网络上表达自己的平台。Echo，意思是回声、反馈、共鸣，也是PHP里最常见、最重要的函数，相信大部分PHP爱好者">
-<meta property="og:updated_time" content="2017-01-13T08:26:00.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#Typecho#，一个简单快速的PHP博客程序">
-<meta name="twitter:description" content="&amp;#91;Typecho&amp;#93;&amp;#40;http://typecho.org/about#top&amp;amp;#41;
-Typecho
-名称的来历Typecho是由type和echo两个词合成的，来自于开发团队的头脑风暴。
-Type，有打字的意思，博客这个东西，正是一个让我们通过打字，在网络上表达自己的平台。Echo，意思是回声、反馈、共鸣，也是PHP里最常见、最重要的函数，相信大部分PHP爱好者">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+    <head>
+    <!--
+        © Material Theme 
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.5
+    -->
+    
+    <!-- Title -->
+    
+    <title>
+        #Typecho#，一个简单快速的PHP博客程序 | Hexo
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hexo">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://lampkid.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="#Typecho#，一个简单快速的PHP博客程序 | Hexo">
+    <meta property="og:description" content="null">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
 
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5
+        }
+		
+		/* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    
 </head>
+	
+	
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Post TOC -->
+
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#名称的来历"><span class="post-toc-number">1.</span> <span class="post-toc-text">名称的来历</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么开发Typecho"><span class="post-toc-number">2.</span> <span class="post-toc-text">为什么开发Typecho</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何开发Typecho"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何开发Typecho</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-Typecho-团队"><span class="post-toc-number">4.</span> <span class="post-toc-text">关于 Typecho 团队</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推荐的交流方式"><span class="post-toc-number">5.</span> <span class="post-toc-text">推荐的交流方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#非正式的交流方式"><span class="post-toc-number">6.</span> <span class="post-toc-text">非正式的交流方式</span></a></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+				<script>
+    
+    var randomNum;
+    randomNum = Math.floor(Math.random() * 19 + 1);
+    
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    
+</script>
+
+		
+	
+        <p class="article-headline-p">
+            #Typecho#，一个简单快速的PHP博客程序
+        </p>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lampkid.github.io"></form>
-      </div>
+
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-typecho-ef-bc-8c-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e5-bf-ab-e9-80-9f-e7-9a-84php-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/12/31/typecho-ef-bc-8c-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e5-bf-ab-e9-80-9f-e7-9a-84php-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f/" class="article-date">
-  <time datetime="2011-12-31T10:09:14.000Z" itemprop="datePublished">2011-12-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/他山之石/">他山之石</a>►<a class="article-category-link" href="/categories/他山之石/工具/">工具</a>►<a class="article-category-link" href="/categories/他山之石/工具/转载/">转载</a>
-  </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>John Doe</strong>
+        <span>Dec 31, 2011</span>
+    </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      #Typecho#，一个简单快速的PHP博客程序
-    </h1>
-  
+    <div class="section-spacer"></div>
 
-      </header>
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+
+    <!-- Qrcode -->
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#91;Typecho&#93;&#40;<a href="http://typecho.org/about#top&amp;#41" target="_blank" rel="external">http://typecho.org/about#top&amp;#41</a>;</p>
+
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/PHP/">PHP</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Typecho/">Typecho</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/博客/">博客</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/工具/">工具</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/转载/">转载</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=#Typecho#，一个简单快速的PHP博客程序&url=https://lampkid.github.io//2011/12/31/typecho-ef-bc-8c-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e5-bf-ab-e9-80-9f-e7-9a-84php-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            شارك على Weibo
+        </li>
+    </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+    <a class="post_share-link" href="https://plus.google.com/share?url=https://lampkid.github.io//2011/12/31/typecho-ef-bc-8c-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e5-bf-ab-e9-80-9f-e7-9a-84php-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            شارك على Google+
+        </li>
+    </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://lampkid.github.io//2011/12/31/typecho-ef-bc-8c-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e5-bf-ab-e9-80-9f-e7-9a-84php-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f/index.html&title=#Typecho#，一个简单快速的PHP博客程序" target="_blank">
+        <li class="mdl-menu__item">
+            شارك على LinkedIn
+        </li>
+    </a>
+    
+
+    <!-- Share QQ -->
+    
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=#Typecho#，一个简单快速的PHP博客程序&summary=null&pics=https://lampkid.github.io/img/favicon.png&url=https://lampkid.github.io/2011/12/31/typecho-ef-bc-8c-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e5-bf-ab-e9-80-9f-e7-9a-84php-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            Share to QQ
+        </li>
+    </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<p>&#91;Typecho&#93;&#40;<a href="http://typecho.org/about#top&amp;#41" target="_blank" rel="external">http://typecho.org/about#top&amp;#41</a>;</p>
 <p>Typecho</p>
 <h3 id="名称的来历"><a href="#名称的来历" class="headerlink" title="名称的来历"></a>名称的来历</h3><p>Typecho是由type和echo两个词合成的，来自于开发团队的头脑风暴。</p>
 <p>Type，有打字的意思，博客这个东西，正是一个让我们通过打字，在网络上表达自己的平台。Echo，意思是回声、反馈、共<br>鸣，也是PHP里最常见、最重要的函数，相信大部分PHP爱好者都是从 echo ‘Hello,world!’; 开始自己的PHP编程之路的</p>
@@ -113,145 +383,355 @@ Type，有打字的意思，博客这个东西，正是一个让我们通过打�
 <h3 id="非正式的交流方式"><a href="#非正式的交流方式" class="headerlink" title="非正式的交流方式"></a>非正式的交流方式</h3><p>QQ群 – 目前有两个主要的QQ交流群1466531和8110782。<br>由于未知的法律和安全风险，我们不知道是否你的谈话信息将被呈送给第三方，请谨慎使用。</p>
 <p>转载：&#91;Typecho&#93;&#40;<a href="http://typecho.org/about#top&amp;#41" target="_blank" rel="external">http://typecho.org/about#top&amp;#41</a>;</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2011/12/31/typecho-ef-bc-8c-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e5-bf-ab-e9-80-9f-e7-9a-84php-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f/" data-id="cixvlup1b00i7gcs64rblaco3" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typecho/">Typecho</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载/">转载</a></li></ul>
+	
+	
+	
+	
+</div>
+				
+				
 
-    </footer>
-  </div>
-  
+                <!-- Post Comments -->
+                
+                    
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     
-<nav id="article-nav">
-  
-    <a href="/2012/01/01/2012-e6-96-b0-e5-b9-b4-e5-bf-ab-e4-b9-90/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          #2012##新年快乐#
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2011/12/30/e6-9c-89-e6-97-b6-e5-80-99-e7-a8-8b-e5-ba-8f-e5-91-98-e6-98-af-e4-b8-80-e4-b8-aa-e8-af-97-e4-ba-ba/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">有时候#程序员#是一个诗人</div>
-    </a>
-  
+    <!-- Prev Nav -->
+    
+        <a href="/2012/01/01/2012-e6-96-b0-e5-b9-b4-e5-bf-ab-e4-b9-90/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            أحدث
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2011/12/30/e6-9c-89-e6-97-b6-e5-80-99-e7-a8-8b-e5-ba-8f-e5-91-98-e6-98-af-e4-b8-80-e4-b8-aa-e8-af-97-e4-ba-ba/" id="post_nav-older" class="next-content">
+            أقدم
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
 </nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/HOWTO/">HOWTO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/HOWTO/PHP/">PHP</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/他山之石/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/他山之石/资源/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/HOWTO/">HOWTO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/HOWTO/PostgreSQL/">PostgreSQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/HOWTO/数据库/">数据库</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/PostgreSQL/">PostgreSQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/PostgreSQL/数据库/">数据库</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/PostgreSQL/数据库/猿说技术/">猿说技术</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dojo/">Dojo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dojo/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dojo/Javascript/猿说技术/">猿说技术</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/FE/">FE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/FE/HOWTO/">HOWTO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/HOWTO/">HOWTO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/">HOWTO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Javascript/prototype/">prototype</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Javascript/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Javascript/工具/">工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/LabVIEW/">LabVIEW</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/LabVIEW/毕业设计/">毕业设计</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Linux/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Linux/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Linux/网络/">网络</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/PostgreSQL/">PostgreSQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/PostgreSQL/Zend-Framework/">Zend Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/PostgreSQL/Zend-Framework/数据库/">数据库</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/Zend-Framework/">Zend Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/Zend-Framework/讨论-FAQ/">讨论/FAQ</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PostgreSQL/">PostgreSQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PostgreSQL/数据库/">数据库</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Python/SciPy/">SciPy</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Python/SciPy/科学计算/">科学计算</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/">Tex</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/工具/文档创作/毕业设计/">毕业设计</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/文档创作/毕业设计/">毕业设计</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/">Vim</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/工具/文档创作/编辑器/">编辑器</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/工具/编辑器/">编辑器</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/文档创作/编辑器/">编辑器</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/编辑器/">编辑器</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/webOS/">webOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/其他/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/多媒体/">多媒体</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/多媒体/工具/">工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/安全/">安全</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/安全/工具/">工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/工具/数学/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/工具/文档创作/">文档创作</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/工具/经验励志/">经验励志</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/网络/">网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/讨论-FAQ/">讨论/FAQ</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/video/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/video/他山之石/设计之美/">设计之美</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/video/他山之石/设计之美/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/他山之石/">他山之石</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/IEEE/">IEEE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IEEE/LabVIEW/">LabVIEW</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IEEE/LabVIEW/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IEEE/LabVIEW/他山之石/数据采集/">数据采集</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/video/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/video/他山之石/其他/">其他</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LabVIEW/">LabVIEW</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LabVIEW/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LabVIEW/他山之石/数据采集/">数据采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LabVIEW/他山之石/数据采集/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/video/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/video/他山之石/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/嵌入式/">嵌入式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/嵌入式/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/嵌入式/资源/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/思维导图/">思维导图</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/资源/">资源</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lisp/">Lisp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Lisp/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Lisp/Python/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Lisp/Python/他山之石/资源/">资源</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Me/">Me</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Me/猿悟人生/">猿悟人生</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Music/">Music</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Music/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Music/video/他山之石/">他山之石</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Music/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Music/他山之石/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Music/他山之石/资源/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/Zend-Framework/">Zend Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/Zend-Framework/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/猿说技术/">猿说技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/猿说技术/设计模式/">设计模式</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PostgreSQL/">PostgreSQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PostgreSQL/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/SciPy/">SciPy</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/SciPy/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/SciPy/工具/猿说技术/">猿说技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/SciPy/工具/猿说技术/科学计算/">科学计算</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/Tex/">Tex</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/Tex/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/Tex/他山之石/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/Tex/他山之石/文档创作/资源/">资源</a></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/">Tex</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/Vim/">Vim</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/Vim/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/Vim/工具/毕业设计/">毕业设计</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/工具/文档创作/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/工具/文档创作/资源/转载/">转载</a></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/工具/文档创作/毕业设计/">毕业设计</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/工具/编辑器/">编辑器</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/工具/编辑器/资源/">资源</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/编辑器/">编辑器</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/编辑器/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/产品启示录/">产品启示录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/技术/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Zend-Framework/">Zend Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Zend-Framework/他山之石/">他山之石</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/gossip/">gossip</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/gossip/产品启示录/">产品启示录</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/video/webOS/">webOS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/video/webOS/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/video/webOS/他山之石/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/video/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/video/他山之石/数据结构与算法/">数据结构与算法</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/他山之石/设计之美/">设计之美</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/书法美术/">书法美术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/书法美术/猿悟人生/">猿悟人生</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品创想录/">产品创想录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/产品创想录/电子商务/">电子商务</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品启示录/">产品启示录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/产品启示录/其他/">其他</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/其他/">其他</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/其他/转载/">转载</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/前沿畅谈/">前沿畅谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/文档创作/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/文档创作/资源/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/转载/">转载</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/文档创作/毕业设计/">毕业设计</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/文档创作/毕业设计/经验励志/">经验励志</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/文档创作/毕业设计/经验励志/资源/">资源</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/经验励志/">经验励志</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/设计之美/">设计之美</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/资源/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/技术感悟/">技术感悟</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/技术感悟/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/猿悟人生/">猿悟人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/猿悟人生/生活/">生活</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术感悟/">技术感悟</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术感悟/猿悟人生/">猿悟人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术感悟/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/文档创作/猿悟人生/">猿悟人生</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/标准与规范/">标准与规范</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/标准与规范/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/毕业设计/">毕业设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/猿悟人生/">猿悟人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/猿悟人生/生活/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/石榴读书/">石榴读书</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/石榴读书/读书/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/石榴读书/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/石榴读书/资源/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/资源/转载/">转载</a></li></ul></li></ul>
+        </div>
     </div>
-  </div>
 
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AD/">AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/APS/">APS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASE/">ASE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache/">Apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AsciiDoc/">AsciiDoc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BSD/">BSD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beamer/">Beamer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMS/">CMS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSRF/">CSRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DSSSL/">DSSSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Date/">Date</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docbook/">Docbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dojo/">Dojo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FAQ，讨论，-权限-，文件/">FAQ，讨论， 权限 ，文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FHS/">FHS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FePt/">FePt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flatpages/">Flatpages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPIB/">GPIB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gentoo/">Gentoo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HOWTO/">HOWTO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IBM/">IBM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IEEE/">IEEE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IEEE488/">IEEE488</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LDAP/">LDAP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LSB/">LSB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LabVIEW/">LabVIEW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Layout/">Layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lisp/">Lisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mako/">Mako</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Module/">Module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Music/">Music</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NumPy/">NumPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Open-Source/">Open Source</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PFA/">PFA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/POSIX/">POSIX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RETURNING/">RETURNING</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMS/">SMS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SciPy/">SciPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tex/">Tex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tutorial/">Tutorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typecho/">Typecho</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIUE/">UIUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unix/">Unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBoxManager/">VBoxManager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VI/">VI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Veer/">Veer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vimscript/">Vimscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/">VirtualBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XPath/">XPath</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zend-Framework/">Zend Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/admin/">admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/book/">book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chart/">chart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deplate/">deplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digraph/">digraph</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/documentation/">documentation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dot/">dot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eps/">eps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exec/">exec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/graphviz/">graphviz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/highlighter/">highlighter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/">history</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iframe/">iframe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/imagemagick/">imagemagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ipython/">ipython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-，demo/">javascript ，demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kernel/">kernel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lamda/">lamda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md5/">md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mpm/">mpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multiprocessing/">multiprocessing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/physics/">physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/picpick/">picpick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prefork/">prefork</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pyreadline/">pyreadline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pysqlite/">pysqlite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/revtex/">revtex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sed/">sed</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setuptools/">setuptools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sha/">sha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sha1/">sha1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/system/">system</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vbscript/">vbscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viki/">viki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webOS/">webOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/worker/">worker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主题/">主题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品启示录/">产品启示录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创新/">创新</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷机/">刷机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/励志/">励志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/历史/">历史</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大学/">大学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串处理/">字符串处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全/">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/密码/">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/希腊/">希腊</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开放平台/">开放平台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源/">开源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微电影/">微电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微薄/">微薄</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能调优/">性能调优</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/感悟/">感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/批处理/">批处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据通信/">数据通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据采集/">数据采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文档/">文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文档创作/">文档创作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新浪/">新浪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日期/">日期</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日语/">日语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂志/">杂志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标准/">标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架/">框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板/">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/毕业/">毕业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/毕业设计/">毕业设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/水印/">水印</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/求职/">求职</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测控/">测控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测量/">测量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/淘宝/">淘宝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源代码/">源代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生物技术/">生物技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子书/">电子书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学计算/">科学计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/管理/">管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统函数/">系统函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统管理/">系统管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经验/">经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码，-encoding/">编码， encoding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编辑器/">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自行车/">自行车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚拟仪器/">虚拟仪器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚拟机/">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行间距/">行间距</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器/">装饰器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/规范/">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语法高亮/">语法高亮</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/调试/">调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资料/">资料</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/走过的痕迹/">走过的痕迹</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/轻音乐/">轻音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进程/">进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面部识别/">面部识别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a></li></ul>
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="John Doe's avatar">
     </div>
-  </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        521scm#gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             الرئيسية
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
 
 
-  
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             أرشيف
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">April 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">November 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/09/">September 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/06/">June 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/03/">March 2015<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/02/">February 2015<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/01/">January 2015<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/11/">November 2014<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/10/">October 2014<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/09/">September 2014<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/08/">August 2014<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/07/">July 2014<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/05/">May 2014<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/04/">April 2014<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/03/">March 2014<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/01/">January 2014<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/12/">December 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/10/">October 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/09/">September 2013<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/08/">August 2013<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/07/">July 2013<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/06/">June 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/05/">May 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/03/">March 2013<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/12/">December 2012<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/11/">November 2012<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/10/">October 2012<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/09/">September 2012<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/08/">August 2012<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/07/">July 2012<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/06/">June 2012<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/05/">May 2012<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/04/">April 2012<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/03/">March 2012<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/02/">February 2012<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/01/">January 2012<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2011/12/">December 2011<span class="sidebar_archives-count">39</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/AD/" style="font-size: 10px;">AD</a> <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/APS/" style="font-size: 10px;">APS</a> <a href="/tags/ASE/" style="font-size: 10px;">ASE</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Apache/" style="font-size: 10px;">Apache</a> <a href="/tags/AsciiDoc/" style="font-size: 10.91px;">AsciiDoc</a> <a href="/tags/BSD/" style="font-size: 10px;">BSD</a> <a href="/tags/Bash/" style="font-size: 12.73px;">Bash</a> <a href="/tags/Beamer/" style="font-size: 11.82px;">Beamer</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/CMS/" style="font-size: 10px;">CMS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/DSSSL/" style="font-size: 10px;">DSSSL</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Django/" style="font-size: 15.45px;">Django</a> <a href="/tags/Docbook/" style="font-size: 10px;">Docbook</a> <a href="/tags/Dojo/" style="font-size: 10px;">Dojo</a> <a href="/tags/FAQ，讨论，-权限-，文件/" style="font-size: 10px;">FAQ，讨论， 权限 ，文件</a> <a href="/tags/FHS/" style="font-size: 10px;">FHS</a> <a href="/tags/FePt/" style="font-size: 10px;">FePt</a> <a href="/tags/Flatpages/" style="font-size: 10.91px;">Flatpages</a> <a href="/tags/GPIB/" style="font-size: 10px;">GPIB</a> <a href="/tags/Gentoo/" style="font-size: 10.91px;">Gentoo</a> <a href="/tags/HOWTO/" style="font-size: 13.64px;">HOWTO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/IBM/" style="font-size: 10px;">IBM</a> <a href="/tags/IEEE/" style="font-size: 10px;">IEEE</a> <a href="/tags/IEEE488/" style="font-size: 10px;">IEEE488</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 14.55px;">Javascript</a> <a href="/tags/LDAP/" style="font-size: 10px;">LDAP</a> <a href="/tags/LSB/" style="font-size: 10px;">LSB</a> <a href="/tags/LaTex/" style="font-size: 15.45px;">LaTex</a> <a href="/tags/LabVIEW/" style="font-size: 10.91px;">LabVIEW</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Linux/" style="font-size: 17.27px;">Linux</a> <a href="/tags/Lisp/" style="font-size: 10px;">Lisp</a> <a href="/tags/Mako/" style="font-size: 10px;">Mako</a> <a href="/tags/Markdown/" style="font-size: 11.82px;">Markdown</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/NumPy/" style="font-size: 10px;">NumPy</a> <a href="/tags/Open-Source/" style="font-size: 11.82px;">Open Source</a> <a href="/tags/PFA/" style="font-size: 10px;">PFA</a> <a href="/tags/PHP/" style="font-size: 15.45px;">PHP</a> <a href="/tags/POSIX/" style="font-size: 10px;">POSIX</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/PostgreSQL/" style="font-size: 14.55px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RETURNING/" style="font-size: 10px;">RETURNING</a> <a href="/tags/SMS/" style="font-size: 10px;">SMS</a> <a href="/tags/SQL/" style="font-size: 10.91px;">SQL</a> <a href="/tags/Samba/" style="font-size: 10px;">Samba</a> <a href="/tags/SciPy/" style="font-size: 10px;">SciPy</a> <a href="/tags/Shell/" style="font-size: 12.73px;">Shell</a> <a href="/tags/Tex/" style="font-size: 19.09px;">Tex</a> <a href="/tags/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tags/Typecho/" style="font-size: 10px;">Typecho</a> <a href="/tags/UIUE/" style="font-size: 10px;">UIUE</a> <a href="/tags/Unix/" style="font-size: 10.91px;">Unix</a> <a href="/tags/VBoxManager/" style="font-size: 10px;">VBoxManager</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/Veer/" style="font-size: 10px;">Veer</a> <a href="/tags/Vim/" style="font-size: 16.36px;">Vim</a> <a href="/tags/Vimscript/" style="font-size: 10.91px;">Vimscript</a> <a href="/tags/VirtualBox/" style="font-size: 11.82px;">VirtualBox</a> <a href="/tags/Windows/" style="font-size: 10.91px;">Windows</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/XPath/" style="font-size: 10px;">XPath</a> <a href="/tags/Zend-Framework/" style="font-size: 14.55px;">Zend Framework</a> <a href="/tags/admin/" style="font-size: 10px;">admin</a> <a href="/tags/algorithms/" style="font-size: 10px;">algorithms</a> <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/chart/" style="font-size: 10px;">chart</a> <a href="/tags/deplate/" style="font-size: 10px;">deplate</a> <a href="/tags/digraph/" style="font-size: 10px;">digraph</a> <a href="/tags/documentation/" style="font-size: 12.73px;">documentation</a> <a href="/tags/dot/" style="font-size: 10px;">dot</a> <a href="/tags/eps/" style="font-size: 10px;">eps</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/exec/" style="font-size: 10px;">exec</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/graphviz/" style="font-size: 10px;">graphviz</a> <a href="/tags/highlighter/" style="font-size: 10.91px;">highlighter</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/imagemagick/" style="font-size: 10px;">imagemagick</a> <a href="/tags/ipython/" style="font-size: 10.91px;">ipython</a> <a href="/tags/javascript-，demo/" style="font-size: 10px;">javascript ，demo</a> <a href="/tags/kernel/" style="font-size: 10px;">kernel</a> <a href="/tags/lamda/" style="font-size: 10px;">lamda</a> <a href="/tags/md5/" style="font-size: 10px;">md5</a> <a href="/tags/mpm/" style="font-size: 10px;">mpm</a> <a href="/tags/multiprocessing/" style="font-size: 10px;">multiprocessing</a> <a href="/tags/physics/" style="font-size: 10px;">physics</a> <a href="/tags/picpick/" style="font-size: 10px;">picpick</a> <a href="/tags/prefork/" style="font-size: 10px;">prefork</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/pyreadline/" style="font-size: 10px;">pyreadline</a> <a href="/tags/pysqlite/" style="font-size: 10px;">pysqlite</a> <a href="/tags/revtex/" style="font-size: 10px;">revtex</a> <a href="/tags/sed/" style="font-size: 10.91px;">sed</a> <a href="/tags/setuptools/" style="font-size: 10px;">setuptools</a> <a href="/tags/sha/" style="font-size: 10px;">sha</a> <a href="/tags/sha1/" style="font-size: 10px;">sha1</a> <a href="/tags/system/" style="font-size: 10px;">system</a> <a href="/tags/vbscript/" style="font-size: 10px;">vbscript</a> <a href="/tags/viki/" style="font-size: 10px;">viki</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webOS/" style="font-size: 10.91px;">webOS</a> <a href="/tags/wordpress/" style="font-size: 12.73px;">wordpress</a> <a href="/tags/worker/" style="font-size: 10px;">worker</a> <a href="/tags/主题/" style="font-size: 10px;">主题</a> <a href="/tags/产品启示录/" style="font-size: 10px;">产品启示录</a> <a href="/tags/函数/" style="font-size: 10.91px;">函数</a> <a href="/tags/创新/" style="font-size: 10px;">创新</a> <a href="/tags/刷机/" style="font-size: 10px;">刷机</a> <a href="/tags/励志/" style="font-size: 10.91px;">励志</a> <a href="/tags/博客/" style="font-size: 11.82px;">博客</a> <a href="/tags/历史/" style="font-size: 10.91px;">历史</a> <a href="/tags/大学/" style="font-size: 10px;">大学</a> <a href="/tags/字符串处理/" style="font-size: 10px;">字符串处理</a> <a href="/tags/安全/" style="font-size: 10.91px;">安全</a> <a href="/tags/密码/" style="font-size: 10px;">密码</a> <a href="/tags/嵌入式/" style="font-size: 10px;">嵌入式</a> <a href="/tags/工具/" style="font-size: 14.55px;">工具</a> <a href="/tags/希腊/" style="font-size: 10px;">希腊</a> <a href="/tags/开放平台/" style="font-size: 10px;">开放平台</a> <a href="/tags/开源/" style="font-size: 12.73px;">开源</a> <a href="/tags/微电影/" style="font-size: 10px;">微电影</a> <a href="/tags/微薄/" style="font-size: 10px;">微薄</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/性能调优/" style="font-size: 10px;">性能调优</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/批处理/" style="font-size: 10px;">批处理</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/教程/" style="font-size: 11.82px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数据库/" style="font-size: 11.82px;">数据库</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/数据通信/" style="font-size: 10px;">数据通信</a> <a href="/tags/数据采集/" style="font-size: 11.82px;">数据采集</a> <a href="/tags/文档/" style="font-size: 11.82px;">文档</a> <a href="/tags/文档创作/" style="font-size: 10px;">文档创作</a> <a href="/tags/新浪/" style="font-size: 10px;">新浪</a> <a href="/tags/日期/" style="font-size: 10px;">日期</a> <a href="/tags/日语/" style="font-size: 10px;">日语</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/杂志/" style="font-size: 10px;">杂志</a> <a href="/tags/标准/" style="font-size: 10px;">标准</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/模板/" style="font-size: 10px;">模板</a> <a href="/tags/毕业/" style="font-size: 10.91px;">毕业</a> <a href="/tags/毕业设计/" style="font-size: 14.55px;">毕业设计</a> <a href="/tags/水印/" style="font-size: 10px;">水印</a> <a href="/tags/求职/" style="font-size: 10px;">求职</a> <a href="/tags/测控/" style="font-size: 10px;">测控</a> <a href="/tags/测量/" style="font-size: 10px;">测量</a> <a href="/tags/淘宝/" style="font-size: 10px;">淘宝</a> <a href="/tags/源代码/" style="font-size: 10px;">源代码</a> <a href="/tags/生活/" style="font-size: 11.82px;">生活</a> <a href="/tags/生物技术/" style="font-size: 10px;">生物技术</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/科学计算/" style="font-size: 10.91px;">科学计算</a> <a href="/tags/算法/" style="font-size: 10.91px;">算法</a> <a href="/tags/管理/" style="font-size: 10px;">管理</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/系统函数/" style="font-size: 10px;">系统函数</a> <a href="/tags/系统管理/" style="font-size: 10px;">系统管理</a> <a href="/tags/经验/" style="font-size: 11.82px;">经验</a> <a href="/tags/编码，-encoding/" style="font-size: 10px;">编码， encoding</a> <a href="/tags/编辑器/" style="font-size: 10.91px;">编辑器</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/自行车/" style="font-size: 10px;">自行车</a> <a href="/tags/虚拟仪器/" style="font-size: 10px;">虚拟仪器</a> <a href="/tags/虚拟机/" style="font-size: 10.91px;">虚拟机</a> <a href="/tags/行间距/" style="font-size: 10px;">行间距</a> <a href="/tags/装饰器/" style="font-size: 10px;">装饰器</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计/" style="font-size: 11.82px;">设计</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法高亮/" style="font-size: 10px;">语法高亮</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资料/" style="font-size: 10px;">资料</a> <a href="/tags/资源/" style="font-size: 18.18px;">资源</a> <a href="/tags/走过的痕迹/" style="font-size: 10px;">走过的痕迹</a> <a href="/tags/转载/" style="font-size: 20px;">转载</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/轻音乐/" style="font-size: 10px;">轻音乐</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面部识别/" style="font-size: 10px;">面部识别</a> <a href="/tags/音乐/" style="font-size: 10px;">音乐</a> <a href="/tags/项目/" style="font-size: 10px;">项目</a>
-    </div>
-  </div>
 
-  
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             رقم المقالة
+             <span class="sidebar-badge">205</span>
+        </a>
+    </li>
+</ul>
+
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		سمة - Material
+		<span class="sidebar-badge badge-circle">i</span>
+	</div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
-    </div>
-  </div>
-
-
-  
+    <!-- Sidebar Sponsor -->
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/01/13/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/19/python-e5-ad-97-e7-ac-a6-e4-b8-b2-e9-95-bf-e5-ba-a6-e8-ae-a1-e7-ae-97/">python中文编码和字符串长度计算</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/20/e6-9c-ac-e5-9c-b0rm-e5-88-a0-e9-99-a4git-e4-bb-93-e5-ba-93-e6-96-87-e4-bb-b6-e5-90-8e-e5-a6-82-e4-bd-95-e6-81-a2-e5-a4-8d/">本地rm删除git仓库文件后如何恢复</a>
-          </li>
-        
-          <li>
-            <a href="/2015/09/23/e6-89-80-e8-b0-93-e6-83-85-e5-95-86/">所谓情商</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/01/e4-b8-8d-e8-b4-aa-e5-a9-aa-e7-9a-84-e8-bf-bd-e6-b1-82/">不贪婪的追求</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
+
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    <a href="https://twitter.com/twitter" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+        <span class="visuallyhidden">Twitter</span>
+    </button></a>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Facebook -->
+    
+    <a href="https://www.facebook.com/facebook" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+        <span class="visuallyhidden">Facebook</span>
+    </button></a>
+    
+
+    <!-- Google + -->
+    
+    <a href="https://www.google.com/" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+        <span class="visuallyhidden">Google Plus</span>
+    </button></a>
+    
+
+    <!-- Weibo -->
+    
+    
+
+    <!-- Instagram -->
+    
+    
+
+    <!-- Tumblr -->
+    
+    
+
+    <!-- Github -->
+    
+    
+
+    <!-- LinkedIn -->
+    
+    
+
+    <!-- Zhihu -->
+    
+    
+</div>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;Hexo</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
 </html>

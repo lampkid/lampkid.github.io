@@ -1,1258 +1,1126 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://lampkid.github.io/page/11/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+    <head>
+    <!--
+        © Material Theme 
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.5
+    -->
+    
+    <!-- Title -->
+    
+    <title>
+        Hexo
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hexo">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://lampkid.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Hexo">
+    <meta property="og:description" content="null">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
 
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5
+        }
+		
+		/* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    
 </head>
+	
+	
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Index Module -->
+<div class="material-index mdl-grid">
+	
+    <div class="locate-thumbnail-symbol"></div>
+    
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/06/15/e4-bd-bf-e7-94-a8beamer-e5-86-99-e6-bc-94-e8-ae-b2-e7-a8-bf-e6-97-b6-e6-a0-87-e9-a2-98-e9-81-87-e5-88-b0-e7-9a-84-e4-b8-ad-e6-96-87-e9-97-ae-e9-a2-98/">使用beamer写演讲稿时标题遇到的中文问题</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            用beamer写演讲稿时，虽然使用了CJK包，但是\section&#123;标题}和\subsection&#123;子标题}中的“标题”和“子标...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/06/15/e4-bd-bf-e7-94-a8beamer-e5-86-99-e6-bc-94-e8-ae-b2-e7-a8-bf-e6-97-b6-e6-a0-87-e9-a2-98-e9-81-87-e5-88-b0-e7-9a-84-e4-b8-ad-e6-96-87-e9-97-ae-e9-a2-98/" target="_self">واصل القراءة</a>
+        </span>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lampkid.github.io"></form>
-      </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>Jun 15, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/HOWTO/">HOWTO</a>, <a class="post_category-link" href="/categories/HOWTO/Tex/">Tex</a>, <a class="post_category-link" href="/categories/HOWTO/Tex/文档创作/">文档创作</a>, <a class="post_category-link" href="/categories/HOWTO/Tex/文档创作/毕业设计/">毕业设计</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-e4-bd-bf-e7-94-a8beamer-e5-86-99-e6-bc-94-e8-ae-b2-e7-a8-bf-e6-97-b6-e6-a0-87-e9-a2-98-e9-81-87-e5-88-b0-e7-9a-84-e4-b8-ad-e6-96-87-e9-97-ae-e9-a2-98" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/06/15/e4-bd-bf-e7-94-a8beamer-e5-86-99-e6-bc-94-e8-ae-b2-e7-a8-bf-e6-97-b6-e6-a0-87-e9-a2-98-e9-81-87-e5-88-b0-e7-9a-84-e4-b8-ad-e6-96-87-e9-97-ae-e9-a2-98/" class="article-date">
-  <time datetime="2012-06-14T23:18:17.000Z" itemprop="datePublished">2012-06-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/HOWTO/">HOWTO</a>►<a class="article-category-link" href="/categories/HOWTO/Tex/">Tex</a>►<a class="article-category-link" href="/categories/HOWTO/Tex/文档创作/">文档创作</a>►<a class="article-category-link" href="/categories/HOWTO/Tex/文档创作/毕业设计/">毕业设计</a>
-  </div>
+            
+</div>
 
-  </div>
-  <div class="article-inner">
+		
+		
     
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
     
-      <header class="article-header">
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/05/23/ni-max-e4-b8-ba-e4-bb-80-e4-b9-88-e4-b8-8d-e8-83-bd-e8-af-86-e5-88-abkeithley-2001-e4-b8-87-e7-94-a8-e8-a1-a8/">NI MAX 为什么不能识别keithley 2001万用表</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/06/15/e4-bd-bf-e7-94-a8beamer-e5-86-99-e6-bc-94-e8-ae-b2-e7-a8-bf-e6-97-b6-e6-a0-87-e9-a2-98-e9-81-87-e5-88-b0-e7-9a-84-e4-b8-ad-e6-96-87-e9-97-ae-e9-a2-98/">使用beamer写演讲稿时标题遇到的中文问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用beamer写演讲稿时，虽然使用了CJK包，但是\section&#123;标题}和\subsection&#123;子标题}中的“标题”和“子标题”在编译时会导致编译错误，不能显示中文。编译器为latexsuite。</p>
-<p>解决办法是：\documentclass&#91;CJK&#93;&#123;beamer} 。</p>
-
-      
+            MAX即Measurement&amp;Automation Explore ，可用来配置和查看LabVIEW相关硬件、软件包括驱动等。我的...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/05/23/ni-max-e4-b8-ba-e4-bb-80-e4-b9-88-e4-b8-8d-e8-83-bd-e8-af-86-e5-88-abkeithley-2001-e4-b8-87-e7-94-a8-e8-a1-a8/" target="_self">واصل القراءة</a>
+        </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/06/15/e4-bd-bf-e7-94-a8beamer-e5-86-99-e6-bc-94-e8-ae-b2-e7-a8-bf-e6-97-b6-e6-a0-87-e9-a2-98-e9-81-87-e5-88-b0-e7-9a-84-e4-b8-ad-e6-96-87-e9-97-ae-e9-a2-98/" data-id="cixvluopx002xgcs60qjnhksx" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Beamer/">Beamer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tex/">Tex</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ni-max-e4-b8-ba-e4-bb-80-e4-b9-88-e4-b8-8d-e8-83-bd-e8-af-86-e5-88-abkeithley-2001-e4-b8-87-e7-94-a8-e8-a1-a8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/05/23/ni-max-e4-b8-ba-e4-bb-80-e4-b9-88-e4-b8-8d-e8-83-bd-e8-af-86-e5-88-abkeithley-2001-e4-b8-87-e7-94-a8-e8-a1-a8/" class="article-date">
-  <time datetime="2012-05-22T18:43:08.000Z" itemprop="datePublished">2012-05-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/HOWTO/">HOWTO</a>►<a class="article-category-link" href="/categories/HOWTO/LabVIEW/">LabVIEW</a>►<a class="article-category-link" href="/categories/HOWTO/LabVIEW/毕业设计/">毕业设计</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/23/ni-max-e4-b8-ba-e4-bb-80-e4-b9-88-e4-b8-8d-e8-83-bd-e8-af-86-e5-88-abkeithley-2001-e4-b8-87-e7-94-a8-e8-a1-a8/">NI MAX 为什么不能识别keithley 2001万用表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>MAX即Measurement&amp;Automation Explore ，可用来配置和查看LabVIEW相关硬件、软件包括驱动等。<br>我的计算机已经能够识别GPIB卡，但是仍然不能识别仪器万用表，这是什么原因？<br>经咨询和查证，我将万用表的GPIB地址设为了0，我只要将GPIB地址设为其他地址，如1，MAX就能正确识别万用表了。<br>但是还是不明白为什么万用表GPIB地址不能设为0呢？地址0有什么特殊的用途吗？</p>
-
-      
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>May 23, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/HOWTO/">HOWTO</a>, <a class="post_category-link" href="/categories/HOWTO/LabVIEW/">LabVIEW</a>, <a class="post_category-link" href="/categories/HOWTO/LabVIEW/毕业设计/">毕业设计</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/05/23/ni-max-e4-b8-ba-e4-bb-80-e4-b9-88-e4-b8-8d-e8-83-bd-e8-af-86-e5-88-abkeithley-2001-e4-b8-87-e7-94-a8-e8-a1-a8/" data-id="cixvlup0400gcgcs6e2sto70d" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+            
+</div>
 
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/05/21/e9-98-85-e8-af-bb-e4-ba-9b-e8-ae-a1-e7-ae-97-e6-9c-ba-e7-a7-91-e5-ad-a6-e7-9a-84-e8-ae-ba-e6-96-87/">阅读些计算机科学的论文</a></p>
+	</div>
 
-  
-    <article id="post-e9-98-85-e8-af-bb-e4-ba-9b-e8-ae-a1-e7-ae-97-e6-9c-ba-e7-a7-91-e5-ad-a6-e7-9a-84-e8-ae-ba-e6-96-87" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/05/21/e9-98-85-e8-af-bb-e4-ba-9b-e8-ae-a1-e7-ae-97-e6-9c-ba-e7-a7-91-e5-ad-a6-e7-9a-84-e8-ae-ba-e6-96-87/" class="article-date">
-  <time datetime="2012-05-21T05:53:19.000Z" itemprop="datePublished">2012-05-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/他山之石/">他山之石</a>►<a class="article-category-link" href="/categories/他山之石/经验励志/">经验励志</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/21/e9-98-85-e8-af-bb-e4-ba-9b-e8-ae-a1-e7-ae-97-e6-9c-ba-e7-a7-91-e5-ad-a6-e7-9a-84-e8-ae-ba-e6-96-87/">阅读些计算机科学的论文</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#60;div&#62;这是我在qq上与一位学长的对话，从对话中大家可以获取自己想要的信息。嗯，Perfect，在此谢谢学长了。也在这和大家一起分享下。&#60;/div&#62;<br> &#91;plain&#93;<br>我: 计算机一般读什么论文啊<br>学长: 不同方向看的不一样，如系统结构（分布式协议，网络，海量存储），<br>软件理论（模型验证，语言设计，编译优化，密码学），AI类（符号逻辑，<br>机器学习，CV，NLP）等。我现在主要是看第三类，作为程序员，随着年龄<br>增长，每个领域都论文都应该看看。<br>学长: 网上有个计算机经典论文，<br><a href="http://groups.google.com/group/hackerfellowship" target="_blank" rel="external">http://groups.google.com/group/hackerfellowship</a> /browse_thread/thread/0241c9d940f215fa<br>完全是作者自己评的经典，但还是不错的。我现在也在看hoare的<br>Communicating Sequential Processes。<br>&#91;/plain&#93;</p>
-<p>&#60;/div&#62;</p>
-
-      
+            &#60;div&#62;这是我在qq上与一位学长的对话，从对话中大家可以获取自己想要的信息。嗯，Perfect，在此谢谢学长了。也在这和大家一起分...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/05/21/e9-98-85-e8-af-bb-e4-ba-9b-e8-ae-a1-e7-ae-97-e6-9c-ba-e7-a7-91-e5-ad-a6-e7-9a-84-e8-ae-ba-e6-96-87/" target="_self">واصل القراءة</a>
+        </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/05/21/e9-98-85-e8-af-bb-e4-ba-9b-e8-ae-a1-e7-ae-97-e6-9c-ba-e7-a7-91-e5-ad-a6-e7-9a-84-e8-ae-ba-e6-96-87/" data-id="cixvluoyg00dlgcs6ja2iee1u" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>May 21, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/他山之石/">他山之石</a>, <a class="post_category-link" href="/categories/他山之石/经验励志/">经验励志</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
 
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/05/19/wordpress-e4-b8-adthe-content-e4-b8-8eecho-get-the-content-e7-9a-84-e5-8c-ba-e5-88-ab/">wordpress中the_content()与echo get_the_content()的区别</a></p>
+	</div>
 
-  
-    <article id="post-wordpress-e4-b8-adthe-content-e4-b8-8eecho-get-the-content-e7-9a-84-e5-8c-ba-e5-88-ab" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/05/19/wordpress-e4-b8-adthe-content-e4-b8-8eecho-get-the-content-e7-9a-84-e5-8c-ba-e5-88-ab/" class="article-date">
-  <time datetime="2012-05-19T06:55:26.000Z" itemprop="datePublished">2012-05-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/HOWTO/">HOWTO</a>►<a class="article-category-link" href="/categories/HOWTO/wordpress/">wordpress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/19/wordpress-e4-b8-adthe-content-e4-b8-8eecho-get-the-content-e7-9a-84-e5-8c-ba-e5-88-ab/">wordpress中the_content()与echo get_the_content()的区别</a>
-    </h1>
-  
+            2012年5月19日， 帮师兄做一个企业网站时发现这么一个现象：
+the_content&#40;&#41; 输出时不会过滤掉文章格式...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/05/19/wordpress-e4-b8-adthe-content-e4-b8-8eecho-get-the-content-e7-9a-84-e5-8c-ba-e5-88-ab/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>May 19, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/HOWTO/">HOWTO</a>, <a class="post_category-link" href="/categories/HOWTO/wordpress/">wordpress</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
 
-      </header>
+		
+		
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2012年5月19日， 帮师兄做一个企业网站时发现这么一个现象：</p>
-<p>the_content&#40;&#41; 输出时不会过滤掉文章格式中的段落标签 &lt;p&gt;,</p>
-<p>而echo get_the_content&#40;&#41;输出时，会过滤掉文章格式中的段落标签 &lt;p&gt;。</p>
-<p>对其百思不得其解，只能在源码中寻个究竟，the_content&#40;&#41;和get_the_content&#40;&#41;均在wp-includes/post-template.php中，而且the_content&#40;&#41;调用了get_the_content&#40;&#41;。我们来看源代码：</p>
-<p>&#91;code&#93;</p>
-<p>/**</p>
-<ul>
-<li>Display the post content.<br>*</li>
-<li>@since 0.71<br>*</li>
-<li>@param string $more_link_text Optional. Content for when there is more text.</li>
-<li>@param string $stripteaser Optional. Teaser content before the more text.<br>*/<br>function the_content&#40;$more_link_text = null, $stripteaser = 0&#41; &#123;<br>$content = get_the_content&#40;$more_link_text, $stripteaser&#41;;<br>$content = apply_filters&#40;’the_content’, $content&#41;;<br>$content = str_replace&#40;’&#93;&#93;&gt;’, ‘&#93;&#93;&amp;gt;’, $content&#41;;<br>echo $content;<br>}</li>
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/05/08/e4-bd-bf-e7-94-a8labview-e9-87-87-e9-9b-86-e5-a3-b0-e9-9f-b3/">使用LabVIEW采集声音</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            LabVI EW声音采集程序前面板：
+&#91;!&#91;声音采集前面板&#93;&#40;
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/05/08/e4-bd-bf-e7-94-a8labview-e9-87-87-e9-9b-86-e5-a3-b0-e9-9f-b3/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>May 08, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/HOWTO/">HOWTO</a>, <a class="post_category-link" href="/categories/HOWTO/LabVIEW/">LabVIEW</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/05/06/e5-a4-a7-e5-ad-a6-e6-9c-80-e9-81-97-e6-86-be-e7-9a-84-e4-ba-8b/">大学最遗憾的事——湖水般平静</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            今天看了一个视频，《大学最遗憾的事》，不由自主联想到自己，在此，回忆总结下自己大学里遗憾的事，也不说是最遗憾的了，因为遗憾太多，所以找不出一个最遗憾...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/05/06/e5-a4-a7-e5-ad-a6-e6-9c-80-e9-81-97-e6-86-be-e7-9a-84-e4-ba-8b/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>May 06, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/猿悟人生/">猿悟人生</a>, <a class="post_category-link" href="/categories/猿悟人生/生活/">生活</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/05/06/how-linux-is-built/">How Linux is Built</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            &#91;youku id=”XMzc1OTY1NTYw”&#93; 
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/05/06/how-linux-is-built/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>May 06, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Linux/">Linux</a>, <a class="post_category-link" href="/categories/Linux/video/">video</a>, <a class="post_category-link" href="/categories/Linux/video/他山之石/">他山之石</a>, <a class="post_category-link" href="/categories/Linux/video/他山之石/转载/">转载</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/04/15/e5-a6-82-e4-bd-95-e7-bc-96-e5-86-99-e3-80-81-e7-bc-96-e8-af-91-e3-80-81-e8-bf-90-e8-a1-8clinux-e5-86-85-e6-a0-b8-e6-a8-a1-e5-9d-97/">如何编写、编译、运行Linux内核模块</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            &nbsp;
+在图书馆翻了下《操作系统课程设计》，发现一个有趣的东西，让自己的代码在核心态下运行，于是拿着书，到实验室开始了Linux...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/04/15/e5-a6-82-e4-bd-95-e7-bc-96-e5-86-99-e3-80-81-e7-bc-96-e8-af-91-e3-80-81-e8-bf-90-e8-a1-8clinux-e5-86-85-e6-a0-b8-e6-a8-a1-e5-9d-97/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>Apr 15, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/HOWTO/">HOWTO</a>, <a class="post_category-link" href="/categories/HOWTO/Linux/">Linux</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/04/12/e8-bd-ac-e8-bd-bd-e8-ae-a1-e7-ae-97-e6-9c-ba-e5-9c-a8-e6-b5-8b-e6-8e-a7-e9-a2-86-e5-9f-9f-e7-9a-84-e5-ba-94-e7-94-a8/">#转载#  计算机在测控领域的应用</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            计算机在测控领域的应用&#60;span style=”color: #333333;”&#62;    ...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/04/12/e8-bd-ac-e8-bd-bd-e8-ae-a1-e7-ae-97-e6-9c-ba-e5-9c-a8-e6-b5-8b-e6-8e-a7-e9-a2-86-e5-9f-9f-e7-9a-84-e5-ba-94-e7-94-a8/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>Apr 12, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/LabVIEW/">LabVIEW</a>, <a class="post_category-link" href="/categories/LabVIEW/他山之石/">他山之石</a>, <a class="post_category-link" href="/categories/LabVIEW/他山之石/数据采集/">数据采集</a>, <a class="post_category-link" href="/categories/LabVIEW/他山之石/数据采集/转载/">转载</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		
+			<!-- Paradox Thumbnail -->
+        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
+    
+    <!-- Post Thumbnail -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+		
+	
+				
+		<!-- Post Title -->
+		<p class="article-headline-p"><a href="/2012/04/12/e8-bd-ac-e8-bd-bd-ieee488-e6-80-bb-e7-ba-bf-e8-af-a6-e8-a7-a3/">#转载#  IEEE488总线详解</a></p>
+	</div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            &#60;div id=”arcInfo-hd”&#62;
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2012/04/12/e8-bd-ac-e8-bd-bd-ieee488-e6-80-bb-e7-ba-bf-e8-af-a6-e8-a7-a3/" target="_self">واصل القراءة</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="John Doe's avatar">
+            </div>
+            <div>
+                <strong>John Doe</strong>
+                <span>Apr 12, 2012</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/IEEE/">IEEE</a>, <a class="post_category-link" href="/categories/IEEE/LabVIEW/">LabVIEW</a>, <a class="post_category-link" href="/categories/IEEE/LabVIEW/他山之石/">他山之石</a>, <a class="post_category-link" href="/categories/IEEE/LabVIEW/他山之石/数据采集/">数据采集</a>
+            </span>
+            
+            
+            
+            <!-- Post Views -->
+            <span class="post_entry-views">
+                
+            </span>
+        </div>
+    </div>
+            
+</div>
+
+		
+		
+    
+		<!-- Index nav -->
+        <nav class="material-nav mdl-cell mdl-cell--12-col">
+            <a class="extend prev" rel="prev" href="/page/10/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/12/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
+        </nav>
+    
+    
+	
+		<script>
+    
+    var randomNum;
+    
+    var locatePost = $(".locate-thumbnail-symbol").next();
+    for(var i=0; i < 10; i++){
+        
+        randomNum = Math.floor(Math.random() * 19 + 1);
+        
+        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
+        
+        locatePost = locatePost.next();
+    }
+    
+</script>
+
+	
+
+</div>
+
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="John Doe's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        521scm#gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             الرئيسية
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             أرشيف
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">April 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">November 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/09/">September 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/06/">June 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/03/">March 2015<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/02/">February 2015<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/01/">January 2015<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/11/">November 2014<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/10/">October 2014<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/09/">September 2014<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/08/">August 2014<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/07/">July 2014<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/05/">May 2014<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/04/">April 2014<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/03/">March 2014<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/01/">January 2014<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/12/">December 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/10/">October 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/09/">September 2013<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/08/">August 2013<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/07/">July 2013<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/06/">June 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/05/">May 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/03/">March 2013<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/12/">December 2012<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/11/">November 2012<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/10/">October 2012<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/09/">September 2012<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/08/">August 2012<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/07/">July 2012<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/06/">June 2012<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/05/">May 2012<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/04/">April 2012<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/03/">March 2012<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/02/">February 2012<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/01/">January 2012<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2011/12/">December 2011<span class="sidebar_archives-count">39</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             رقم المقالة
+             <span class="sidebar-badge">205</span>
+        </a>
+    </li>
 </ul>
-<p>/**</p>
-<ul>
-<li>Retrieve the post content.<br>*</li>
-<li>@since 0.71<br>*</li>
-<li>@param string $more_link_text Optional. Content for when there is more text.</li>
-<li>@param string $stripteaser Optional. Teaser content before the more text.</li>
-<li>@return string<br>*/<br>function get_the_content&#40;$more_link_text = null, $stripteaser = 0&#41; &#123;<br>global $post, $more, $page, $pages, $multipage, $preview;</li>
-</ul>
-<p>if &#40; null === $more_link_text &#41;<br>$more_link_text = __&#40; ‘&#40;more…&#41;’ &#41;;</p>
-<p>$output = ‘’;<br>$hasTeaser = false;</p>
-<p>// If post password required and it doesn’t match the cookie.<br>if &#40; post_password_required&#40;$post&#41; &#41; &#123;<br>$output = get_the_password_form&#40;&#41;;<br>return $output;<br>}</p>
-<p>if &#40; $page &gt; count&#40;$pages&#41; &#41; // if the requested page doesn’t exist<br>$page = count&#40;$pages&#41;; // give them the highest numbered page that DOES exist</p>
-<p>$content = $pages&#91;$page-1&#93;;<br>if &#40; preg_match&#40;’/&lt;!–more&#40;.*?&#41;?–&gt;/‘, $content, $matches&#41; &#41; &#123;<br>$content = explode&#40;$matches&#91;0&#93;, $content, 2&#41;;<br>if &#40; !empty&#40;$matches&#91;1&#93;&#41; &amp;&amp; !empty&#40;$more_link_text&#41; &#41;<br>$more_link_text = strip_tags&#40;wp_kses_no_null&#40;trim&#40;$matches&#91;1&#93;&#41;&#41;&#41;;</p>
-<p>$hasTeaser = true;<br>} else &#123;<br>$content = array&#40;$content&#41;;<br>}<br>if &#40; &#40;false !== strpos&#40;$post-&gt;post_content, ‘&lt;!–noteaser–&gt;’&#41; &amp;&amp; &#40;&#40;!$multipage&#41; || &#40;$page==1&#41;&#41;&#41; &#41;<br>$stripteaser = 1;<br>$teaser = $content&#91;0&#93;;<br>if &#40; &#40;$more&#41; &amp;&amp; &#40;$stripteaser&#41; &amp;&amp; &#40;$hasTeaser&#41; &#41;<br>$teaser = ‘’;<br>$output .= $teaser;<br>if &#40; count&#40;$content&#41; &gt; 1 &#41; &#123;<br>if &#40; $more &#41; &#123;<br>$output .= ‘&lt;span id=&quot;more-‘ . $post-&gt;ID . ‘&quot;&gt;&lt;/span&gt;’ . $content&#91;1&#93;;<br>} else &#123;<br>if &#40; ! empty&#40;$more_link_text&#41; &#41;<br>$output .= apply_filters&#40; ‘the_content_more_link’, ‘ &lt;a href=&quot;’ . get_permalink&#40;&#41; . &quot;#more-&#123;$post-&gt;ID}\&quot; class=\&quot;more-link\&quot;&gt;$more_link_text&lt;/a&gt;&quot;, $more_link_text &#41;;<br>$output = force_balance_tags&#40;$output&#41;;<br>}</p>
-<p>}<br>if &#40; $preview &#41; // preview fix for javascript bug with foreign languages<br>$output =    preg_replace_callback&#40;’/\%u&#40;&#91;0-9A-F&#93;&#123;4}&#41;/‘, ‘_convert_urlencoded_to_entities’, $output&#41;;</p>
-<p>return $output;<br>}</p>
-<p>&#91;/code&#93;</p>
-<p>我们可以发现the_content&#40;&#41;使用get_the_content&#40;&#41;获得文章内容后，使用下面几行代码对文章内容做了处理：</p>
-<p>&#91;code&#93;</p>
-<p>$content = apply_filters&#40;’the_content’, $content&#41;;<br>$content = str_replace&#40;’&#93;&#93;&gt;’, ‘&#93;&#93;&amp;gt;’, $content&#41;;<br>echo $content;</p>
-<p>&#91;/code&#93;</p>
-<p>wordpress会先执行挂在钩子the_content上的所有函数（过滤器），然后使用str_replace将文章内容中的&#93;&#93;&gt;替换为&#93;&#93;&amp;gt;，然后返回处理后的文章内容。</p>
-<p>还是看不出问题原因。经过测试，原因出现在&#91;code&#93; $content = apply_filters&#40;’the_content’, $content&#41;;&#91;/code&#93;</p>
-<p>,一定是执行了什么钩子函数，才恢复了文章本来的格式。</p>
-<p>那到底执行了什么钩子函数呢？ 苦心寻找，未果。</p>
-<p>&nbsp;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/05/19/wordpress-e4-b8-adthe-content-e4-b8-8eecho-get-the-content-e7-9a-84-e5-8c-ba-e5-88-ab/" data-id="cixvlup2000j3gcs6erwdpl4o" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-    <article id="post-e4-bd-bf-e7-94-a8labview-e9-87-87-e9-9b-86-e5-a3-b0-e9-9f-b3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/05/08/e4-bd-bf-e7-94-a8labview-e9-87-87-e9-9b-86-e5-a3-b0-e9-9f-b3/" class="article-date">
-  <time datetime="2012-05-08T00:04:10.000Z" itemprop="datePublished">2012-05-08</time>
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		سمة - Material
+		<span class="sidebar-badge badge-circle">i</span>
+	</div>
 </a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/HOWTO/">HOWTO</a>►<a class="article-category-link" href="/categories/HOWTO/LabVIEW/">LabVIEW</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/08/e4-bd-bf-e7-94-a8labview-e9-87-87-e9-9b-86-e5-a3-b0-e9-9f-b3/">使用LabVIEW采集声音</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>LabVI EW声音采集程序前面板：</p>
-<p>&#91;!&#91;声音采集前面板&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%A3%B0%E9%9F%B3%E9%87%87%E9%9B%86%E5%89%8D%E9%9D%A2%E6%9D%BF-300x159.jpg" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%A3%B0%E9%9F%B3%E9%87%87%E9%9B%86%E5%89%8D%E9%9D%A2%E6%9D%BF-300x159.jpg</a> “声音采集前面板”&#41;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%A3%B0%E9%9F%B3%E9%87%87%E9%9B%86%E5%89%8D%E9%9D%A2%E6%9D%BF.jpg&amp;#41" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%A3%B0%E9%9F%B3%E9%87%87%E9%9B%86%E5%89%8D%E9%9D%A2%E6%9D%BF.jpg&amp;#41</a>;</p>
-<p>LabVIEW声音采集程序框图代码：</p>
-<p>&#91;!&#91;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%A3%B0%E9%9F%B3%E9%87%87%E9%9B%86%E6%A1%86%E5%9B%BE.jpg" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%A3%B0%E9%9F%B3%E9%87%87%E9%9B%86%E6%A1%86%E5%9B%BE.jpg</a> “声音采集框图”&#41;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%A3%B0%E9%9F%B3%E9%87%87%E9%9B%86%E6%A1%86%E5%9B%BE.jpg&amp;#41" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%A3%B0%E9%9F%B3%E9%87%87%E9%9B%86%E6%A1%86%E5%9B%BE.jpg&amp;#41</a>;</p>
-<p>下面为采集不同对象声音的结果：</p>
-<p>没有任何声音输入，应该是噪声：</p>
-<p>&#91;!&#91;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%99%AA%E5%A3%B0.jpg" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%99%AA%E5%A3%B0.jpg</a> “噪声”&#41;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%99%AA%E5%A3%B0.jpg&amp;#41" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%99%AA%E5%A3%B0.jpg&amp;#41</a>;</p>
-<p>当向麦克风吹气时：</p>
-<p>&#91;!&#91;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%90%B9%E9%BA%A6%E5%85%8B%E9%A3%8E.jpg" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%90%B9%E9%BA%A6%E5%85%8B%E9%A3%8E.jpg</a> “吹麦克风”&#41;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%90%B9%E9%BA%A6%E5%85%8B%E9%A3%8E.jpg&amp;#41" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E5%90%B9%E9%BA%A6%E5%85%8B%E9%A3%8E.jpg&amp;#41</a>;</p>
-<p>当用鼠标不断点击，出现尖峰，尖峰数目与鼠标单击次数相同：</p>
-<p>&#91;!&#91;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB.jpg" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB.jpg</a> “鼠标点击”&#41;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB.jpg&amp;#41" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB.jpg&amp;#41</a>;</p>
-<p>当输入歌曲《 电台情歌》时：</p>
-<p>&#91;!&#91;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E7%94%B5%E5%8F%B0%E6%83%85%E6%AD%8C.jpg" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E7%94%B5%E5%8F%B0%E6%83%85%E6%AD%8C.jpg</a> “电台情歌”&#41;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E7%94%B5%E5%8F%B0%E6%83%85%E6%AD%8C.jpg&amp;#41" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E7%94%B5%E5%8F%B0%E6%83%85%E6%AD%8C.jpg&amp;#41</a>;</p>
-<p>当输入歌曲 《飘雪》时：</p>
-<p>&#91;!&#91;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E9%A3%98%E9%9B%AA.jpg" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E9%A3%98%E9%9B%AA.jpg</a> “飘雪”&#41;&#93;&#40;<a href="http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E9%A3%98%E9%9B%AA.jpg&amp;#41" target="_blank" rel="external">http://sunchunman-wordpress.stor.sinaapp.com/uploads/2012/05/%E9%A3%98%E9%9B%AA.jpg&amp;#41</a>;</p>
-<p>可以从波形明显看出，音乐的波形为白色，没有一丝红色，而其他均带有红色波形，根据对比猜想，红色波形可能为噪声。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/05/08/e4-bd-bf-e7-94-a8labview-e9-87-87-e9-9b-86-e5-a3-b0-e9-9f-b3/" data-id="cixvluoqe003dgcs6bv67afxx" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LabVIEW/">LabVIEW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据采集/">数据采集</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-e5-a4-a7-e5-ad-a6-e6-9c-80-e9-81-97-e6-86-be-e7-9a-84-e4-ba-8b" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/05/06/e5-a4-a7-e5-ad-a6-e6-9c-80-e9-81-97-e6-86-be-e7-9a-84-e4-ba-8b/" class="article-date">
-  <time datetime="2012-05-06T00:04:09.000Z" itemprop="datePublished">2012-05-06</time>
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
 </a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/猿悟人生/">猿悟人生</a>►<a class="article-category-link" href="/categories/猿悟人生/生活/">生活</a>
-  </div>
+-->
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/06/e5-a4-a7-e5-ad-a6-e6-9c-80-e9-81-97-e6-86-be-e7-9a-84-e4-ba-8b/">大学最遗憾的事——湖水般平静</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天看了一个视频，《大学最遗憾的事》，不由自主联想到自己，在此，回忆总结下自己大学里遗憾的事，也不说是最遗憾的了，因为遗憾太多，所以找不出一个最遗憾的。</p>
-<p>从自己的身份来说吧：</p>
-<p>首先从作为一个人说起吧。人的健康很重要，锻炼身体很重要。而在大学，我很少锻炼身体或是没能坚持锻炼身体。大一和大二，还可以在体育课上踢踢足球锻炼锻炼。记得大三还和几个同学晨跑过一段时间。不过，锻炼的时间真是太少了……</p>
-<p>然后说说作为一个男人吧。自己还是不够成熟，看起来还是那么小孩样，从小到现在还是一个人，没有恋爱经历。听说恋爱可以让一个男人开始成熟，可以学会照顾别人，可以懂得爱别人。</p>
-<p>在说说作为一个儿子吧。家里还算是离学校比较近，从学校到家坐公交也就是3个小时左右。而我一学期回家基本上只有一次，或寒假或暑假。除了这件事外，就是很少主动向家里打电话，一般都是家里给我打电话，或是我有事才向家里打电话，甚是不成熟……虽然打电话可能没啥事，但我觉得向家里打个电话，寒暄寒暄，问个好，报个平安已经算孝了，免得家人担心。</p>
-<p>作为学生，当然是读书的事情了。确实，我买了很多书，但是这些书，要么读了一些，要么根本就没读，而且这多是计算机相关的书。作为一个物理学专业的学生，确很少读过物理相关的课外书。在文学修养方面，更少。从小到现在，几乎没有完整地读过一本文学书籍。而且，毕设前的几年，没有找一个指导老师。学生生活平平淡淡，没有什么特别地殊荣，也没有什么奖学金，如湖水平静。</p>
-<p>作为同学，我和同学相处地太少，一个人的时间太多。大一时，还能积极参加班里的活动，到了大二，我开始疯狂地啃计算机，大多数时间都和电脑在一起。然后…..大了大三暑假，开始实习了，一实习就是大半年，很少有机会参加班里的聚餐等活动。</p>
-<p>作为舍友，如果记得清的话，好像和宿舍的三个舍友还没正式地在一块聚过吃个饭。不过大学还没结束。</p>
-<p>作为一个即将走向社会的人，没有轰轰烈烈地跑过招聘会，很简单果断地确定了一份工作。没有考研，没有考公务员，不知道跑招聘会、考研、考公务员的滋味，貌似人生路上又少了些许味道。</p>
-<p>总之，在大学，我觉得我是真地没有踏踏实实地去做过一件事情，很多东西都是粗略带过而已，草草了之，没有深入。</p>
-<p>稍微从另一个角度总结下吧。</p>
-<p>健康、婚姻、父母、学业、修养、同学、朋友、事业。</p>
-<ul>
-<li>个人：身体健康、修养（读书）、学业、事业。</li>
-<li>个人与社会的联系：<br>&#62; 1.  家庭：父母、婚姻；<br>&#62; 2.  同学、朋友。<br>&#62; 以后人生也就是这几个标签了。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/05/06/e5-a4-a7-e5-ad-a6-e6-9c-80-e9-81-97-e6-86-be-e7-9a-84-e4-ba-8b/" data-id="cixvluosx006bgcs6mm939ljc" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大学/">大学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/毕业/">毕业</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-how-linux-is-built" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/05/06/how-linux-is-built/" class="article-date">
-  <time datetime="2012-05-05T22:38:42.000Z" itemprop="datePublished">2012-05-06</time>
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
 </a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>►<a class="article-category-link" href="/categories/Linux/video/">video</a>►<a class="article-category-link" href="/categories/Linux/video/他山之石/">他山之石</a>►<a class="article-category-link" href="/categories/Linux/video/他山之石/转载/">转载</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
+    <!-- Sidebar Sponsor -->
     
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/06/how-linux-is-built/">How Linux is Built</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#91;youku id=”XMzc1OTY1NTYw”&#93; </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/05/06/how-linux-is-built/" data-id="cixvluoz300ehgcs6ky1wdtjp" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-    <article id="post-e5-a6-82-e4-bd-95-e7-bc-96-e5-86-99-e3-80-81-e7-bc-96-e8-af-91-e3-80-81-e8-bf-90-e8-a1-8clinux-e5-86-85-e6-a0-b8-e6-a8-a1-e5-9d-97" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/04/15/e5-a6-82-e4-bd-95-e7-bc-96-e5-86-99-e3-80-81-e7-bc-96-e8-af-91-e3-80-81-e8-bf-90-e8-a1-8clinux-e5-86-85-e6-a0-b8-e6-a8-a1-e5-9d-97/" class="article-date">
-  <time datetime="2012-04-14T22:37:54.000Z" itemprop="datePublished">2012-04-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/HOWTO/">HOWTO</a>►<a class="article-category-link" href="/categories/HOWTO/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/15/e5-a6-82-e4-bd-95-e7-bc-96-e5-86-99-e3-80-81-e7-bc-96-e8-af-91-e3-80-81-e8-bf-90-e8-a1-8clinux-e5-86-85-e6-a0-b8-e6-a8-a1-e5-9d-97/">如何编写、编译、运行Linux内核模块</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;</p>
-<p>在图书馆翻了下《操作系统课程设计》，发现一个有趣的东西，让自己的代码在核心态下运行，于是拿着书，到实验室开始了Linux内核模块编写的探索历程。。。</p>
-<p>一开始，书上的代码如下：</p>
-<p>&#91;c&#93;<br>/<em> 内核模块的编写 hello.c </em>/</p>
-<p>#define <strong>NO</strong>VERSION__  /<em> 为简化程序，不考虑模块版本问题 </em>/</p>
-<p>#define <strong>KERNEL</strong>  /<em> 该标志表明这是运行在内核空间的代码 </em>/</p>
-<p>#define <strong>MODULE</strong>  /<em> 该文件为模块 </em>/</p>
-<p>#include &lt;linux/kernel.h&gt; /<em> 核心态编程 </em>/</p>
-<p>#include &lt;linux/module.h&gt; /<em> 模块编程 </em>/</p>
-<p>/<em> 初始化模块 </em>/<br>int init_module&#40;&#41;<br>&#123;<br>        printk&#40;&quot;Hello, world - this is the kernel \n&quot;&#41;;</p>
-<pre><code>/* 如果该函数返回非零值，表示init_module&amp;#40;&amp;#41;初始化失败，
-
-并且内核模块不能成功加载 */
-
-reture 0;
-</code></pre><p>}</p>
-<p>/<em> 撤销init_module&#40;&#41;所做的任何事情 </em>/<br>void cleanup_module&#40;&#41;<br>&#123;<br>        printk&#40; &quot;short is the life of a kernel module \n&quot;&#41;;<br>}</p>
-<p>&#91;/c&#93;<br>使用命令gcc -c -I/usr/src/linux/include -Wall hello.c 编译时，未能编译通过，<br>只好使用搜索引擎，于是查到下面的方法：</p>
-<p>hello模块源代码：</p>
-<p>&#91;c&#93;<br>/<em> 内核模块的编写 hello.c </em>/</p>
-<p>#include &lt;linux/init.h&gt;</p>
-<p>#include &lt;linux/module.h&gt;<br>MODULE_LICENSE&#40;&quot;Dual BSD/GPL&quot;&#41;;</p>
-<p>static int hello_init&#40;void&#41;<br>&#123;<br>     printk&#40;KERN_ALERT &quot;Hello, world\n&quot;&#41;;<br>     return 0;<br>}</p>
-<p>static void hello_exit&#40;void&#41;<br>&#123;<br>     printk&#40;KERN_ALERT &quot;Goodbye, cruel world\n&quot;&#41;;<br>}</p>
-<p>module_init&#40;hello_init&#41;;<br>module_exit&#40;hello_exit&#41;;</p>
-<p>&#91;/c&#93;</p>
-<p>本来还有一段代码，是在上面的hello_init函数里嵌入一段汇编,然过OS，直接操作硬件，点亮大小写、数字指示灯，结果未能如我所愿，dmesg命令的输出提示atkbd serio0: Spurious NAK on isa0060/serio0. Some program might be trying access hardware directly.</p>
-<p><strong>asm</strong>&#40;”movb $0xed,%al;  out %al,$0x60”&#41;;<br><strong>asm</strong>&#40;”movb $7,%al;  out %al,$0x60”&#41;;</p>
-<p>详细资料：&#91;viki&#93;&#40;<a href="http://2.sunchunman.sinaapp.com/linux/kernel/HowToWriteLinuxModuleHello/linuxModule_ubuntu.html&amp;#41" target="_blank" rel="external">http://2.sunchunman.sinaapp.com/linux/kernel/HowToWriteLinuxModuleHello/linuxModule_ubuntu.html&amp;#41</a>;<br>参考：</p>
-<p>《操作系统课程设计》<br>&#91;百度空间&#93;&#40;<a href="http://hi.baidu.com/wstone_h/blog/item/db79215c9ad35f44faf2c023.html&amp;#41" target="_blank" rel="external">http://hi.baidu.com/wstone_h/blog/item/db79215c9ad35f44faf2c023.html&amp;#41</a>;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/04/15/e5-a6-82-e4-bd-95-e7-bc-96-e5-86-99-e3-80-81-e7-bc-96-e8-af-91-e3-80-81-e8-bf-90-e8-a1-8clinux-e5-86-85-e6-a0-b8-e6-a8-a1-e5-9d-97/" data-id="cixvluotc006zgcs6oz6x21cb" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Module/">Module</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kernel/">kernel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源代码/">源代码</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-e8-bd-ac-e8-bd-bd-e8-ae-a1-e7-ae-97-e6-9c-ba-e5-9c-a8-e6-b5-8b-e6-8e-a7-e9-a2-86-e5-9f-9f-e7-9a-84-e5-ba-94-e7-94-a8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/04/12/e8-bd-ac-e8-bd-bd-e8-ae-a1-e7-ae-97-e6-9c-ba-e5-9c-a8-e6-b5-8b-e6-8e-a7-e9-a2-86-e5-9f-9f-e7-9a-84-e5-ba-94-e7-94-a8/" class="article-date">
-  <time datetime="2012-04-12T00:48:36.000Z" itemprop="datePublished">2012-04-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/LabVIEW/">LabVIEW</a>►<a class="article-category-link" href="/categories/LabVIEW/他山之石/">他山之石</a>►<a class="article-category-link" href="/categories/LabVIEW/他山之石/数据采集/">数据采集</a>►<a class="article-category-link" href="/categories/LabVIEW/他山之石/数据采集/转载/">转载</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/12/e8-bd-ac-e8-bd-bd-e8-ae-a1-e7-ae-97-e6-9c-ba-e5-9c-a8-e6-b5-8b-e6-8e-a7-e9-a2-86-e5-9f-9f-e7-9a-84-e5-ba-94-e7-94-a8/">#转载#  计算机在测控领域的应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>计算机在测控领域的应用</strong><br>&#60;span style=”color: #333333;”&#62;    1　引 言</p>
-<p>随着微电子技术、计算机技术、软件技术、网络技术的高度发展及其在电子测量技术与仪器上的应用，新的测试理论、新的测试方法、新的测试领域以及新的仪器 结构不断出现，在许多方面已经突破传统仪器的概念，电子测量仪器的功能和作用已经发生了质的变化。在这种背景下，美国国家仪器公司（National Instruments Corporation，简称NI）在20世纪80年代最早提出虚拟仪器（Virtual Instrument，简称VI）的概念。虚拟仪器这种计算机操纵的模块化仪器系统在世界范围内得到了广泛的认同和应用，国内近几年的应用需求急剧高涨。 因此，虚拟仪器的产生是测控领域的一次革命。</p>
-<p>2　虚拟仪器的基本概念、特点及其构成</p>
-<p>所谓虚拟仪器，就是在以 通用计算机为核心的硬件平台上，由用户设计定义、具有虚拟前面板、测试功能由测试软件实现的一种计算机仪器系统。其基本思想就是在测试系统或仪器设计中尽 可能地用软件代替硬件，即“软件就是仪器”。简而言之VI系统是由计算机、应用软件和仪器硬件组成的。用户可以通过友好的图形界面（这里称作虚拟前面板） 操作计算机，如同操作功能相同的单台传统仪器一样。虚拟仪器具有以下特点：</p>
-<p>①　在通用硬件平台确定后，由软件取代传统仪器中的硬件来完成仪器的功能。</p>
-<p>②　仪器的功能是用户根据需要由软件来定义的，而不是事先由厂家定义好的。</p>
-<p>③　仪器性能的改进和功能扩展只需进行相关软件的设计更新，而不需购买新的仪器。</p>
-<p>④　研制周期较传统仪器大为缩短。</p>
-<p>⑤　虚拟仪器开放、灵活，可与计算机同步发展，可与网络及其它周边设备互联。</p>
-<p>与传统非数字化仪器相比，虚拟仪器技术的优势在于用户自定义仪器功能、结构等，且构建容易，转换灵活以及其开放性。</p>
-<p>虚拟仪器的基本构成包括计算机、虚拟仪器软件、硬件接口模块等。其中，硬件接口模块可以包括插入式数据采集卡（DAQ）、串／并口、IEEE488接口 （GPIB）卡、VXI控制器以及其它接口卡。目前较为常用的虚拟仪器系统是数据采集卡系统、GPIB仪器控制系统、VXI仪器系统以及这三者之间的任意 组合。在这里，硬件仅仅是为了解决信号的输入输出，软件才是整个系统的关键。</p>
-<p>2．1　虚拟仪器的硬件构成</p>
-<p>&#60;/span&#62;</p>
-<p>&#60;center&#62;&#60;span style=”color: #333333;”&#62;!&#91;&#93;&#40;<a href="http://www.c114.net/technic/picture/04031111.jpg&#41;&#60;/span&#62;&#60;/center&amp;#62" target="_blank" rel="external">http://www.c114.net/technic/picture/04031111.jpg&#41;&#60;/span&#62;&#60;/center&amp;#62</a>;</p>
-<p>如图2—1所示，虚拟仪器的硬件构成有多种方案，通常采用以下几种：</p>
-<p>（1）基于数据采集的虚拟仪器系统</p>
-<p>这种方式借助于插入计算机内的数据采集卡与专用的软件如LabVIEW（或LabWindows／CVI）相结合，通过A／D变换将模拟、数字信号采集 到计算机进行分析、处理、显示等，并可通过D／A转换实现反馈控制。根据需要还可加入信号调理和实时DSP等硬件模块。</p>
-<p>（2）基于通用接口总线GPIB接口的仪器系统</p>
-<p>GPIB（General Purpose Interface Bus）仪器系统的构成是迈向虚拟仪器的第一步，即利用GPIB接口卡将若干GPIB仪器连接起来，用计算机增强传统仪器的功能，组织大型柔性自动测试系 统，技术易于升级，维护方便，仪器功能和面板自定义，开发和使用容易。它可高效灵活地完成各种不同规模的测试测量任务。利用GPIB技术，可由计算机实现 对仪器的操作和控制，替代传统的人工操作方式，排除人为因素造成的测试测量误差。同时，由于可预先编制好测试程序，实现自动测试，提高了测试效率。</p>
-<p>（3）利用VXI总线仪器实现虚拟仪器系统</p>
-<p>VXI（VMEbus ExtensionforInstrumentation）总线为虚拟仪器系统提供了一个更为广阔的发展空间。VXI总线是一种高速计算机总线——— VME（VersaModule Eurocard）总线在仪器领域的扩展。由于其标准开放、传输速率高、数据吞吐能力强、定时和同步精确、模块化设计、结构紧凑、使用方便灵活，已越来越 受到重视。它便于组织大规模、集成化系统，是仪器发展的一个方向。</p>
-<p>（4）基于串行口或其它工业标准总线的系统</p>
-<p>将某些串行口仪器和工业控制模块连接起来，组成实时监控系统。将带有RS－232总线接口的仪器作为I／O接口设备通过RS－232串口总线与PC计算 机组成虚拟仪器系统，目前仍然是虚拟仪器的构成方式之一。当今，PC计算机已更多地采用了USB总线和IEEE1394总线。</p>
-<p>2．2　虚拟仪器的软件体系构成</p>
-<p>构成一个虚拟仪器系统，基本硬件确定以后，就可通过不同的软件实现不同的功能。软件是虚拟仪器系统的关键。没有一个优秀的控制分析软件，很难构成一台理 想的虚拟仪器系统。根据VPP（VXIPlug＆Play）系统规范的定义，虚拟仪器系统的软件结构应包含3部分，如图2—2所示：</p>
-<p>&#60;center&#62;!&#91;&#93;&#40;<a href="http://www.c114.net/technic/picture/04031112.jpg&#41;&#60;/center&amp;#62" target="_blank" rel="external">http://www.c114.net/technic/picture/04031112.jpg&#41;&#60;/center&amp;#62</a>;</p>
-<p>（1）I／O接口软件</p>
-<p>I／O接口软件存在于仪器（即I／O接口设备）与仪器驱动程序之间，是一个完成对仪器寄存器单元进行直接存取数据操作，并为仪器与仪器驱动程序提供信息 传递的底层软件，是实现开放的、统一的虚拟仪器系统的基础与核心。在VPP系统规范中，详细规范了虚拟仪器的I／O接口软件的特点、组成、内部结构与实现 规范，并将符合VPP规范的虚拟仪器I／O接口软件定义为VISA软件。</p>
-<p>（2）仪器驱动程序</p>
-<p>每个仪器模块均 有自己的仪器驱动程序。仪器驱动程序的实质是为用户提供了用于仪器操作的较抽象的操作函数集。对于应用程序来说，它对仪器的操作是通过仪器驱动程序来实现 的；仪器驱动程序对于仪器的操作与管理，又是通过I／O软件所提供的统一基础与格式的函数库（VISA）的调用来实现的。对于应用程序设计人员来说，一旦 有了仪器驱动程序，在不是十分了解仪器内部操作过程的情况下，也可以进行虚拟仪器系统的设计工作。虚拟仪器驱动程序是连接上层应用程序与底层I／O接口软 件的纽带和桥梁。</p>
-<p>（3）应用软件开发环境</p>
-<p>应用软件开发环境的选择，可因开发人员的喜好不同而不同，但最终都必须提供给用户一个界面友好、功能强大的应用程序。在目前，虚拟仪器系统应用软件开发环境主要包括两种：</p>
-<p>①基于传统的文本语言式的平台。主要是NI公司的LabWindows／CVI、Microsoft公司的VisualC＋＋、Visual Basic、Borland公司的Delphi等。</p>
-<p>②基于图形化编程环境的平台。如HP公司的HPVEE、NI公司的LabVIEW等。图形化软件开发平台的提出，可以大大减轻系统开发人员的负担，使其将主要精力集中投入到系统设计中，而不再是具体软件细节的推敲上。</p>
-<p>3　虚拟仪器的关键技术</p>
-<p>虚拟仪器的发展领域非常广阔，开发虚拟仪器既要拥有计算机技术，又要拥有信息处理技术。总线技术是VI的一个关键问题，VI需要利用计算机的扩展槽、 PCI插槽或ISA插槽，所以开发VI的仪器硬件，首先要确定应采用哪一种总线标准，PCI总线是一种最新的计算机总线规范，它兼容性强，功能全，传输率 高，工作时钟频率33MHz，结构与处理器独立，适合于未来的计算机。1997年9月，美国NI公司发布了一项PXI总线标 准，PXI（PCIExtention forInstrument）是PCI在仪器领域的扩展。开发VI可以考虑采用PXI标准，因为数据处理工作量大，VI的仪器硬件部分要尽量做得功能强 大，否则，采用软件会影响仪器处理速度。目前，虚拟仪器已具备时域分析和频率域分析的功能，速度都非常快。</p>
-<p>图形化的编程环境是VI 技术的又一关键因素。1986年，NI公司推出了LabVIEW软件包，它简单直观、效率高、速度快、具有优化的图形编译机制，独特快捷的查错、调试方 法，极大地提高了运行速度，采用LabVIEW可以数倍地提高系统开发速度。近年来基于Windows95和WindowsNT的开发平台成为后起之秀， 可以使用Visual C＋＋、Visual Basic、BorlandC＋＋等功能强大的编程软件编写专用应用软件。</p>
-<p>4　虚拟仪器的整体设计</p>
-<p>在科学研究与工程实验室里，有各种各样的仪器与设备。如何提高它们的综合使用效率？如何对它们进行更有效的管理？是仪器用户值得考虑的问题。目前，最有 效的方法是采用“虚拟仪器”技术。即充分利用计算机强大的管理与处理能力，以此为基础，将实验室相关设备搭配起来，构成一种全新的实验环境。实验室中的仪 器与设备一般都是具有特定功能的单台设备。如果它们具有某种总线接口，就有可能进行虚拟仪器的构造。步骤如下：</p>
-<p>1）确定所用仪器或 设备的接口形式。如果仪器设备具有RS－232串行总线接口，则不用进行处理，直接用连线将仪器设备与计算机的RS－232串行接口连接即可；如果是 GPIB或HP－IB接口，则需要额外配备一块GPIB－488接口板，将接口板插入计算机的ISA插槽，建立起计算机与仪器设备之间的通讯渠道；如果使 用计算机来控制VXI总线设备，也需要配备一块GPIB接口卡，通过GPIB总线与VXI主机箱零槽模块通信，零槽模块的GPIB－VXI翻译器将 GPIB的命令翻译成VXI命令并把各模块返回的数据以一定的格式传回主控计算机。由于计算机的RS－232串行接口有限，若仪器设备比较多，必要时必须 扩展计算机的RS－232接口。市场上此类产品品种繁多，用户可以根据具体情况，选择合适的RS－232总线接口扩展产品。</p>
-<p>2）确 定所选择的接口卡是否具有设备驱动程序。接口卡的设备驱动程序是控制各种硬件接口的驱动程序，是连接主控计算机与仪器设备的纽带；如果有设备驱动程序，它 适合于何种操作系统？如果没有，或者所带的设备驱动程序不符合用户所用的操作系统，用户就有必要针对所用接口卡，编写设备驱动程序。</p>
-<p>3）确定应用管理程序的编程语言。如果用户有专业的图形化编程软件，如LabVIEW、HPVEE，那么就可以采用专业的图形化编程软件进行编程。如果 没有此类软件，则可以采用通用编程语言，如VisualC＋＋、Visual Basic或者Delphi。由于它们易于使用、功能强大而倍受测控人员的青睐。</p>
-<p>4）在硬件连接无误的情况下，编写用户的应用管理程序。</p>
-<p>5　结束语</p>
-<p>虚拟仪器技术使现代测控系统更灵活、更紧凑、更经济、功能更强。而图形编程方式使系统软件开发更省时、更省力、更容易。无论是测量、测试、计量，或是工 业过程控制和分析处理，还是其它更为广泛的测控领域，虚拟仪器都是理想的高效率的解决方案。随着计算机技术的不断发展，虚拟仪器技术也会在各领域中发挥其 重要作用，并表现出强大的生命力，它必然会对科技发展和工业生产产生不可估量的影响。</p>
-<p>信息来源：《工业仪表与自动化装置》</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/04/12/e8-bd-ac-e8-bd-bd-e8-ae-a1-e7-ae-97-e6-9c-ba-e5-9c-a8-e6-b5-8b-e6-8e-a7-e9-a2-86-e5-9f-9f-e7-9a-84-e5-ba-94-e7-94-a8/" data-id="cixvluoxb00cggcs677oyd3tf" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LabVIEW/">LabVIEW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VI/">VI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据采集/">数据采集</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测控/">测控</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测量/">测量</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/虚拟仪器/">虚拟仪器</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-e8-bd-ac-e8-bd-bd-ieee488-e6-80-bb-e7-ba-bf-e8-af-a6-e8-a7-a3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/04/12/e8-bd-ac-e8-bd-bd-ieee488-e6-80-bb-e7-ba-bf-e8-af-a6-e8-a7-a3/" class="article-date">
-  <time datetime="2012-04-11T23:30:55.000Z" itemprop="datePublished">2012-04-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/IEEE/">IEEE</a>►<a class="article-category-link" href="/categories/IEEE/LabVIEW/">LabVIEW</a>►<a class="article-category-link" href="/categories/IEEE/LabVIEW/他山之石/">他山之石</a>►<a class="article-category-link" href="/categories/IEEE/LabVIEW/他山之石/数据采集/">数据采集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/12/e8-bd-ac-e8-bd-bd-ieee488-e6-80-bb-e7-ba-bf-e8-af-a6-e8-a7-a3/">#转载#  IEEE488总线详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#60;div id=”arcInfo-hd”&#62;</p>
-<h1 id="IEEE488总线详解"><a href="#IEEE488总线详解" class="headerlink" title="IEEE488总线详解"></a>IEEE488总线详解</h1><p>&#60;div&#62;<strong>
-</strong>&#60;/div&#62;<br>&#60;/div&#62;<br>&#60;div&#62;<br>&#60;div id=”jf-arcMain-1”&#62;&#60;/div&#62;<br>&#60;span style=”font-family: Verdana;”&#62;IEEE488总线&#60;/span&#62;</p>
-<p>IEEE 488是一种并行的外总线，它是20世纪70年代由HP公司制定的。HP公司为了解决各种仪器仪表与各类计算机的接口时，由于互相不兼容而带来的连接麻 烦，而研制了通用接口总线HP—IB总线。1975年IEEE以IEEE 488标准总线予以推荐，1977年国际电工委员会 &#40;IEC&#41;也对该总线进行认可与推荐，定名为IEC—IB。所以这种总线同时使用了IEEE—488，IEC—IB &#40;IEC接口总线&#41;，HP—IB &#40;HP接口总线&#41;或GP—IB &#40;通用接口总线&#41;多种名称。由于IEEE 488总线的推出，当用IEEE 488标准建立一个由计算机控制的测试系统时，不要再加一大堆复杂的控制电路，IEEE 488系统以机架层叠式智能仪器为主要器件，构成开放式的积木测试系统。因此IEEE 488总线是当前工业上应用最广泛的通信总线之一。</p>
-<p>一、 IEEE 488总线使用的约定</p>
-<p>&#40;1&#41; 数据传输速率≤1 MB/s。</p>
-<p>&#40;2&#41; 连接在总线上的设备 &#40;包括作为主控器的微型机&#41;≤15个。</p>
-<p>&#40;3&#41; 设备间的最大距离≤20 m。</p>
-<p>&#40;4&#41; 整个系统的电缆总长度≤220 m，若电缆长度超过220 m，则会因延时而改变定时关系，从而造成工作不可靠。这种情况应附加调制解调器</p>
-<p>&#40;5&#41; 所有数据交换都必须是数字化的。</p>
-<p>&#40;6&#41; 总线规定使用24线的组合插头座，并且采用负逻辑，即用小于+0.8V的电平表示逻辑“1”；用大于2V的电平表示逻辑“0”。</p>
-<p>二、系统上设备的工作方式</p>
-<p>IEEE 488总线接口结构如图8.22所示 .利用IEEE 488总线将微型计算机和其它若干设备连接在一起。可以采用串行连接，也可以采用星形连接。</p>
-<p>　　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/200813113188567.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/200813113188567.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　　　　图8.22 IEEE 488总线接口结构</p>
-<p>在IEEE 488系统中的每一个设备可按如下3种方式工作。</p>
-<p>&#40;1&#41; “听者”方式这是一种接收器，它从数据总线上接收数据，一个系统在同一时刻，可以有两个以上的“听者”在工作。可以充当“听者”功能的设备有： 微型计算机、打印机、绘图仪等。</p>
-<p>&#40;2&#41; “讲者”方式这是一种发送器，它向数据总线发送数据，一个系统可以有两个以上的“讲者”，但任一时刻只能有一个讲者在工作。具有“讲者”功能的设备有： 微型计算机、磁带机、数字电压表、频谱分析仪等。</p>
-<p>&#40;3&#41; “控制者”方式这是一种向其它设备发布命令的设备，例如对其它设备寻址，或允许“讲者”使用总线。控制者通常由微型机担任。一个系统可以有不止一个控制者，但每一时刻只能有一个控制者在工作。</p>
-<p>在IEEE 488总线上的各种设备可以具备不同的功能。有的设备如微型计算机可以同时具有控制者、听者、讲者3种功能。有的设备只具有收、发功能，而有的设备只具有 接收功能，如打印机。在某一时刻系统只能有一个控制者，而当进行数据传送时，某一时刻只能有一个发送器发送数据，允许多个接收器接收数据。也就是可以进行 一对多的数据传送。</p>
-<p>一般应用中，例如，微型机控制的数据测量系统，通过IEEE 488将微型机和各种测试仪器连接起来，这时，只有微型机具备控制、发、收3种功能，而总线上的其它设备都没有控制功能，但仍有收、发功能。当总线工作 时，由控制者发布命令，规定哪个设备为发送器、哪个为接收器，而后发送器可以利用总线发送数据，接收器从总线上接收数据。</p>
-<p>三、 IEEE 488总线信号定义说明</p>
-<p>IEEE 488总线使用24线组合插头座，其各引脚定义列于表8.7</p>
-<p>&nbsp;<br>&#60;table width=”428” border=”1” cellspacing=”0”&#62;&#60;caption&#62;表8.7 IEEE 488信号定义&#60;/caption&#62;<br>&#60;tbody&#62;<br>&#60;tr&#62;<br>&#60;th scope=”col” width=”44”&#62;<br>&#60;div&#62;引脚&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”44”&#62;<br>&#60;div&#62;符号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”120”&#62;<br>&#60;div&#62;说明&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”43”&#62;<br>&#60;div&#62;引脚&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”54”&#62;符号&#60;/th&#62;<br>&#60;th scope=”col” width=”97”&#62;<br>&#60;div&#62;说明&#60;/div&#62;&#60;/th&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;1&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;D0&#60;/div&#62;&#60;/td&#62;<br>&#60;td rowspan=”4”&#62;<br>&#60;div&#62;低4位数据线&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;13&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;D4&#60;/div&#62;&#60;/td&#62;<br>&#60;td rowspan=”4”&#62;<br>&#60;div&#62;高四位数据线&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;2&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;D1&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;14&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;D5&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;3&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;D2&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;15&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;D6&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;4&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;D3&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;16&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;D7&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;5&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;EOI&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;结束或识别线&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;17&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;REN&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;远程控制&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;6&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;DAV&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;数据有效线&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;18&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;GND&#60;/div&#62;&#60;/td&#62;<br>&#60;td rowspan=”7”&#62;<br>&#60;div&#62;地&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;7&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;NRFD&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;未准备好接收数据线&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;19&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;NGD&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;8&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;NDAC&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;数据未接收完毕线&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;20&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;GND&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;9&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;IFC&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;接口清零线&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;21&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;GND&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;10&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;SRQ&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;服务请求线&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;22&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;GND&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;11&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;ATN&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;监视线&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;23&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;GND&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;12&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;GND&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;机壳线&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;24&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;GND&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;/tbody&#62;<br>&#60;/table&#62;<br>IEEE 488的信号线除8条地线外，有以下3类信号线。</p>
-<p>&#40;1&#41; D7～D0数据总线，这是8条双向数据线，除了用于传送数据外，还用于“听”、“讲”方式的设置，以及设备地址和设备控制信息的传送。即在D7~D0上可以传送数据、设备地址和命令。这是因为该总线没有设置地址线和命令线，这些信息要通过数据线上的编码来产生。</p>
-<p>&#40;2&#41; 字节传送控制线，在IEEE 488总线上数据传送采用异步握手 &#40;挂钩&#41;联络方式。即用DAV，NRFD和NDAC 3根线进行握手联络。</p>
-<p>DAV &#40;Data Avaible&#41;——数据有效线。当由发送器控制的数据总线上的数据有效时，发送器置DAV为低电平 &#40;逻辑1&#41;，指示接收器可以从总线上接收数据。</p>
-<p>NRFC &#40;Not Ready for Data&#41;——未准备好接收数据线，只要连接在总线上被指定为接收器中的设备，尚有一个未准备好接收数据，接收器就置NRFD线为有效低电平，示意发送器不要发出数据。当所有接收器都准备好时，NRFD变为高电平。</p>
-<p>NDAC &#40;Not Data Accepted&#41;——未接收完数据，当总线上被指定为接收器的设备，有任何一个尚未接收完数据，它就置NDAC线为低电平，示意发送器不要撤销当前数据。只有当所有接收器都接收完数据后，此信号才变为高电平。</p>
-<p>&#40;3&#41; <strong>接口管理线</strong>。</p>
-<p>IFC &#40;Interface Clear&#41;——接口清零线。该线的状态由控制器建立，并作用于所有设备。当它为有效低电平时，整个IEEE 488总线停止工作，发送器停止发送，接收器停止接收。使系统处于已知的初始状态。它类似于复位信号RESET。可用计算机的复位键来产生IFC信号。</p>
-<p>SRQ &#40;Service Request&#41;——服务请求线。它用来指出某个设备请求控制器的服务，所有设备的请求线是“线或”在一起的，因此任何一个设备都可以使这条线有效，来向 控制器请求服务。但请求能否得到控制器的响应，完全由程序安排，当系统中有计算机时，SRQ是发向计算机的中断请求线。</p>
-<p>ATN &#40;Attenntion Line&#41;——监视线。它由控制器驱动，用它的不同状态对数据总线上的信息作出解释。<br>当ATN=“1”时，表示数据线上传送的是地址或命令，这时只有控制器能发送信息，其它设备都只能接收信息。<br>当ATN=“0”时，表示数据总线上传送的是数据。</p>
-<p>EOI &#40;End or Identify&#41;——结束或识别线。该线与ATN线一起指示是数据传送结束，还是用来识别一个具体设备。当ATN=“0”时，这是进行数据传送，当传送 最后一个字节使EOI=“1”，表示数据传送结束，当ATN=“1”，若EOI=“1”时，则表示数据总线上是设备识别信息，即可得到请求服务的设备编 码。</p>
-<p>REN &#40;Remote Enable&#41;——远程控制线。该信号为低电平时，系统处于远程控制状态，设备面板开关，按键均不起作用；若该信号为高电平，则远程控制不起作用，本地面板控制开关，按键起作用。</p>
-<p>四、 IEEE 488总线传送数据时序</p>
-<p>IEEE 488总线上数据传送采用异步方式，即每传送一个字节数据都要利用DAV，NRFD和NDAC 3条信号线进行握手联络。数据传送的时序图如图8.23所示</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131824775.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131824775.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　　　　　图8.23 3线握手时序图</p>
-<p>从时序图可见，总线上每传送一个字节数据，就有一次DAV，NRFD和NDAC 3线握手过程。<br>图8.23中，“①”表示原始状态讲者置DAV为高电平；听者置NRFD和NDAC两线为低电平。 “②”表示讲者测试NRFD，NDAC两线的状态，若它们同时为低电平时，则讲者将数据送上数据总线D7~D0。“③”表示中虚线表示一个设备接着一个设 备陆续做好了接收数据准备 &#40;如打印机“不忙”&#41;。“④”表示所有接收设备都已准备就绪，NRFD变为高电平。“⑤”表示当NRFD为高电平，而且数据总线上的数据已稳定后。讲者使 DAV线变低，告诉听者数据总线上的数据有效。“⑥”表示听者一旦识别到这点，便立即将NRFD拉回低电平，这意味着在结束处理此数据之前不准备再接收另 外的数据。“⑦”表示听者开始接收数据，最早接收完数据的听者欲使NDAC变高 &#40;如图中虚线示&#41;。但其它听者尚未接收完数据，故NDAC线仍保持低电平。“⑧”表示只有当所有的听者都接收完毕此字节数据后，NDAC线才变为高电平。 “⑨”表示讲者确认NDAC线变高后，就升高DAV线。“”表示讲者撤销数据总线上的数据。“”表示听者确认DAV线为高后置NDAC为低，以便开始传送 另一数据字节。至此完成传送一个数据字节的3线握手联络全过程。以后按上述定时关系重复进行。从数据传送的过程可见，IEEE 488总线上数据传送是按异步方式进行的，总线上若是快速设备，则数据传送就快，若是慢速设备，则数据传送就慢。也就是说数据传送的定时是很灵活的。这意 味着可以将不同速度的设备同时挂在IEEE 488总线上。<br>8.4.2 VXI总线</p>
-<p>目前在自动测试系统中IEEE 488总线虽仍然广泛使用，但由于它的数据总线只有8位宽，系统的最高速传率只有1MB/s，体积也较大。因此往往不能适应现代科技和生产对测试系统的需 要。1987年Clolrado Data Systems, Hewlett Packard, Racaldana, Tektronix和Wavetek等公司的工程技术代表组成一个特别委员会。根据VME总线、EUROCARD标准和IEEE 488·2等标准，制定开放性仪器总线结构所必需的附加标准。1987年7月这个委员会宣布了VXI总线标准。VXI是VME bus extension for instrumentation的缩写，即VME总线在仪器领域的扩展。VXI的问世是测量和仪器领域中发生的重大事件。它是一种模块化仪器总线，是一种 在世界范围内完全开放的，适合于多供货厂商的标准总线，它吸取VME计算机系统总线的高速通信和IEEE 488总线易于组成测试系统的优点，而且集中了智能仪器、个人仪器和自动测试仪器的很多特长。具有小型便携、高速数据传输、模块化结构、软件标准化高、兼 容性强、可扩性好和器件可重复使用等优点。组建系统灵活方便，能充分利用计算机的效能，易于利用数字信号处理的新原理和新方法以及构成虚拟仪器的优点，并 便于接入计算机网构成信息采集，传输和处理的一体化网络。VXI技术把计算机技术、数字接口技术和仪器测量技术有机的结合起来。这种总线推出后，在世界上 得到迅速的推广，它以很快的速度进入测试市场，自问世以来，销售额逐年增长。<br>VXI被IEEE确定为正式标准IEEE 1155。</p>
-<p>下面对VXI总线进行简略描述。</p>
-<p>&#40;1&#41; 系统最多可以包含256个器件 &#40;或称装置&#41;，每个器件都具有惟一的逻辑地址单元。</p>
-<p>&#40;2&#41; 它有A，B，C和D4种尺寸的模块，A级最小 &#40;高10 cm×深16 cm&#41;，D级最大 &#40;36.7 cm×34 cm&#41;，其中C级 &#40;23.335 cm×34 cm&#41;应用最多。C级的宽度为3 cm或其整数倍，即大体上相当于一本大型书籍的尺寸。组建系统时，可以像插放或更换书架上的书籍一样灵活方便地插放或更换模块。</p>
-<p>&#40;3&#41; 一个模块是一个VXI器件，但也允许灵活处理。系统中以每一个主机箱为单位构成一个子系统。一般一个主机箱可以放置5~13块模块，主机箱的的背板为高质 量的多层印制电路板，其上印制着VXI总线。模块通过连接器与总线连接。有P1，P2和P33种连接器。每种连接器是3排，共96个引脚。其中P1是必需 的，而P2和P3是可选择的。在主机箱的背板上安装着连接器的插座，模块上安装着连接器的插头，由主机箱向模块提供模拟和数字电路所需的7种电源和冷却能 力。</p>
-<p>&#40;4&#41; 对VXI总线的控制分两种，一种是主机箱的外部控制者；另一种是嵌入主机箱的内部控制者。此外系统还有资源管理和零槽功能模块。前者负责系统的配置和管理 系统的正常工作，后者主要给系统提供公共资源。当采用外部控制者时，可以通过IEEE 488，RS232C多系统扩展总线MXI，VME总线和计算机本地网等多种方式连接，这时资源管理者和零槽器件往往做成一个模块，通过上述方式与外部控 制者连接。当采用嵌入式控制者时，易于组成高速、便携的灵巧系统，这种内嵌式微机往往同时具有资源管理者和零槽器件的功能。</p>
-<p>&#40;5&#41; VXI总线中地址线有16位、24位、32位3种，数据线32位，在数据线上数据的传输速率可达40 MB/s，当在相邻模块间用本地总线传输时，速率更可大幅度提高。此外VXI总线中还定义了多种控制线、中断线、时钟线、触发线、识别线和模拟线等。</p>
-<p>&#40;6&#41; 在VXI总线规范文本中，对主机箱及模块的机械规程、供电、冷却、电磁兼容、系统控制、资源管理和通信规程等都做了明确规定。</p>
-<p>8.4.3 SCSI总线</p>
-<p>SCSI是Small Computer System Interface的缩写，即小型计算机系统接口。它用于计算机与磁带机、软磁盘机、硬磁盘机、CDROM、可重写光盘、扫描仪、通信设备和打印机等外部 设备的连接。目前广泛用于微型计算机中主机与硬磁盘和光盘如CDROM的连接，成为最重要、最有潜力的新总线标准。</p>
-<p>一、SCSI总线的主要特点</p>
-<p>SCSI是一种低成本的通用多功能的计算机与外部设备并行外总线，可以采用异步传送，当采用异步传送8位的数 据时，传送速率可达1.5 MB/s。也可以采用同步传送，速率达5 MB/s。其下一代SCSI—2 &#40;fast SCSI&#41;速率为10 MB/s；Ultra SCSI传输速率为20 MB/s；Ultra—Wide SCSI &#40;即数据为32位宽&#41;传送速率高达40 MB/s。<br>SCSI 的启动设备 &#40;命令别的设备操作的设备&#41;和目标设备 &#40;接受请求操作的设备&#41;通过高级命令进行通信，不涉及外设的物理层如磁头、磁道、扇区等物理参数，所以不管是与磁盘或CDROM接口，都不必修改硬件和软 件，所以是一种连接很方便的通用接口，它也是一种智能接口，对于多媒体集成接口此标准更显重要。<br>当采用单端驱动器和单端接收器时，允许电缆长达6 m，若采用差动驱动器和差动接收器时，允许电缆可长达25 m。总线上最多可挂接8台总线设备 &#40;包括适配器和控制器&#41;。但在任何时刻只允许两个总线设备进行通信。目前数据宽度有8位和32位两种。当前与硬盘和CDROM连接多用8位。下面以8位的 SCSI为例进行信号定义说明。</p>
-<p>二、SCSI信号定义说明<br>SCSI总线信号可以采用单端驱动器和单端接收器进行信号传送，也可以采用差动驱动器和差动接收器进行信号传送。但两者在信号定义上有区别，下面分别介绍。</p>
-<p>1. 单端SCSI总线信号定义</p>
-<p>单端SCSI总线采用50芯扁平电缆或25对双绞线，也可以采用圆型电缆。电缆中每根导线的截面积为0.8 mm2，最大长度6m,单端SCSI总线信号的定义列于表8.8</p>
-<p>&nbsp;<br>&#60;table width=”428” border=”1” cellspacing=”0”&#62;&#60;caption&#62;表8.8 单端SCSI总线信号定义&#60;/caption&#62;<br>&#60;tbody&#62;<br>&#60;tr&#62;<br>&#60;th scope=”col”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col”&#62;<br>&#60;div&#62;信号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col”&#62;<br>&#60;div&#62;信号&#60;/div&#62;&#60;/th&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;</p>
-<p>1</p>
-<p>3</p>
-<p>5</p>
-<p>7</p>
-<p>9</p>
-<p>11</p>
-<p>13</p>
-<p>15</p>
-<p>17</p>
-<p>19</p>
-<p>21</p>
-<p>23</p>
-<p>25</p>
-<p>27</p>
-<p>29</p>
-<p>31</p>
-<p>33</p>
-<p>35</p>
-<p>37</p>
-<p>39</p>
-<p>41</p>
-<p>43</p>
-<p>45</p>
-<p>47</p>
-<p>49</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>OPEN</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>2</p>
-<p>4</p>
-<p>6</p>
-<p>8</p>
-<p>10</p>
-<p>12</p>
-<p>14</p>
-<p>16</p>
-<p>18</p>
-<p>20</p>
-<p>22</p>
-<p>24</p>
-<p>26</p>
-<p>28</p>
-<p>30</p>
-<p>32</p>
-<p>34</p>
-<p>36</p>
-<p>38</p>
-<p>40</p>
-<p>42</p>
-<p>44</p>
-<p>46</p>
-<p>48</p>
-<p>50</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>DB-1</p>
-<p>DB-2</p>
-<p>DB-3</p>
-<p>DB-4</p>
-<p>DB-5</p>
-<p>DB-6</p>
-<p>DB-7</p>
-<p>DB-8</p>
-<p>DB-P</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>TERMPWR</p>
-<p>GND</p>
-<p>GND</p>
-<p>ATN</p>
-<p>GND</p>
-<p>BSY</p>
-<p>ACK</p>
-<p>RST</p>
-<p>MSG</p>
-<p>SEL</p>
-<p>C/D</p>
-<p>REQ</p>
-<p>I/O</p>
-<p>&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;/tbody&#62;<br>&#60;/table&#62;<br>这9条数据线的功能取决于总线的工作节拍。</p>
-<p>TERMPWR &#40;26&#41;——经电缆向总线设备提供电源的引脚。</p>
-<p>ATN &#40;32&#41;——注意信号。它由启动设备产生，用来通知目标设备，启动设备已准备好一个报文信息。</p>
-<p>BSY &#40;36&#41;——忙信号。该信号可以由总线上的任何设备产生，它用来指示总线的工作状态。当其为高电平时，表示总线正被占用。</p>
-<p>ACK &#40;38&#41;——认可信号。该信号传送节拍，由启动设备产生，作为对请求信号的响应。</p>
-<p>RST &#40;40&#41;——重置信号。该信号可由总线上的任何设备产生，用来通知总线上的所有设备重置。</p>
-<p>MSG &#40;42&#41;——指示信息类别信号。该信号由目标设备产生。用来通知启动设备，在信息传输节拍里，数据线上是报文还是其它信息。当MSG=“0”时，表示数据线上传输的是命令或状态信息；当MSG=“1”时，表示数据线上传输的是报文信息。</p>
-<p>SEL &#40;44&#41;——选择信号。该信号可由选择目标设备的起始设备产生，也可以由重选起始设备的目标设备产生。在这里，总线上要求其它设备执行操作的设备为起始设 备；执行起始设备要求的为目标设备。总线上的设备有的只能作为起始设备，有的只能作为目标设备，但有的总线设备在某一时刻可以是起始设备，在另一时刻可以 是目标设备。例如，起始总线上的微型计算机。</p>
-<p>C/D &#40;46&#41;——控制/数据信号。它由目标设备产生，在信息传输节拍里，用来通知启动设备在数据线上传输的是控制信号还是数据信息。<br>当C/D=“0”时，数据线上为数据信息；<br>当C/D=“1”时，数据线上为控制信息。</p>
-<p>REQ &#40;48&#41;——请求信号。该信号由目标设备产生，用来请求进行数据传送。</p>
-<p>I/O &#40;50&#41;——输入/输出信号。该信号由目标设备产生，在信息传输节拍里，用来通知启动设备信息传输的方向。<br>当I/O=“0”时，表示起始设备为输出；<br>当I/O=“1”时，表示起始设备为输入。<br>在选择重选节拍里，该信号用来作为选择重选的标志。当I/O=“0”时，表示为选择；当I/O=“1”时表示为重选。<br>2. 差动SCSI总线信号定义</p>
-<p>当SCSI总线采用差动驱动和差动接收时，对连接线的要求同单端一样，也是50芯扁平电缆或25对双绞线。但电缆的长度可达25m。差动SCSI的总线信号定义列于表8.9。</p>
-<p>&nbsp;<br>&#60;table width=”428” border=”1” cellspacing=”0”&#62;&#60;caption&#62;表8.9 差动SCSI总线信号定义&#60;/caption&#62;<br>&#60;tbody&#62;<br>&#60;tr&#62;<br>&#60;th scope=”col”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col”&#62;信号&#60;/th&#62;<br>&#60;th scope=”col”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col”&#62;信号&#60;/th&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;</p>
-<p>1</p>
-<p>3</p>
-<p>5</p>
-<p>7</p>
-<p>9</p>
-<p>11</p>
-<p>13</p>
-<p>15</p>
-<p>17</p>
-<p>19</p>
-<p>21</p>
-<p>23</p>
-<p>25</p>
-<p>27</p>
-<p>29</p>
-<p>31</p>
-<p>33</p>
-<p>35</p>
-<p>37</p>
-<p>39</p>
-<p>41</p>
-<p>43</p>
-<p>45</p>
-<p>47</p>
-<p>49</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;GND</p>
-<p>+DB-1</p>
-<p>+DB-2</p>
-<p>+DB-3</p>
-<p>+DB-4</p>
-<p>+DB-5</p>
-<p>+DB-6</p>
-<p>+DB-7</p>
-<p>+DB-8</p>
-<p>+DB-P</p>
-<p>D-ENABLE</p>
-<p>地</p>
-<p>TERMPWR</p>
-<p>地</p>
-<p>+ATN</p>
-<p>地</p>
-<p>+BSY</p>
-<p>+ACK</p>
-<p>+RST</p>
-<p>+MSG</p>
-<p>+SEL</p>
-<p>+C/D</p>
-<p>+REQ</p>
-<p>+I/O</p>
-<p>地&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>2</p>
-<p>4</p>
-<p>6</p>
-<p>8</p>
-<p>10</p>
-<p>12</p>
-<p>14</p>
-<p>16</p>
-<p>18</p>
-<p>20</p>
-<p>22</p>
-<p>24</p>
-<p>26</p>
-<p>28</p>
-<p>30</p>
-<p>32</p>
-<p>34</p>
-<p>36</p>
-<p>38</p>
-<p>40</p>
-<p>42</p>
-<p>44</p>
-<p>46</p>
-<p>48</p>
-<p>50</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;地</p>
-<p>-DB-1</p>
-<p>-DB-2</p>
-<p>-DB-3</p>
-<p>-DB-4</p>
-<p>-DB-5</p>
-<p>-DB-6</p>
-<p>-DB-7</p>
-<p>-DB-8</p>
-<p>-DB-P</p>
-<p>地</p>
-<p>地</p>
-<p>TERMPWR</p>
-<p>地</p>
-<p>-ATN</p>
-<p>地</p>
-<p>-BSY</p>
-<p>-ACK</p>
-<p>-RST</p>
-<p>-MSG</p>
-<p>-SEL</p>
-<p>-C/D</p>
-<p>-REQ</p>
-<p>-I/O</p>
-<p>地&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;/tbody&#62;<br>&#60;/table&#62;<br>&nbsp;</p>
-<p>单端和差动信号引脚相对应，只是单端一个信号只需占一个引脚，而差动一个信号要占用两个引脚，将单端时的一些地引脚，在差动时是“+”的信号引脚。<br>引脚21为DENABLE，是总线允许信号，高电平为有效。在差动连接时，若DENABLE不慎接地，则总线无法工作。<br>经电缆向总线设备提供电源的TERMPWR引脚，单端时用26号引脚，差动时用25和26引脚。<br>三、SCSI总线的工作过程</p>
-<p>SCSI总线工作过程包括如下10个总线节拍：</p>
-<p>BUS FREE——总线自由节拍；<br>ARB——总线仲裁节拍；<br>SEL——总线选择节拍；<br>RESEL——重新选择节拍；<br>MSG IN——信息输入节拍；<br>MSG OUT——信息输出节拍；<br>DATA IN——数据输入节拍；<br>DATA OUT——数据输出节拍；<br>CMD——命令节拍；<br>STATUS——状态节拍。<br>各节拍的转换如图8.24所示</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131840402.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131840402.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　　　　图8.24 SCSI总线节拍转换图</p>
-<p>SCSI总线在复位之后进入总线自由节拍BUS FREE，在此状态下，总线上的设备可以提出请求，此后进入总线仲裁节拍ARB，通过ARB后，使优先权最高的请求设备获得总线仲裁权。然后进入选择节拍 SEL，利用SEL和BSY信号及设备编码决定起始设备和目标设备。</p>
-<p>经过上述3个节拍后，总线进入信息传输节拍。利用MSG，C/D,I/O三个信号的不同编码，可以决定信息的传输方式。例如，若MSG C/D I/O=000时，则表示一个数据输出总线节拍，数据由起始设备传送到目标设备。<br>当信息传输完成或出现错误时，可利用RST信号使总线复位，总线重新回到BUS FREE节拍。</p>
-<p>SCSI总线设置很多命令，在软件支持下工作。详细内容可以查阅ECMA公布的SCSI标准。ECMA &#40;European Computer Manufacturers Association&#41;即欧洲计算机厂家协会。</p>
-<p>8.4.4 IDE总线</p>
-<p>IDE总线或称IDE接口，它是1984年由COMPAQ和WD公司联合推出的一种硬盘接口标准。这种接口只支 持硬盘驱动器。1993年为了与SCSI接口标准竞争，WD公司又推出增强型的IDE接口，也称为EIDE接口或称ATA接口。EIDE接口不仅支持硬盘 驱动器，还支持磁带机和CD—ROM驱动器。EIDE接口迅速得到许多厂商的欢迎。现在市面上新的多功能卡基本上都支持EIDE接口。若插有EIDE的多 功能卡，CD—ROM驱动器安装起来相当于第二个磁盘。但旧的多功能卡或硬盘卡，只支持旧的IDE标准，甚至只支持ST506这种更旧的接口标准，则这种 卡尽管可以驱动双硬盘，却不能驱动CD—ROM。</p>
-<p>常见的CD—ROM除了EIDE接口标准外，还有AT接口标准，AT接口是SONY、松下和三菱等公司专用的 CD—ROM接口。EIDE接口的平均寻址时间明显优于AT接口。所以若看重读写速度应选用EIDE接口的CD—ROM。CD—ROM采用EIDE接口是 大势所趋，AT专用接口将走向消亡。</p>
-<p>ISA，EISA总线支持EIDE接口数传率为4.1 MB/s，而VESA总线上多采用Fast EIDE接口，它的数传率为11~13 MB/s。容量为850 MB以上的硬盘要采用Fast EIDE—2接口，其数传率为16.6 MB/s。<br>EIDE总线信号定义列于表8.10</p>
-<p>&nbsp;<br>&#60;table width=”404” border=”1” cellspacing=”0”&#62;&#60;caption&#62;表8.10 EIDE总线信号定义&#60;/caption&#62;<br>&#60;tbody&#62;<br>&#60;tr&#62;<br>&#60;th scope=”col” width=”69”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”98”&#62;信号&#60;/th&#62;<br>&#60;th scope=”col” width=”69”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”150”&#62;<br>&#62; 信号<br>&#60;/th&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;1&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;RESET&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;2&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;GND&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;3&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D7&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;4&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D8&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;5&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D6&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;6&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D9&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;7&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D5&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;8&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D10&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;9&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D4&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;10&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D11&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;11&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D3&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;12&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D12&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;13&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D2&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;14&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D13&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;15&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D1&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;16&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D14&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;17&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D0&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;18&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;D15&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;19&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;GND&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;20&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;KEY&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;21&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;DRQ3&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;22&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;GND&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;23&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;IOW&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;24&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;GND&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;25&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;IOR&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;26&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;GND&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;27&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;IOCHRDY&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;28&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;BALE&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;29&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;DACK3&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;30&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;GND&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;31&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;IRQ14&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;32&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;IOCS16&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;33&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;A1&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;34&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;GND&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;35&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;A0&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;36&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;A2&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;37&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;CS0&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;38&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;CS1&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;39&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;Activitg&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;40&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;GND&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;/tbody&#62;<br>&#60;/table&#62;<br>&nbsp;</p>
-<p>8.4.5 Centronics总线</p>
-<p>Centronics总线用于计算机与打印机或绘图仪的连接。它也是一种并行通信总线，总线由36条信号线组 成。采用扁平电缆或多芯电缆进行信息传送。传输速率较高，传输距离最长为2 m。在使用扁平电缆连接时，采用每两条数据线之间夹一条地线，可以较好的克服数据间的干扰。这种总线未经标准化组织确定，所以不同厂家对引脚定义可能略有 区别。目前经常采用25线简化的Centronics总线。例如PC系列机的并行接口就是采用25线的Centronics总线标准。<br>Centronics总线信号定义列于表8.11</p>
-<p>&nbsp;<br>&#60;table width=”428” border=”1” cellspacing=”0”&#62;&#60;caption&#62;表8.11 Centronics总线信号定义&#60;/caption&#62;<br>&#60;tbody&#62;<br>&#60;tr&#62;<br>&#60;th scope=”col” width=”62”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”79”&#62;<br>&#60;div&#62;信号名称&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”78”&#62;<br>&#60;div&#62;说明&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”38”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”63”&#62;<br>&#60;div&#62;信号名称&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”82”&#62;<br>&#60;div&#62;说明&#60;/div&#62;&#60;/th&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;</p>
-<p>1</p>
-<p>2</p>
-<p>3</p>
-<p>4</p>
-<p>5</p>
-<p>6</p>
-<p>7</p>
-<p>8</p>
-<p>9</p>
-<p>10</p>
-<p>11</p>
-<p>12</p>
-<p>13</p>
-<p>14</p>
-<p>15</p>
-<p>16</p>
-<p>17</p>
-<p>18</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>STROBE</p>
-<p>D0</p>
-<p>D1</p>
-<p>D2</p>
-<p>D3</p>
-<p>D4</p>
-<p>D5</p>
-<p>D6</p>
-<p>D7</p>
-<p>ACKNLG</p>
-<p>BUSY</p>
-<p>PAPER END</p>
-<p>+5V</p>
-<p>AUTO FEEDXT</p>
-<p>NC</p>
-<p>GND</p>
-<p>CHASSIC GND</p>
-<p>NC</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>选通信号</p>
-<p>并行数据</p>
-<p>应答信号</p>
-<p>忙信号</p>
-<p>纸走完信号</p>
-<p>自动走纸信号</p>
-<p>地</p>
-<p>机壳地</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>19</p>
-<p>20</p>
-<p>21</p>
-<p>22</p>
-<p>23</p>
-<p>24</p>
-<p>25</p>
-<p>26</p>
-<p>27</p>
-<p>28</p>
-<p>29</p>
-<p>30</p>
-<p>31</p>
-<p>32</p>
-<p>33</p>
-<p>34</p>
-<p>35</p>
-<p>36</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>GND</p>
-<p>INIT</p>
-<p>ERROR</p>
-<p>GND</p>
-<p>NC</p>
-<p>+5V</p>
-<p>SLCT IN</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>地</p>
-<p>初始化信号</p>
-<p>出错信号</p>
-<p>地</p>
-<p>输入选择信号</p>
-<p>&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;/tbody&#62;<br>&#60;/table&#62;<br>&nbsp;</p>
-<p>8.4.6 RS—232C总线</p>
-<p>一、RS—232C信号定义的说明</p>
-<p>RS—232C是一种串行通信总线标准，是数据终端设备&#40;DTE&#41;和数据通信设备&#40;DCE&#41;之间的接口标 准，1969年由美国电子工业协会&#40;EIA&#41;从CCITT远程通信标准中导出的一个标准。当初制订此标准的目的是为了使不同厂家生产的设备能达到接插的 “兼容性”。也就是说不同厂家所生产的设备，只要它们都具有RS—232C标准接口，则不需要任何转换电路，就可以互相插接起来。这个标准仅保证硬件兼容 而没有软件兼容。此外，用它进行数据传输时，由于线路的损耗和噪声干扰，传输距离一般都不超过15 m。通常两计算机的近距离通信可以通过RS—232C接口连接起来。</p>
-<p>RS—232C标准包括机械指标和电气指标。机械指标规定，RS—232C接口通向外部的连接器&#40;插针和插座&#41;是一种标准的“D”型保护壳的25针插头。图8.25是这种插头的插脚编号</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131847952.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131847952.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　　　　图8.25 标准25针“D”型插头</p>
-<p>25个插脚的功能分配列于表8.12。</p>
-<p>&nbsp;<br>&#60;table width=”428” border=”1” cellspacing=”0”&#62;&#60;caption&#62;表8.12 RS-232C的插脚功能分配&#60;/caption&#62;<br>&#60;tbody&#62;<br>&#60;tr&#62;<br>&#60;th scope=”col” width=”169” height=”51”&#62;<br>&#60;div&#62;插脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”249”&#62;<br>&#60;div&#62;插脚功能&#60;/div&#62;&#60;/th&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td height=”999”&#62;</p>
-<p>*1</p>
-<p>*2</p>
-<p>*3</p>
-<p>*4</p>
-<p>*5</p>
-<p>*6</p>
-<p>*7</p>
-<p>*8</p>
-<p>*9</p>
-<p>*10</p>
-<p>*11</p>
-<p>*12</p>
-<p>*13</p>
-<p>*14</p>
-<p>*15</p>
-<p>*16</p>
-<p>*17</p>
-<p>*18</p>
-<p>*19</p>
-<p>*20</p>
-<p>*21</p>
-<p>*22</p>
-<p>*23</p>
-<p>*24</p>
-<p>*25</p>
-<p>&#60;/td&#62;<br>&#60;td&#62;</p>
-<p>　保护地</p>
-<p>　发送数据&#40;TXD&#41;</p>
-<p>　接收数据&#40;RXD&#41;</p>
-<p>　请求发送&#40;RTS&#41;</p>
-<p>　允许发送&#40;CTS&#41;</p>
-<p>　数据通信设备&#40;DCE&#41;准备好&#40;DSR&#41;</p>
-<p>　信号地&#40;公共回线&#41;</p>
-<p>　数据载体检测&#40;DCD&#41;</p>
-<p>　&#40;保留供数据通信设备测试&#41;</p>
-<p>　&#40;保留供数据通信设备测试&#41;</p>
-<p>　未定义</p>
-<p>　&#40;辅信道&#41;数据载体检测&#40;DCD&#41;</p>
-<p>　&#40;辅信道&#41;清除发送&#40;CTS&#41;</p>
-<p>　&#40;辅信道&#41;发送数据&#40;TXD&#41;</p>
-<p>　发送信号单元定时&#40;DCE为源&#41;</p>
-<p>　&#40;辅信道&#41;接收数据&#40;RXD&#41;</p>
-<p>　接收信号单元定时&#40;DCE为源&#41;</p>
-<p>　未定义</p>
-<p>　&#40;辅信道&#41;请求发送&#40;RTS&#41;</p>
-<p>　数据终端准备好&#40;DTR&#41;</p>
-<p>　信号质量检测</p>
-<p>　振铃指示&#40;RI&#41;</p>
-<p>　数据信号速率选择&#40;DTE/DCE为源&#41;</p>
-<p>　发送信号单元定时&#40;DTE为源&#41;</p>
-<p>　未定义</p>
-<p>&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;/tbody&#62;<br>&#60;/table&#62;<br>RS—232C的25个插脚仅定义22个。这22个信号分为两个信道组：一个主信道组&#40;标有“*”者&#41; 和一个辅信道组，大多数微机通信系统仅使用主信道组的信号线。在通信时，并非所有主信道组的信号都要连接。在微机通信中，通常使用的RS—232接口信号 只有9根引脚&#40;见表8.13&#41;。</p>
-<p>&nbsp;<br>&#60;table width=”428” border=”1” cellspacing=”0”&#62;&#60;caption&#62;表8.13 微型计算机通信中常用的RS-232C接口信号&#60;/caption&#62;<br>&#60;tbody&#62;<br>&#60;tr&#62;<br>&#60;th scope=”col” width=”51”&#62;<br>&#60;div&#62;引脚号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”88”&#62;<br>&#60;div&#62;符号&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”86”&#62;<br>&#60;div&#62;方向&#60;/div&#62;&#60;/th&#62;<br>&#60;th scope=”col” width=”185”&#62;<br>&#60;div&#62;功能&#60;/div&#62;&#60;/th&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;2&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;TXD&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;输出&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;发送数据&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;3&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;RXD&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;输入&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;接收数据&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;4&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;RTS&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;输出&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;请求发送&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;5&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;CTS&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;输入&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;允许发送&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;6&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;DSR&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;输入&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;数据通信设备准备好&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;7&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;GND&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;信号地&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;8&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;DCD&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;输入&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;数据载体检测&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;20&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;DTR&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;输出&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;数据终端准备好&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;tr&#62;<br>&#60;td&#62;<br>&#60;div&#62;22&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;RI&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;输入&#60;/div&#62;&#60;/td&#62;<br>&#60;td&#62;<br>&#60;div&#62;振铃指示&#60;/div&#62;&#60;/td&#62;<br>&#60;/tr&#62;<br>&#60;/tbody&#62;<br>&#60;/table&#62;<br>常用的9根引脚分两类：一类是基本的数据传送引脚，另一类是用于调制解调器&#40;MODEM&#41;的控制和反应它的状态的引脚。</p>
-<p>1. 基本的数据传送引脚</p>
-<p>TXD，RXD，GND&#40;2，3，7号引脚&#41; 基本数据传送引脚。<br>TXD——数据发送引脚，数据传送时，发送数据由该引脚发出，送上通信线，在不传送数据时，异步串行通信接口维持该脚为逻辑“1”。<br>RXD——数据接收引脚，来自通信线的数据信息由该引脚进入接收设备。<br>GND——信号地，该引脚为所有电路提供参考电位。</p>
-<p>2. MODEM的控制和状态引脚</p>
-<p>从计算机通过RS232C接口送给MODEM的控制引脚包括DTR和RTS。</p>
-<p>DTR——数据终端准备完毕引脚，用于通知MODEM计算机准备好，可以通信了。<br>RTS——请求发送引脚，用于通知MODEM计算机请求发送数据。<br>从MODEM通过RS323C接口送给计算机的状态信息，引脚包括DSR，CTS，DCD和RI。<br>DSR——数据通信设备准备就绪引脚，用于通知计算机，MODEM准备好了。<br>CTS——允许发送引脚，用于通知计算机MODEM可以接收数据了。<br>DCD——数据载体检测引脚，用于通知计算机MODEM与电话线另一端的MODEM已经建立联系。<br>RI——振铃信号指示引脚，用于通知计算机，有来自电话网的信号。<br>二、具有MODEM设备的远距离通信</p>
-<p>数据终端设备DTE &#40;Data Terminal Equipment&#41;，如计算机、终端显示器，通过RS232C接口和数据通信设备DCE&#40;DataCommunication Equipment&#41;如调制解调器连接起来，再通过电话线和远程的设备进行通信。即电话线的两端都有DCE，即MODEM设备。MODEM除具有调制和解 调功能外，还必须具有控制功能和反映状态的功能。这些控制功能用来完成与RS—232C接口以及电话线另一端的MODEM进行信息交换和联络控制。具有 MODEM设备的远距离通信的连接图，见图8.26。</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131848178.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131848178.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　　　　　　图8.26 最简单连接</p>
-<p>在实际使用中，若进行近距离通信，即不通过电话线进行远程通信，则不需要使用DCE，而直接把DTE连接起来， 称为零调制解调器联接，因为此时调制解调器已退化成了一个线路交叉，不起任何作用了。两个DTE之间可以利用表8?13列出的9根线进行不同的连接进行通 信双方的握手联络。</p>
-<p>1. 通信双方永远准备好接收的DTE</p>
-<p>这是一种最简单的连接，这种连接仅用3根线。其它和MODEM有关的线，可以不连接，如图8?26&#40;a&#41;或将控制线和自身的状态线连接起来。如图8.26&#40;b&#41;所示。</p>
-<p>2. 利用MODEM的控制信号线建立同步</p>
-<p>当进行近距离通信时，不必通过MODEM，两台计算机可以通过RS—232C直接对接，这种情况下，和MODEM有关的控制线和状态线用来为通信双方进行握手联络。这种连接如图8.27所示。</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131857563.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131857563.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　图8.27 用MODEM控制作为通信握手联络</p>
-<p>通信双方的握手联络过程如下：</p>
-<p>首先需要发送数据的一方将RTS变为有效向对方&#40;接收数据的一方&#41;请求发送。RTS接到另一方的DSR和 DCD。当DSR有效，表示数据设备准备好，DCD引脚的状态改变，通知CPU对方要发送数据。当接收端准备好接收时，通过DTR引脚向对方&#40;请求发送的 一方&#41;发出数据终端准备完毕的信息，该引脚接到发送端的CTS引脚，通知它接收端“允许发送”。只有当CTS有效时，发送端才可以发送信息。所以如果在接 收信息时，接收端来不及处理收到的信息，例如，接收缓冲器满等情况出现，便可以将自身的DTR信号变为无效，使发送端的CTS也变为无效而使发送端暂停发 送。当发送端发送完全部数据，便使自身的请求发送引脚RTS变为无效，接收端的DSR，DCD引脚状态改变会再次引起CPU中断，从而得知数据发送完毕。 RS—232C是支持全双工通信的，双方的收发都可以按上述方式进行。</p>
-<p>若有一方永远处于接收准备好的状态，例如，计算机B对接收的数据处理得很快或很简单，则它是永远准备好接收的 DTR，这种情况可以省去两条接线，连接图如图8.28所示。将接收端的DTR与自己的DSR和DCD相接，只要DTR有效，便使DSR和DCD有效，从 而使接收线路畅通。在发送端RTS接向自己的CTS，只要RTS有效，就会使允许发送CTS有效，因此发送端随时可以发送。</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/200813113194644.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/200813113194644.gif&amp;#41</a>;</p>
-<p>　　　　　　　 　　　　图8.28 用MODEM控制的一种简化联络</p>
-<p>三、RS—232C总线的电气规范</p>
-<p>RS—232C总线的电气规范列于表8.14。</p>
-<p>&nbsp;<br>&#60;table width=”362” border=”1” cellspacing=”0”&#62;&#60;caption&#62;表8.14 RS-232C的电气规范&#60;/caption&#62;<br>&#60;tbody&#62;<br>&#60;tr&#62;<br>&#60;th scope=”col” width=”214”&#62;</p>
-<p>带3～7K欧负载时驱动器的输出电平</p>
-<p>不带负载时驱动器的输出电平</p>
-<p>驱动器段断开时的输出阻抗</p>
-<p>输出短路电流</p>
-<p>驱动器转换速率</p>
-<p>接收器输入阻抗</p>
-<p>接收器输入电压的允许范围</p>
-<p>输入开路时接收器的输出</p>
-<p>输入经300欧接地时接收器的输出</p>
-<p>+3V输入时接收器的输出</p>
-<p>-3V输入时接收器的输出</p>
-<p>最大负载电容</p>
-<p>&#60;/th&#62;<br>&#60;th scope=”col” width=”138”&#62;</p>
-<p>逻辑0：+5～+15V</p>
-<p>逻辑1：-5～-15V</p>
-<p>-25～+25V</p>
-<p>&gt;300欧</p>
-<p>&lt;0.5A</p>
-<p>&lt;30伏/微秒</p>
-<p>在3～7K欧之间</p>
-<p>-25～+25V</p>
-<p>逻辑1</p>
-<p>逻辑1</p>
-<p>逻辑0</p>
-<p>逻辑1</p>
-<p>2500pF</p>
-<p>&#60;/th&#62;<br>&#60;/tr&#62;<br>&#60;/tbody&#62;<br>&#60;/table&#62;<br>&nbsp;</p>
-<p>从表8.14看出对于发送端，规定用-5~-15 V表示逻辑“1”&#40;或称MARK信号&#41;，用+5~+15 V表示逻辑“0”&#40;或称SPACE&#41;，内阻为几百欧姆，可以带2 500 pF的电容负载。负载开路时电压不得超过±25 V；对于接收端，电压低于-3 V表示逻辑“1”，高于+3 V表示逻辑“0”，输入阻抗在3~7 kΩ之间。接口应经得住短路而不损坏。</p>
-<p>四、RS—232C标准与TTL标准之间的转换</p>
-<p>由RS—232C的电气规范，可以得出发送时RS—232C的逻辑“1”电平在-5~-15 V范围内。而逻辑“0”电平在+5~+15 V范围内；它要求RS—232C的接收器必须能识别低至+3 V的信号作为逻辑0，而能识别高至-3 V的信号作为逻辑1。因此，RS—232C的逻辑电平与TTL逻辑电平是不兼容的。但是微型计算机通过串行接口芯片，送出的和能接收的都是TTL电平表示 的数字信息。为了使RS—232C和TTL组成的串行接口能相接，必须进行电平转换。Motorola公司制造的MC1488是把TTL电平转换为RS— 232C电平的一种比较简单的集成电路驱动器芯片；而MC1489是把RS—232C电平转换成TTL电平的接收器芯片。，采用MC1488和 MC1489电平转换芯片的全双工RS—232C接口电路和UART&#40;异步规程收发器接口&#41;的连接线路如图8.29所示。</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131920374.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131920374.gif&amp;#41</a>;</p>
-<p>　　　　　　　图8.29 采用MC1488和1489电平转换芯片</p>
-<p>时RS—232C与UART的连接</p>
-<p>由于RS—232C使用非常广泛，许多半导体厂家都生产专用于TTL电平与RS—232C电平的专用转换芯片。 常用于将TTL电平转换为RS—232C电平的芯片，除MC1488外还有75188，75150等，用于将RS—232C电平转换为TTL电平的除 MC1489外，还有75189，75154等。</p>
-<p>8.4.7 RS—423A总线</p>
-<p>为了克服RS—232C的缺点，提高传送速率，增加通信距离，又考虑到与RS—232C的兼容性，EIA在1987年提出了RS—423A总线标准。该标准的主要优点是在接收端采用了差分输入。RS—423A的接口电路如图8.30所示。</p>
-<p>　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131923671.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131923671.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　　图8.30 RS—423A接口电路</p>
-<p>在有电磁干扰的场合，干扰信号将同时混入两条通信线路中，产生共模干扰，而差分输入对共模干扰信号有较高的抑制 作用，这样就提高了通信的可靠性。RS—423A用-6 V表示逻辑“1”，用+6 V表示逻辑“0”，而RS—232C的接收电压范围是±3 V，所以RS—423 A不通的接收器仅对差动信号敏感，当信号线之间的电压低于-0.2 V时表示“1”，大于0.2 V时表示“0”。接收芯片可以承受±25 V的电压，因此可以直接与RS—232C相接。根据使用经验，采用普通双绞线，RS—423A线路可以在130 m用100 k的波特率可靠通信。在1200 m内，可用1200波特进行通信。目前越来越多的计算机逐步采用RS—423A标准以获得比RS—232C更佳的通信效果。</p>
-<p>8.4.8RS—422A总线</p>
-<p>RS—422A采用平衡输出的发送器，差分输入的接收器。如图8.31所示。</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131926865.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131926865.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　　图8.31 RS—422A平衡输出差分输入图</p>
-<p>发送器有两根输出线，当一条线向高电平跳变的同时，另一条输出线向低电平跳变，线之间的电压极性因此翻转过 来。在RS—422A线路中，发送信号要用两条线，接收信号也要两条线，对于双工通信，至少要有4根线。由于RS—422A线路是完全平衡的，它比RS— 423A更高的可靠性，传送更快更远。一般情况下，RS—422A线路不使用公共地线，这使得通信双方由于地电位不同而对通信线路产生的干扰减至最小。双 方地电位不同产生的信号成为共模干扰会被差分接收器滤波掉，而这种干扰却能使RS—232C的线路产生错误。但是必须注意，由于接收器所允许的共模干扰范 围是有限的，要求小于±25V。因此，若双方地电位的差超过这一数值，也会使信号传送错误，或导致芯片损坏。当采用普通双绞线时，RS—422A可在1 200m范围以38.4 kbit/s的波特率进行通信。在短距离&#40;200 m&#41;，RS—422A的线路可以轻易地达到200 kbit/s以上的波特率，因此这种接口电路被广泛地用在计算机本地网络上。RS—422A的输出信号线间的电压为±2 V，接收器的识别电压为±0.2 V。共模范围±25 V。在高速传送信号时，应该考虑到通信线路的阻抗匹配，否则会产生强烈的反射，使传送的信息发生畸变，导致通信错误。一般在接收端加终端电阻以吸收掉反射 波。电阻网络也应该是平衡的，如图8.32所示。</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131941526.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131941526.gif&amp;#41</a>;</p>
-<p>　　　　　　　　　　　　　图8.32 在接收端加终端电阻图</p>
-<p>8.4.9 RS—485总线</p>
-<p>使用RS—422A接口电路进行全双工通信，需要两对线或4条线，使线路成本增加。RS—485适用于收发双方共用一对线进行通信，也适用于多个点之间共用一对线路进行总线方式联网，通信只能是半双工的，线路如图8.33所示。</p>
-<p>　　　!&#91;&#93;&#40;<a href="http://www.elecfans.com/article/UploadPic/2008-1/2008131131947349.gif&amp;#41" target="_blank" rel="external">http://www.elecfans.com/article/UploadPic/2008-1/2008131131947349.gif&amp;#41</a>;</p>
-<p>　　　　　图8.33 使用RS—485多个点之间共用一对线路进行总</p>
-<p>线方式联网</p>
-<p>由于共用一条线路，在任何时刻，只允许有一个发送器发送数据，其它发送器必须处于关闭 &#40;高阻&#41;状态，这是通过发送器芯片上的发送允许端控制的。例如，当该端为高电平时，发送器可以发送数据，而为低电平时，发送器的两个输出端都呈现高阻状态，好像从线路脱开一样。</p>
-<p>&nbsp;</p>
-<p>转自：&#91;ElecFans&#93;&#40;<a href="http://www.elecfans.com/dianzichangshi/200801317618.html&amp;#41" target="_blank" rel="external">http://www.elecfans.com/dianzichangshi/200801317618.html&amp;#41</a>;</p>
-<p>&#60;/div&#62;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lampkid.github.io/2012/04/12/e8-bd-ac-e8-bd-bd-ieee488-e6-80-bb-e7-ba-bf-e8-af-a6-e8-a7-a3/" data-id="cixvluoyb00ddgcs6j6imi5r9" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GPIB/">GPIB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IEEE/">IEEE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IEEE488/">IEEE488</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据采集/">数据采集</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/10/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/12/">__('next') &raquo;</a>
-  </nav>
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/HOWTO/">HOWTO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/HOWTO/PHP/">PHP</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/他山之石/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/他山之石/资源/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/HOWTO/">HOWTO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/HOWTO/PostgreSQL/">PostgreSQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/HOWTO/数据库/">数据库</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/PostgreSQL/">PostgreSQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/PostgreSQL/数据库/">数据库</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/PostgreSQL/数据库/猿说技术/">猿说技术</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dojo/">Dojo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dojo/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dojo/Javascript/猿说技术/">猿说技术</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/FE/">FE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/FE/HOWTO/">HOWTO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/HOWTO/">HOWTO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/">HOWTO</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Javascript/prototype/">prototype</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Javascript/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Javascript/工具/">工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/LabVIEW/">LabVIEW</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/LabVIEW/毕业设计/">毕业设计</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Linux/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Linux/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Linux/网络/">网络</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/PostgreSQL/">PostgreSQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/PostgreSQL/Zend-Framework/">Zend Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/PostgreSQL/Zend-Framework/数据库/">数据库</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/Zend-Framework/">Zend Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PHP/Zend-Framework/讨论-FAQ/">讨论/FAQ</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PostgreSQL/">PostgreSQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/PostgreSQL/数据库/">数据库</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Python/SciPy/">SciPy</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Python/SciPy/科学计算/">科学计算</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/">Tex</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/工具/文档创作/毕业设计/">毕业设计</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Tex/文档创作/毕业设计/">毕业设计</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/">Vim</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/工具/文档创作/编辑器/">编辑器</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/工具/编辑器/">编辑器</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/文档创作/编辑器/">编辑器</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/Vim/编辑器/">编辑器</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/webOS/">webOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/wordpress/">wordpress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/其他/">其他</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/多媒体/">多媒体</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/多媒体/工具/">工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/安全/">安全</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/安全/工具/">工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/工具/数学/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/工具/文档创作/">文档创作</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/工具/经验励志/">经验励志</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/网络/">网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HOWTO/讨论-FAQ/">讨论/FAQ</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/video/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/video/他山之石/设计之美/">设计之美</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/video/他山之石/设计之美/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/他山之石/">他山之石</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/IEEE/">IEEE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IEEE/LabVIEW/">LabVIEW</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IEEE/LabVIEW/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IEEE/LabVIEW/他山之石/数据采集/">数据采集</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/video/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/video/他山之石/其他/">其他</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LabVIEW/">LabVIEW</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LabVIEW/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LabVIEW/他山之石/数据采集/">数据采集</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LabVIEW/他山之石/数据采集/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/video/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/video/他山之石/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/嵌入式/">嵌入式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/嵌入式/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/嵌入式/资源/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/思维导图/">思维导图</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/他山之石/资源/">资源</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lisp/">Lisp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Lisp/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Lisp/Python/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Lisp/Python/他山之石/资源/">资源</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Me/">Me</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Me/猿悟人生/">猿悟人生</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Music/">Music</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Music/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Music/video/他山之石/">他山之石</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Music/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Music/他山之石/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Music/他山之石/资源/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/Zend-Framework/">Zend Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/Zend-Framework/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/猿说技术/">猿说技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/猿说技术/设计模式/">设计模式</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PostgreSQL/">PostgreSQL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PostgreSQL/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/SciPy/">SciPy</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/SciPy/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/SciPy/工具/猿说技术/">猿说技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/SciPy/工具/猿说技术/科学计算/">科学计算</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/Tex/">Tex</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/Tex/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/Tex/他山之石/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/Tex/他山之石/文档创作/资源/">资源</a></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/">Tex</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/Vim/">Vim</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/Vim/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/Vim/工具/毕业设计/">毕业设计</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/工具/文档创作/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/他山之石/工具/文档创作/资源/转载/">转载</a></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tex/工具/文档创作/毕业设计/">毕业设计</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/工具/编辑器/">编辑器</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/工具/编辑器/资源/">资源</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/编辑器/">编辑器</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/他山之石/编辑器/转载/">转载</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/产品启示录/">产品启示录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/技术/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Zend-Framework/">Zend Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Zend-Framework/他山之石/">他山之石</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/gossip/">gossip</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/gossip/产品启示录/">产品启示录</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/video/">video</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/video/webOS/">webOS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/video/webOS/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/video/webOS/他山之石/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/video/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/video/他山之石/数据结构与算法/">数据结构与算法</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/他山之石/设计之美/">设计之美</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/书法美术/">书法美术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/书法美术/猿悟人生/">猿悟人生</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品创想录/">产品创想录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/产品创想录/电子商务/">电子商务</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/产品启示录/">产品启示录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/产品启示录/其他/">其他</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/其他/">其他</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/其他/转载/">转载</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/前沿畅谈/">前沿畅谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/文档创作/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/文档创作/资源/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/工具/转载/">转载</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/文档创作/毕业设计/">毕业设计</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/文档创作/毕业设计/经验励志/">经验励志</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/文档创作/毕业设计/经验励志/资源/">资源</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/经验励志/">经验励志</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/设计之美/">设计之美</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/资源/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/技术感悟/">技术感悟</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/技术感悟/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/猿悟人生/">猿悟人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/猿悟人生/生活/">生活</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术感悟/">技术感悟</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术感悟/猿悟人生/">猿悟人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术感悟/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档创作/">文档创作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/文档创作/猿悟人生/">猿悟人生</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/标准与规范/">标准与规范</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/标准与规范/猿说技术/">猿说技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/毕业设计/">毕业设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/猿悟人生/">猿悟人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/猿悟人生/生活/">生活</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/石榴读书/">石榴读书</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/石榴读书/读书/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/石榴读书/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/石榴读书/资源/转载/">转载</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/资源/转载/">转载</a></li></ul></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AD/">AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/APS/">APS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASE/">ASE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache/">Apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AsciiDoc/">AsciiDoc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BSD/">BSD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beamer/">Beamer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMS/">CMS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSRF/">CSRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DSSSL/">DSSSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Date/">Date</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docbook/">Docbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dojo/">Dojo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FAQ，讨论，-权限-，文件/">FAQ，讨论， 权限 ，文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FHS/">FHS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FePt/">FePt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flatpages/">Flatpages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPIB/">GPIB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gentoo/">Gentoo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HOWTO/">HOWTO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IBM/">IBM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IEEE/">IEEE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IEEE488/">IEEE488</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LDAP/">LDAP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LSB/">LSB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LabVIEW/">LabVIEW</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Layout/">Layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lisp/">Lisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mako/">Mako</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Module/">Module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Music/">Music</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NumPy/">NumPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Open-Source/">Open Source</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PFA/">PFA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/POSIX/">POSIX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RETURNING/">RETURNING</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMS/">SMS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SciPy/">SciPy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tex/">Tex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tutorial/">Tutorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typecho/">Typecho</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIUE/">UIUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unix/">Unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBoxManager/">VBoxManager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VI/">VI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Veer/">Veer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vimscript/">Vimscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/">VirtualBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XPath/">XPath</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zend-Framework/">Zend Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/admin/">admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/book/">book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chart/">chart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deplate/">deplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digraph/">digraph</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/documentation/">documentation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dot/">dot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eps/">eps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exec/">exec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/graphviz/">graphviz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/highlighter/">highlighter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/">history</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iframe/">iframe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/imagemagick/">imagemagick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ipython/">ipython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-，demo/">javascript ，demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kernel/">kernel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lamda/">lamda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md5/">md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mpm/">mpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multiprocessing/">multiprocessing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/physics/">physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/picpick/">picpick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prefork/">prefork</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pyreadline/">pyreadline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pysqlite/">pysqlite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/revtex/">revtex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sed/">sed</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setuptools/">setuptools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sha/">sha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sha1/">sha1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/system/">system</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vbscript/">vbscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viki/">viki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webOS/">webOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/worker/">worker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主题/">主题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品启示录/">产品启示录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创新/">创新</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷机/">刷机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/励志/">励志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/历史/">历史</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大学/">大学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串处理/">字符串处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全/">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/密码/">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/希腊/">希腊</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开放平台/">开放平台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源/">开源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微电影/">微电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微薄/">微薄</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能调优/">性能调优</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/感悟/">感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/批处理/">批处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据通信/">数据通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据采集/">数据采集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文档/">文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文档创作/">文档创作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新浪/">新浪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日期/">日期</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日语/">日语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂志/">杂志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标准/">标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架/">框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板/">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/毕业/">毕业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/毕业设计/">毕业设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/水印/">水印</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/求职/">求职</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测控/">测控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测量/">测量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/淘宝/">淘宝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源代码/">源代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生物技术/">生物技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子书/">电子书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学计算/">科学计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/管理/">管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统函数/">系统函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统管理/">系统管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经验/">经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码，-encoding/">编码， encoding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编辑器/">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自行车/">自行车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚拟仪器/">虚拟仪器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚拟机/">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行间距/">行间距</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器/">装饰器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/规范/">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语法高亮/">语法高亮</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/调试/">调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资料/">资料</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/走过的痕迹/">走过的痕迹</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/轻音乐/">轻音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进程/">进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面部识别/">面部识别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/AD/" style="font-size: 10px;">AD</a> <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/APS/" style="font-size: 10px;">APS</a> <a href="/tags/ASE/" style="font-size: 10px;">ASE</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Apache/" style="font-size: 10px;">Apache</a> <a href="/tags/AsciiDoc/" style="font-size: 10.91px;">AsciiDoc</a> <a href="/tags/BSD/" style="font-size: 10px;">BSD</a> <a href="/tags/Bash/" style="font-size: 12.73px;">Bash</a> <a href="/tags/Beamer/" style="font-size: 11.82px;">Beamer</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/CMS/" style="font-size: 10px;">CMS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/DSSSL/" style="font-size: 10px;">DSSSL</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Django/" style="font-size: 15.45px;">Django</a> <a href="/tags/Docbook/" style="font-size: 10px;">Docbook</a> <a href="/tags/Dojo/" style="font-size: 10px;">Dojo</a> <a href="/tags/FAQ，讨论，-权限-，文件/" style="font-size: 10px;">FAQ，讨论， 权限 ，文件</a> <a href="/tags/FHS/" style="font-size: 10px;">FHS</a> <a href="/tags/FePt/" style="font-size: 10px;">FePt</a> <a href="/tags/Flatpages/" style="font-size: 10.91px;">Flatpages</a> <a href="/tags/GPIB/" style="font-size: 10px;">GPIB</a> <a href="/tags/Gentoo/" style="font-size: 10.91px;">Gentoo</a> <a href="/tags/HOWTO/" style="font-size: 13.64px;">HOWTO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/IBM/" style="font-size: 10px;">IBM</a> <a href="/tags/IEEE/" style="font-size: 10px;">IEEE</a> <a href="/tags/IEEE488/" style="font-size: 10px;">IEEE488</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 14.55px;">Javascript</a> <a href="/tags/LDAP/" style="font-size: 10px;">LDAP</a> <a href="/tags/LSB/" style="font-size: 10px;">LSB</a> <a href="/tags/LaTex/" style="font-size: 15.45px;">LaTex</a> <a href="/tags/LabVIEW/" style="font-size: 10.91px;">LabVIEW</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Linux/" style="font-size: 17.27px;">Linux</a> <a href="/tags/Lisp/" style="font-size: 10px;">Lisp</a> <a href="/tags/Mako/" style="font-size: 10px;">Mako</a> <a href="/tags/Markdown/" style="font-size: 11.82px;">Markdown</a> <a href="/tags/Module/" style="font-size: 10px;">Module</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/NumPy/" style="font-size: 10px;">NumPy</a> <a href="/tags/Open-Source/" style="font-size: 11.82px;">Open Source</a> <a href="/tags/PFA/" style="font-size: 10px;">PFA</a> <a href="/tags/PHP/" style="font-size: 15.45px;">PHP</a> <a href="/tags/POSIX/" style="font-size: 10px;">POSIX</a> <a href="/tags/Perl/" style="font-size: 10px;">Perl</a> <a href="/tags/PostgreSQL/" style="font-size: 14.55px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RETURNING/" style="font-size: 10px;">RETURNING</a> <a href="/tags/SMS/" style="font-size: 10px;">SMS</a> <a href="/tags/SQL/" style="font-size: 10.91px;">SQL</a> <a href="/tags/Samba/" style="font-size: 10px;">Samba</a> <a href="/tags/SciPy/" style="font-size: 10px;">SciPy</a> <a href="/tags/Shell/" style="font-size: 12.73px;">Shell</a> <a href="/tags/Tex/" style="font-size: 19.09px;">Tex</a> <a href="/tags/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tags/Typecho/" style="font-size: 10px;">Typecho</a> <a href="/tags/UIUE/" style="font-size: 10px;">UIUE</a> <a href="/tags/Unix/" style="font-size: 10.91px;">Unix</a> <a href="/tags/VBoxManager/" style="font-size: 10px;">VBoxManager</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/Veer/" style="font-size: 10px;">Veer</a> <a href="/tags/Vim/" style="font-size: 16.36px;">Vim</a> <a href="/tags/Vimscript/" style="font-size: 10.91px;">Vimscript</a> <a href="/tags/VirtualBox/" style="font-size: 11.82px;">VirtualBox</a> <a href="/tags/Windows/" style="font-size: 10.91px;">Windows</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/XPath/" style="font-size: 10px;">XPath</a> <a href="/tags/Zend-Framework/" style="font-size: 14.55px;">Zend Framework</a> <a href="/tags/admin/" style="font-size: 10px;">admin</a> <a href="/tags/algorithms/" style="font-size: 10px;">algorithms</a> <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/chart/" style="font-size: 10px;">chart</a> <a href="/tags/deplate/" style="font-size: 10px;">deplate</a> <a href="/tags/digraph/" style="font-size: 10px;">digraph</a> <a href="/tags/documentation/" style="font-size: 12.73px;">documentation</a> <a href="/tags/dot/" style="font-size: 10px;">dot</a> <a href="/tags/eps/" style="font-size: 10px;">eps</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/exec/" style="font-size: 10px;">exec</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/graphviz/" style="font-size: 10px;">graphviz</a> <a href="/tags/highlighter/" style="font-size: 10.91px;">highlighter</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/imagemagick/" style="font-size: 10px;">imagemagick</a> <a href="/tags/ipython/" style="font-size: 10.91px;">ipython</a> <a href="/tags/javascript-，demo/" style="font-size: 10px;">javascript ，demo</a> <a href="/tags/kernel/" style="font-size: 10px;">kernel</a> <a href="/tags/lamda/" style="font-size: 10px;">lamda</a> <a href="/tags/md5/" style="font-size: 10px;">md5</a> <a href="/tags/mpm/" style="font-size: 10px;">mpm</a> <a href="/tags/multiprocessing/" style="font-size: 10px;">multiprocessing</a> <a href="/tags/physics/" style="font-size: 10px;">physics</a> <a href="/tags/picpick/" style="font-size: 10px;">picpick</a> <a href="/tags/prefork/" style="font-size: 10px;">prefork</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/pyreadline/" style="font-size: 10px;">pyreadline</a> <a href="/tags/pysqlite/" style="font-size: 10px;">pysqlite</a> <a href="/tags/revtex/" style="font-size: 10px;">revtex</a> <a href="/tags/sed/" style="font-size: 10.91px;">sed</a> <a href="/tags/setuptools/" style="font-size: 10px;">setuptools</a> <a href="/tags/sha/" style="font-size: 10px;">sha</a> <a href="/tags/sha1/" style="font-size: 10px;">sha1</a> <a href="/tags/system/" style="font-size: 10px;">system</a> <a href="/tags/vbscript/" style="font-size: 10px;">vbscript</a> <a href="/tags/viki/" style="font-size: 10px;">viki</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/webOS/" style="font-size: 10.91px;">webOS</a> <a href="/tags/wordpress/" style="font-size: 12.73px;">wordpress</a> <a href="/tags/worker/" style="font-size: 10px;">worker</a> <a href="/tags/主题/" style="font-size: 10px;">主题</a> <a href="/tags/产品启示录/" style="font-size: 10px;">产品启示录</a> <a href="/tags/函数/" style="font-size: 10.91px;">函数</a> <a href="/tags/创新/" style="font-size: 10px;">创新</a> <a href="/tags/刷机/" style="font-size: 10px;">刷机</a> <a href="/tags/励志/" style="font-size: 10.91px;">励志</a> <a href="/tags/博客/" style="font-size: 11.82px;">博客</a> <a href="/tags/历史/" style="font-size: 10.91px;">历史</a> <a href="/tags/大学/" style="font-size: 10px;">大学</a> <a href="/tags/字符串处理/" style="font-size: 10px;">字符串处理</a> <a href="/tags/安全/" style="font-size: 10.91px;">安全</a> <a href="/tags/密码/" style="font-size: 10px;">密码</a> <a href="/tags/嵌入式/" style="font-size: 10px;">嵌入式</a> <a href="/tags/工具/" style="font-size: 14.55px;">工具</a> <a href="/tags/希腊/" style="font-size: 10px;">希腊</a> <a href="/tags/开放平台/" style="font-size: 10px;">开放平台</a> <a href="/tags/开源/" style="font-size: 12.73px;">开源</a> <a href="/tags/微电影/" style="font-size: 10px;">微电影</a> <a href="/tags/微薄/" style="font-size: 10px;">微薄</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/性能调优/" style="font-size: 10px;">性能调优</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/批处理/" style="font-size: 10px;">批处理</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/教程/" style="font-size: 11.82px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数据库/" style="font-size: 11.82px;">数据库</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/数据通信/" style="font-size: 10px;">数据通信</a> <a href="/tags/数据采集/" style="font-size: 11.82px;">数据采集</a> <a href="/tags/文档/" style="font-size: 11.82px;">文档</a> <a href="/tags/文档创作/" style="font-size: 10px;">文档创作</a> <a href="/tags/新浪/" style="font-size: 10px;">新浪</a> <a href="/tags/日期/" style="font-size: 10px;">日期</a> <a href="/tags/日语/" style="font-size: 10px;">日语</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/杂志/" style="font-size: 10px;">杂志</a> <a href="/tags/标准/" style="font-size: 10px;">标准</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/模板/" style="font-size: 10px;">模板</a> <a href="/tags/毕业/" style="font-size: 10.91px;">毕业</a> <a href="/tags/毕业设计/" style="font-size: 14.55px;">毕业设计</a> <a href="/tags/水印/" style="font-size: 10px;">水印</a> <a href="/tags/求职/" style="font-size: 10px;">求职</a> <a href="/tags/测控/" style="font-size: 10px;">测控</a> <a href="/tags/测量/" style="font-size: 10px;">测量</a> <a href="/tags/淘宝/" style="font-size: 10px;">淘宝</a> <a href="/tags/源代码/" style="font-size: 10px;">源代码</a> <a href="/tags/生活/" style="font-size: 11.82px;">生活</a> <a href="/tags/生物技术/" style="font-size: 10px;">生物技术</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/科学计算/" style="font-size: 10.91px;">科学计算</a> <a href="/tags/算法/" style="font-size: 10.91px;">算法</a> <a href="/tags/管理/" style="font-size: 10px;">管理</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/系统函数/" style="font-size: 10px;">系统函数</a> <a href="/tags/系统管理/" style="font-size: 10px;">系统管理</a> <a href="/tags/经验/" style="font-size: 11.82px;">经验</a> <a href="/tags/编码，-encoding/" style="font-size: 10px;">编码， encoding</a> <a href="/tags/编辑器/" style="font-size: 10.91px;">编辑器</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/自行车/" style="font-size: 10px;">自行车</a> <a href="/tags/虚拟仪器/" style="font-size: 10px;">虚拟仪器</a> <a href="/tags/虚拟机/" style="font-size: 10.91px;">虚拟机</a> <a href="/tags/行间距/" style="font-size: 10px;">行间距</a> <a href="/tags/装饰器/" style="font-size: 10px;">装饰器</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计/" style="font-size: 11.82px;">设计</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语法高亮/" style="font-size: 10px;">语法高亮</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资料/" style="font-size: 10px;">资料</a> <a href="/tags/资源/" style="font-size: 18.18px;">资源</a> <a href="/tags/走过的痕迹/" style="font-size: 10px;">走过的痕迹</a> <a href="/tags/转载/" style="font-size: 20px;">转载</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/轻音乐/" style="font-size: 10px;">轻音乐</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面部识别/" style="font-size: 10px;">面部识别</a> <a href="/tags/音乐/" style="font-size: 10px;">音乐</a> <a href="/tags/项目/" style="font-size: 10px;">项目</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/01/13/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/19/python-e5-ad-97-e7-ac-a6-e4-b8-b2-e9-95-bf-e5-ba-a6-e8-ae-a1-e7-ae-97/">python中文编码和字符串长度计算</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/20/e6-9c-ac-e5-9c-b0rm-e5-88-a0-e9-99-a4git-e4-bb-93-e5-ba-93-e6-96-87-e4-bb-b6-e5-90-8e-e5-a6-82-e4-bd-95-e6-81-a2-e5-a4-8d/">本地rm删除git仓库文件后如何恢复</a>
-          </li>
-        
-          <li>
-            <a href="/2015/09/23/e6-89-80-e8-b0-93-e6-83-85-e5-95-86/">所谓情商</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/01/e4-b8-8d-e8-b4-aa-e5-a9-aa-e7-9a-84-e8-bf-bd-e6-b1-82/">不贪婪的追求</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    <a href="https://twitter.com/twitter" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+        <span class="visuallyhidden">Twitter</span>
+    </button></a>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Facebook -->
+    
+    <a href="https://www.facebook.com/facebook" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+        <span class="visuallyhidden">Facebook</span>
+    </button></a>
+    
+
+    <!-- Google + -->
+    
+    <a href="https://www.google.com/" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+        <span class="visuallyhidden">Google Plus</span>
+    </button></a>
+    
+
+    <!-- Weibo -->
+    
+    
+
+    <!-- Instagram -->
+    
+    
+
+    <!-- Tumblr -->
+    
+    
+
+    <!-- Github -->
+    
+    
+
+    <!-- LinkedIn -->
+    
+    
+
+    <!-- Zhihu -->
+    
+    
+</div>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;Hexo</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
 </html>
