@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme 
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.5
+    -->
+    
+    <!-- Title -->
+    
+    <title>
+        使用Zend_Config让用户自定义应用程序配置 | 静悟猿
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="在路上">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="静悟猿">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://lampkid.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="使用Zend_Config让用户自定义应用程序配置 | 静悟猿">
+    <meta property="og:description" content="null">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5
+        }
+		
+		/* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    
+</head>
+	
+	
+
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Post TOC -->
+
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.</span> <span class="post-toc-text">XML</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">2.</span> <span class="post-toc-text">读取INI文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">3.</span> <span class="post-toc-text">读取数组：config.php</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">4.</span> <span class="post-toc-text">读取yaml</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">5.</span> <span class="post-toc-text">读取多层嵌套的配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">6.</span> <span class="post-toc-text">配置之间可以继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">7.</span> <span class="post-toc-text">配置文件的写操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">8.</span> <span class="post-toc-text">创建嵌套的XML配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">9.</span> <span class="post-toc-text">创建嵌套的INI配置文件</span></a></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+				<script>
+    
+    var randomNum;
+    randomNum = Math.floor(Math.random() * 19 + 1);
+    
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    
+</script>
+
+		
+	
+        <p class="article-headline-p">
+            使用Zend_Config让用户自定义应用程序配置
+        </p>
+    </div>
+
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>在路上</strong>
+        <span>12月 25, 2011</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+
+    <!-- Qrcode -->
+    
+
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用Zend_Config让用户自定义应用程序配置&url=https://lampkid.github.io//2011/12/25/blogger/使用Zend_Config让用户自定义应用程序配置/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+    <a class="post_share-link" href="https://plus.google.com/share?url=https://lampkid.github.io//2011/12/25/blogger/使用Zend_Config让用户自定义应用程序配置/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://lampkid.github.io//2011/12/25/blogger/使用Zend_Config让用户自定义应用程序配置/index.html&title=使用Zend_Config让用户自定义应用程序配置" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 LinkedIn
+        </li>
+    </a>
+    
+
+    <!-- Share QQ -->
+    
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=静悟猿&title=使用Zend_Config让用户自定义应用程序配置&summary=null&pics=https://lampkid.github.io/img/favicon.png&url=https://lampkid.github.io/2011/12/25/blogger/使用Zend_Config让用户自定义应用程序配置/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 QQ
+        </li>
+    </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<p>Zend_Config是Zend Framework的一个组件，Zend_Config可以读写数组、INI、XML格式的文件。</p>
+<h3>XML</h3>
+<p>我们先看一个XML的例子：</p>
+<p>XML文件:config.xml</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">'1.0'</span><span class="meta">?&gt;</span></span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">config</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">dialer</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">number</span>&gt;</span>12345678<span class="tag">&lt;/<span class="name">number</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">retries</span>&gt;</span>15<span class="tag">&lt;/<span class="name">retries</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">protocol</span>&gt;</span>ppp<span class="tag">&lt;/<span class="name">protocol</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">dialer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">config</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>下面看下Zend_Config是怎么访问这个XML文件的数据的：</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="comment">// include auto-loader class</span></div><div class="line"><span class="keyword">require_once</span> <span class="string">'Zend/Loader/Autoloader.php'</span>;</div><div class="line"> </div><div class="line"><span class="comment">// register auto-loader</span></div><div class="line">$loader = Zend_Loader_Autoloader::getInstance();</div><div class="line"> </div><div class="line"><span class="comment">// read XML config file</span></div><div class="line">$config = <span class="keyword">new</span> Zend_Config_Xml(<span class="string">'config.xml'</span>, <span class="string">'dialer'</span>);</div><div class="line"> </div><div class="line"><span class="comment">// access individual nodes</span></div><div class="line">printf(<span class="string">"Number: %s \r\n"</span>, $config-&gt;number);</div><div class="line">printf(<span class="string">"Retries: %s \r\n"</span>, $config-&gt;retries);</div><div class="line">printf(<span class="string">"Protocol: %s \r\n"</span>, $config-&gt;protocol);</div><div class="line"></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>其中，Zend_Loader_Autoloader可以自动加载我们要使用的Zend Framework 组件类，如Zend_Config_Xml。
+我们可以使用Zend_Config，也可以使用Zend_Config的子类操作配置文件：
+包括Zend_Config_Xml、Zend_Config_Ini、Zend_Config_Json、Zend_Config_Yaml,
+如果要操作数组，我们可以直接使用Zend_Config.
+上面的代码使用了Zend_Config_Xml,我们看下Zend_Config_Xml的构造方法：</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">__construct( string $xml,  <span class="comment">//XML字符串或XML文件名</span></div><div class="line">mixed $section = <span class="keyword">null</span>,   <span class="comment">//开始解析的XML节点</span></div><div class="line"><span class="keyword">array</span>|boolean $options = <span class="keyword">false</span>  <span class="comment">//设置是否允许修改该XML</span></div><div class="line">) : void</div></pre></td></tr></table></figure></p>
+<p><em>对于构造方法的第三个参数，需要强调一点：</em>
+如果该参数为boolean类型，即true或false，则等价于
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$options = <span class="keyword">array</span>( <span class="string">'allowModifications'</span> =&gt; <span class="keyword">false</span>）</div></pre></td></tr></table></figure></p>
+<p>如果该参数为数组，其形式为</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$options = <span class="keyword">array</span>( <span class="string">'allowModifications'</span> =&gt; <span class="keyword">false</span>, <span class="string">'skipExtends'</span> =&gt; <span class="keyword">false</span> );</div></pre></td></tr></table></figure></p>
+<p>不理解skipExtends的作用。</p>
+<ul>
+<li>从构造方法里可以看出，后两个参数是可选的：*</li>
+</ul>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="comment">// include auto-loader class</span></div><div class="line"><span class="keyword">require_once</span> <span class="string">'Zend/Loader/Autoloader.php'</span>;</div><div class="line"> </div><div class="line"><span class="comment">// register auto-loader</span></div><div class="line">$loader = Zend_Loader_Autoloader::getInstance();</div><div class="line"> </div><div class="line"><span class="comment">// read XML config file</span></div><div class="line">$config = <span class="keyword">new</span> Zend_Config_Xml(<span class="string">'config.xml'</span>);</div><div class="line"> </div><div class="line"><span class="comment">// access individual nodes</span></div><div class="line">printf(<span class="string">"Number: %s \r\n"</span>, $config-&gt;dialer-&gt;number);</div><div class="line">printf(<span class="string">"Retries: %s \r\n"</span>, $config-&gt; dialer-&gt;retries);</div><div class="line">printf(<span class="string">"Protocol: %s \r\n"</span>, $config-&gt; dialer-&gt;protocol);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在上面的XML文件里，我们发现这些节点都没有属性，如果节点有属性，Zend_Config_Xml是怎么处理的呢？</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">'1.0'</span><span class="meta">?&gt;</span></span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">config</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">firewall</span> <span class="attr">context</span>=<span class="string">"default"</span> <span class="attr">access</span>=<span class="string">"deny"</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">rule</span> <span class="attr">access</span>=<span class="string">"allow"</span> <span class="attr">network</span>=<span class="string">"10.0.0.0/8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">rule</span> <span class="attr">access</span>=<span class="string">"allow"</span> <span class="attr">host</span>=<span class="string">"192.168.1.17"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">firewall</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">config</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="comment">// include auto-loader class</span></div><div class="line"><span class="keyword">require_once</span> <span class="string">'Zend/Loader/Autoloader.php'</span>;</div><div class="line"> </div><div class="line"><span class="comment">// register auto-loader</span></div><div class="line">$loader = Zend_Loader_Autoloader::getInstance();</div><div class="line"> </div><div class="line"><span class="comment">// read XML config file</span></div><div class="line">$config = <span class="keyword">new</span> Zend_Config_Xml(<span class="string">'config.xml'</span>, <span class="string">'firewall'</span>);</div><div class="line"> </div><div class="line"><span class="comment">// returns 'default'</span></div><div class="line"><span class="keyword">echo</span> $config-&gt;context;</div><div class="line"><span class="comment">// returns 'allow'</span></div><div class="line"><span class="keyword">echo</span> $config-&gt;rule-&gt;&#123;<span class="number">0</span>&#125;-&gt;access;</div><div class="line"><span class="comment">// returns '192.168.1.17'</span></div><div class="line"><span class="keyword">echo</span> $config-&gt;rule-&gt;&#123;<span class="number">1</span>&#125;-&gt;host;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>可以看出，节点的属性也将作为子节点处理，注意rule标签的访问，可以使用{0}、{1}分别访问rule标签。</p>
+<h3>读取INI文件</h3>
+<p>INI文件：config.ini</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[dialer]</div><div class="line">number = 12345678</div><div class="line">retries = 15</div><div class="line">protocol = ppp</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">// read XML config file</span></div><div class="line">$config = <span class="keyword">new</span> Zend_Config_Ini(<span class="string">'config.ini'</span>, <span class="string">'dialer'</span>);</div><div class="line"> </div><div class="line"><span class="comment">// access individual elements</span></div><div class="line">printf(<span class="string">"Number: %s \r\n"</span>, $config-&gt;number);</div><div class="line">printf(<span class="string">"Retries: %s \r\n"</span>, $config-&gt;retries);</div><div class="line">printf(<span class="string">"Protocol: %s \r\n"</span>, $config-&gt;protocol);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<h3>读取数组：config.php</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">return $config = array(</div><div class="line">  &apos;dialer&apos; =&gt; array(</div><div class="line">    &apos;number&apos;    =&gt; 12345678,</div><div class="line">    &apos;retries&apos;   =&gt; 15,</div><div class="line">    &apos;protocol&apos;  =&gt; &apos;ppp&apos;</div><div class="line">  )</div><div class="line">);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="comment">// include PHP configuration data</span></div><div class="line"><span class="keyword">require_once</span> <span class="string">'config.php'</span>;</div><div class="line"> </div><div class="line"><span class="comment">// read XML config file</span></div><div class="line">$config = <span class="keyword">new</span> Zend_Config($config);</div><div class="line"> </div><div class="line"><span class="comment">// access individual elements</span></div><div class="line">printf(<span class="string">"Number: %s \r\n"</span>, $config-&gt;dialer-&gt;number);</div><div class="line">printf(<span class="string">"Retries: %s \r\n"</span>, $config-&gt;dialer-&gt;retries);</div><div class="line">printf(<span class="string">"Protocol: %s \r\n"</span>, $config-&gt;dialer-&gt;protocol);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用数组的优点：
+APC等PHP opcode cache可以缓冲这些数据，减少文件读操作，这样可以改善性能。</p>
+</blockquote>
+<h3>读取yaml</h3>
+<p>参考<a href="http://www.emanaton.com/code/php/zendconfigyml" target="_blank" rel="external">two</a> <a href="http://blog.eval.ca/2008/02/18/using-yaml-with-the-zend-framework/" target="_blank" rel="external">approaches which make use of</a>  <a href="http://pecl.php.net/syck" target="_blank" rel="external">the syck extension</a>  and  <a href="http://spyc.sourceforge.net/" target="_blank" rel="external">the spyc library</a> 。</p>
+<h3>读取多层嵌套的配置文件</h3>
+<p>config.xml
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">'1.0'</span><span class="meta">?&gt;</span></span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">configs</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">config</span> <span class="attr">scope</span>=<span class="string">"php"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filters</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">filter</span> <span class="attr">name</span>=<span class="string">"Tidy"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">parameters</span> <span class="attr">name</span>=<span class="string">"tidy_options"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">parameter</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>output-xhtml<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">parameter</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">parameter</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>numeric-entities<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">parameter</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">parameter</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>utf8<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">parameter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">parameters</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filters</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">config</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configs</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"> </div><div class="line"><span class="comment">// read XML config file</span></div><div class="line">$config = <span class="keyword">new</span> Zend_Config_Xml(<span class="string">'config.xml'</span>, <span class="string">'config'</span>);</div><div class="line"> </div><div class="line"><span class="comment">// returns 'true'</span></div><div class="line"><span class="keyword">echo</span> $config-&gt;filters-&gt;filter-&gt;parameters-&gt;parameter-&gt;&#123;<span class="number">0</span>&#125;-&gt;value;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Zend_Config实现了迭代器，Iterator interface,所以可以迭代访问配置数据</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="comment">// read XML config file</span></div><div class="line">$config = <span class="keyword">new</span> Zend_Config_Xml(<span class="string">'config.xml'</span>, <span class="string">'config'</span>);</div><div class="line"> </div><div class="line"><span class="comment">// iterate over parameters</span></div><div class="line"><span class="keyword">foreach</span> ($config-&gt;filters-&gt;filter-&gt;parameters-&gt;parameter <span class="keyword">as</span> $p) &#123;</div><div class="line">  printf(<span class="string">"%s = %s \r\n"</span>, $p-&gt;name, $p-&gt;value);</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<h3>配置之间可以继承</h3>
+<p>XML使用extends属性，指定要继承的节点</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">'1.0'</span><span class="meta">?&gt;</span></span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">configs</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">default</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">log</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">filename</span>&gt;</span>general.log<span class="tag">&lt;/<span class="name">filename</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">data</span>&gt;</span>time,message,code<span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">maxsize</span>&gt;</span>2M<span class="tag">&lt;/<span class="name">maxsize</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">log</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">default</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">error</span> <span class="attr">extends</span>=<span class="string">"default"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">log</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">filename</span>&gt;</span>error.log<span class="tag">&lt;/<span class="name">filename</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">log</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">error</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configs</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="comment">// define Zend_Config objects</span></div><div class="line">$config = <span class="keyword">new</span> Zend_Config_Xml(<span class="string">'config.xml'</span>);</div><div class="line"> </div><div class="line"><span class="comment">// returns 'error.log'</span></div><div class="line"><span class="keyword">echo</span> $config-&gt;error-&gt;log-&gt;filename;</div><div class="line"> </div><div class="line"><span class="comment">// returns '2M'</span></div><div class="line"><span class="keyword">echo</span> $config-&gt;error-&gt;log-&gt;maxsize;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>INI使用colon冒号指定继承关系，回忆下Zend Framework工程文件中的配置文件application.ini</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[default]</div><div class="line">log.filename = &quot;general.log&quot;</div><div class="line">log.data = &quot;time,message,code&quot;</div><div class="line">log.maxsize = &quot;2M&quot;</div><div class="line"> </div><div class="line">[error : default]</div><div class="line">log.filename = &quot;error.log&quot;</div></pre></td></tr></table></figure></p>
+<p>我们还可以将配置文件分成多个配置文件，新的数据将覆盖原来的数据：</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="comment">// define Zend_Config objects</span></div><div class="line">$zca = <span class="keyword">new</span> Zend_Config(<span class="keyword">array</span>(<span class="string">'a'</span>=&gt;<span class="number">10</span>, <span class="string">'b'</span>=&gt;<span class="number">2</span>), <span class="keyword">true</span>);</div><div class="line">$zcb = <span class="keyword">new</span> Zend_Config(<span class="keyword">array</span>(<span class="string">'c'</span>=&gt;<span class="number">4</span>,  <span class="string">'b'</span>=&gt;<span class="number">16</span>), <span class="keyword">true</span>);</div><div class="line"> </div><div class="line"><span class="comment">// merge objects</span></div><div class="line">$zca-&gt;merge($zcb);</div><div class="line"> </div><div class="line"><span class="comment">// check merged data</span></div><div class="line"><span class="keyword">echo</span> $zca-&gt;a; <span class="comment">// 10</span></div><div class="line"><span class="keyword">echo</span> $zca-&gt;b; <span class="comment">// 16</span></div><div class="line"><span class="keyword">echo</span> $zca-&gt;c; <span class="comment">// 4</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<h3>配置文件的写操作</h3>
+<p>使用Zend_Config_Writer可以操作INI、XML、PHP Array。
+INI举例：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"> </div><div class="line">// define configuration array</div><div class="line">$data = array(</div><div class="line">  &apos;name&apos; =&gt; &apos;Zerg Ultralisk&apos;,</div><div class="line">  &apos;endurance&apos; =&gt; &apos;7&apos;,</div><div class="line">  &apos;strength&apos; =&gt; &apos;13&apos;,</div><div class="line">  &apos;intelligence&apos; =&gt; &apos;8&apos;,</div><div class="line">  &apos;damage&apos; =&gt; &apos;4&apos;</div><div class="line">);</div><div class="line"> </div><div class="line">// write INI config file</div><div class="line">try &#123;</div><div class="line">  $config = new Zend_Config_Writer_Ini();</div><div class="line">  $config-&gt;write(&apos;my.ini&apos;, new Zend_Config($data));</div><div class="line">  echo &apos;Configuration successfully written to file.&apos;;</div><div class="line">&#125; catch (Exception $e) &#123;</div><div class="line">  die(&apos;ERROR: &apos; . $e-&gt;getMessage());</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p>我们使用Zend_Config_Writer_Ini的write()方法将$data写入my.ini文件。</p>
+<p>要将配置数据写入XML文件，只需使用Zend_Config_Writer_Xml</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"> </div><div class="line"><span class="comment">// define configuration array</span></div><div class="line">$data = <span class="keyword">array</span>(</div><div class="line">  <span class="string">'name'</span> =&gt; <span class="string">'Zerg Ultralisk'</span>,</div><div class="line">  <span class="string">'endurance'</span> =&gt; <span class="string">'7'</span>,</div><div class="line">  <span class="string">'strength'</span> =&gt; <span class="string">'13'</span>,</div><div class="line">  <span class="string">'intelligence'</span> =&gt; <span class="string">'8'</span>,</div><div class="line">  <span class="string">'damage'</span> =&gt; <span class="string">'4'</span></div><div class="line">);</div><div class="line"> </div><div class="line"><span class="comment">// write XML config file</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  $config = <span class="keyword">new</span> Zend_Config_Writer_Xml();</div><div class="line">  $config-&gt;write(<span class="string">'my.xml'</span>, <span class="keyword">new</span> Zend_Config($data));</div><div class="line">  <span class="keyword">echo</span> <span class="string">'Configuration successfully written to file.'</span>;</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">  <span class="keyword">die</span>(<span class="string">'ERROR: '</span> . $e-&gt;getMessage());</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>同样，我们也可以将配置数据写入php文件，使用PHP array保存</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"> </div><div class="line"><span class="comment">// define configuration array</span></div><div class="line">$data = <span class="keyword">array</span>(</div><div class="line">  <span class="string">'name'</span> =&gt; <span class="string">'Zerg Ultralisk'</span>,</div><div class="line">  <span class="string">'endurance'</span> =&gt; <span class="string">'7'</span>,</div><div class="line">  <span class="string">'strength'</span> =&gt; <span class="string">'13'</span>,</div><div class="line">  <span class="string">'intelligence'</span> =&gt; <span class="string">'8'</span>,</div><div class="line">  <span class="string">'damage'</span> =&gt; <span class="string">'4'</span></div><div class="line">);</div><div class="line"> </div><div class="line"><span class="comment">// write array config file</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  $config = <span class="keyword">new</span> Zend_Config_Writer_Array();</div><div class="line">  $config-&gt;write(<span class="string">'my.php'</span>, <span class="keyword">new</span> Zend_Config($data));</div><div class="line">  <span class="keyword">echo</span> <span class="string">'Configuration successfully written to file.'</span>;</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">  <span class="keyword">die</span>(<span class="string">'ERROR: '</span> . $e-&gt;getMessage());</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<h3>创建嵌套的XML配置文件</h3>
+<p>使用数组初始化Zend_Config：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"> </div><div class="line">// define configuration array</div><div class="line">$data = array(</div><div class="line">  &apos;global&apos; =&gt; array(</div><div class="line">    &apos;smtp&apos; =&gt; array(</div><div class="line">      &apos;parameters&apos;  =&gt; array(</div><div class="line">        &apos;host&apos;      =&gt; &apos;smtp.example.com&apos;,</div><div class="line">        &apos;port&apos;      =&gt; &apos;587&apos;,</div><div class="line">        &apos;username&apos;  =&gt; &apos;jeky11&apos;,</div><div class="line">        &apos;password&apos;  =&gt; &apos;hyd3&apos;,</div><div class="line">        &apos;security&apos;  =&gt; &apos;tls&apos;,</div><div class="line">      )</div><div class="line">    )</div><div class="line">  )</div><div class="line">);</div><div class="line"> </div><div class="line">// write XML config file</div><div class="line">try &#123;</div><div class="line">  $config = new Zend_Config_Writer_Xml();</div><div class="line">  $config-&gt;write(&apos;my.xml&apos;, new Zend_Config($data));</div><div class="line">  echo &apos;Configuration successfully written to file.&apos;;</div><div class="line">&#125; catch (Exception $e) &#123;</div><div class="line">  die(&apos;ERROR: &apos; . $e-&gt;getMessage());</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p>使用object-&gt;property初始化Zend_Config</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!--?php <span class="comment">// define configuration array $data = array(   'global' =--&gt; array(</span></div><div class="line">    <span class="string">'smtp'</span> =&gt; <span class="keyword">array</span>(</div><div class="line">      <span class="string">'parameters'</span>  =&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">'host'</span>      =&gt; <span class="string">'smtp.example.com'</span>,</div><div class="line">        <span class="string">'port'</span>      =&gt; <span class="string">'587'</span>,</div><div class="line">        <span class="string">'username'</span>  =&gt; <span class="string">'jeky11'</span>,</div><div class="line">        <span class="string">'password'</span>  =&gt; <span class="string">'hyd3'</span>,</div><div class="line">        <span class="string">'security'</span>  =&gt; <span class="string">'tls'</span>,</div><div class="line">      )</div><div class="line">    )</div><div class="line">  )</div><div class="line">);</div><div class="line"></div><div class="line"><span class="comment">// write XML config file</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  $config = <span class="keyword">new</span> Zend_Config_Writer_Xml();</div><div class="line">  $config-&gt;write(<span class="string">'my.xml'</span>, <span class="keyword">new</span> Zend_Config($data));</div><div class="line">  <span class="keyword">echo</span> <span class="string">'Configuration successfully written to file.'</span>;</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">  <span class="keyword">die</span>(<span class="string">'ERROR: '</span> . $e-&gt;getMessage());</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<h3>创建嵌套的INI配置文件</h3>
+<p>使用SetNestSeparator()设置嵌套的分隔符：</p>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"> </div><div class="line"><span class="comment">// define configuration array</span></div><div class="line">$data = <span class="keyword">array</span>(</div><div class="line">  <span class="string">'global'</span> =&gt; <span class="keyword">array</span>(</div><div class="line">    <span class="string">'smtp'</span> =&gt; <span class="keyword">array</span>(</div><div class="line">      <span class="string">'parameters'</span>  =&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">'host'</span>      =&gt; <span class="string">'smtp.example.com'</span>,</div><div class="line">        <span class="string">'port'</span>      =&gt; <span class="string">'587'</span>,</div><div class="line">        <span class="string">'username'</span>  =&gt; <span class="string">'jeky11'</span>,</div><div class="line">        <span class="string">'password'</span>  =&gt; <span class="string">'hyd3'</span>,</div><div class="line">        <span class="string">'security'</span>  =&gt; <span class="string">'tls'</span>,</div><div class="line">      )</div><div class="line">    )</div><div class="line">  ),</div><div class="line">  <span class="string">'local'</span> =&gt; <span class="keyword">array</span>(</div><div class="line">    <span class="string">'version'</span> =&gt; <span class="string">'1.1'</span></div><div class="line">  )</div><div class="line">);</div><div class="line"> </div><div class="line"><span class="comment">// write INI config file</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  $config = <span class="keyword">new</span> Zend_Config_Writer_Ini();</div><div class="line">  $config-&gt;setNestSeparator(<span class="string">'::'</span>);</div><div class="line">  $config-&gt;write(<span class="string">'my.ini'</span>, <span class="keyword">new</span> Zend_Config($data));</div><div class="line">  <span class="keyword">echo</span> <span class="string">'Configuration successfully written to file.'</span>;</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">  <span class="keyword">die</span>(<span class="string">'ERROR: '</span> . $e-&gt;getMessage());</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>使用setRenderWithoutSections() 将INI文件分为多个模块：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// include auto-loader class</div><div class="line">require_once &apos;Zend/Loader/Autoloader.php&apos;;</div><div class="line"> </div><div class="line">// register auto-loader</div><div class="line">$loader = Zend_Loader_Autoloader::getInstance();</div><div class="line"> </div><div class="line">// define configuration array</div><div class="line">$data = array(</div><div class="line">  &apos;global&apos; =&gt; array(</div><div class="line">    &apos;smtp&apos; =&gt; array(</div><div class="line">      &apos;parameters&apos;  =&gt; array(</div><div class="line">        &apos;host&apos;      =&gt; &apos;smtp.example.com&apos;,</div><div class="line">        &apos;port&apos;      =&gt; &apos;587&apos;,</div><div class="line">        &apos;username&apos;  =&gt; &apos;jeky11&apos;,</div><div class="line">        &apos;password&apos;  =&gt; &apos;hyd3&apos;,</div><div class="line">        &apos;security&apos;  =&gt; &apos;tls&apos;,</div><div class="line">      )</div><div class="line">    )</div><div class="line">  ),</div><div class="line">  &apos;local&apos; =&gt; array(</div><div class="line">    &apos;version&apos; =&gt; &apos;1.1&apos;</div><div class="line">  )</div><div class="line">);</div><div class="line"> </div><div class="line">// write INI config file</div><div class="line">try &#123;</div><div class="line">  $config = new Zend_Config_Writer_Ini();</div><div class="line">  $config-&gt;setNestSeparator(&apos;::&apos;);</div><div class="line">  $config-&gt;setRenderWithoutSections(true);</div><div class="line">  $config-&gt;write(&apos;my.ini&apos;, new Zend_Config($data));</div><div class="line">  echo &apos;Configuration successfully written to file.&apos;;</div><div class="line">&#125; catch (Exception $e) &#123;</div><div class="line">  die(&apos;ERROR: &apos; . $e-&gt;getMessage());</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p>相关文章：应用Zend_Config创建一个用户可以自定义的Task Manager(任务管理应用)</p>
+<p>参考：</p>
+<ul>
+<li><a href="http://devzone.zend.com/1792/manipulating-configuration-data-with-zend_config/" target="_blank" rel="external">Manipulating Configuration Data with Zend_Config</a></li>
+<li><a href="http://framework.zend.com/manual/en/zend.config.introduction.html" target="_blank" rel="external">Zend Framework Reference Guide</a></li>
+</ul>
+<blockquote>
+<p>2017-08-27 整理</p>
+</blockquote>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+        <a href="/2011/12/27/blogger/如何使用Zend_Mail发送邮件/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2011/12/22/blogger/使用WPaudio和smart-video向WordPress博客添加audio和video/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
+
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="在路上's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        521scm#gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/01/">一月 2012<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2011/12/">十二月 2011<span class="sidebar_archives-count">18</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             文章总数
+             <span class="sidebar-badge">29</span>
+        </a>
+    </li>
+</ul>
+
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		主题 - Material
+		<span class="sidebar-badge badge-circle">i</span>
+	</div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
+    
+    <!-- Sidebar Sponsor -->
+    
+
+
+</aside>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    <a href="https://twitter.com/twitter" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+        <span class="visuallyhidden">Twitter</span>
+    </button></a>
+    
+
+    <!-- Facebook -->
+    
+    <a href="https://www.facebook.com/facebook" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+        <span class="visuallyhidden">Facebook</span>
+    </button></a>
+    
+
+    <!-- Google + -->
+    
+    <a href="https://www.google.com/" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+        <span class="visuallyhidden">Google Plus</span>
+    </button></a>
+    
+
+    <!-- Weibo -->
+    
+    
+
+    <!-- Instagram -->
+    
+    
+
+    <!-- Tumblr -->
+    
+    
+
+    <!-- Github -->
+    
+    
+
+    <!-- LinkedIn -->
+    
+    
+
+    <!-- Zhihu -->
+    
+    
+</div>
+
+
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;静悟猿</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
+</html>

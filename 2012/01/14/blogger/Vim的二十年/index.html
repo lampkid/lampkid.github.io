@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme 
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.5
+    -->
+    
+    <!-- Title -->
+    
+    <title>
+        Vim的二十年 | 静悟猿
+    </title>
+    
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    
+    <!-- Meta & INfo -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="在路上">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null">
+    
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="静悟猿">
+    
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://lampkid.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Vim的二十年 | 静悟猿">
+    <meta property="og:description" content="null">
+    
+     <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+        
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+	body, html{
+		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+    a{
+        color: #00838F
+    }
+    
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important
+    }
+    
+	/* Sidebar User Drop Down Menu Text Color */
+	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
+        color: #0097A7 !important
+    }
+    
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
+        color: #0097A7 !important
+    }
+    
+    .toTop{
+        background: #757575 !important
+    }
+		
+	.material-layout .material-post>.material-nav,
+	.material-layout .material-index>.material-nav,
+	.material-nav a{
+		color: #757575;
+	}
+		
+	#scheme-Paradox .MD-burger-layer {
+		background-color: #757575;
+	}
+
+	#scheme-Paradox #post-toc-trigger-btn{
+		color: #757575;
+	}
+	
+	.post-toc a:hover{
+		color: #00838F;
+		text-decoration: underline;
+	}
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5
+        }
+		
+		/* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+	<script src="/js/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
+	
+	<!-- UC Browser Compatible-->
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.indexOf('ucbrowser')>0) {
+			document.write('<link rel="stylesheet" href="/css/uc.css">');
+		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+		}
+	</script>
+    
+    <!-- Custom Head -->
+    
+</head>
+	
+	
+
+    <body id="scheme-Paradox">
+
+		
+        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+				
+			
+			
+            <!-- Main Container -->
+            <main class="material-layout__content" id="main">
+				
+                <!-- Top Anchor -->
+                <div id="top"></div>
+				
+				
+                <!-- Hamburger Button -->
+                <button class="MD-burger-icon sidebar-toggle">
+                    <span class="MD-burger-layer"></span>
+                </button>
+				
+				
+                <!-- Post TOC -->
+
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.</span> <span class="post-toc-text">Two decades of productivity: Vim's 20th anniversary</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Prehistory</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">History</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Vim today</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Why people still use Vim</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Conclusion</span></a></li></ol></li></ol>
+		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
+	
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+				<script>
+    
+    var randomNum;
+    randomNum = Math.floor(Math.random() * 19 + 1);
+    
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    
+</script>
+
+		
+	
+        <p class="article-headline-p">
+            Vim的二十年
+        </p>
+    </div>
+
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>在路上</strong>
+        <span>1月 14, 2012</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+
+    <!-- Qrcode -->
+    
+
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Vim的二十年&url=https://lampkid.github.io//2012/01/14/blogger/Vim的二十年/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+    <a class="post_share-link" href="https://plus.google.com/share?url=https://lampkid.github.io//2012/01/14/blogger/Vim的二十年/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://lampkid.github.io//2012/01/14/blogger/Vim的二十年/index.html&title=Vim的二十年" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 LinkedIn
+        </li>
+    </a>
+    
+
+    <!-- Share QQ -->
+    
+    <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=静悟猿&title=Vim的二十年&summary=null&pics=https://lampkid.github.io/img/favicon.png&url=https://lampkid.github.io/2012/01/14/blogger/Vim的二十年/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 QQ
+        </li>
+    </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<h1>Two decades of productivity: Vim's 20th anniversary</h1>
+<p>By Ryan Paul</p>
+<hr>
+<p>The Vim text editor was first released to the public on November 2, 1991—exactly 20 years ago today. Although it was originally designed as a vi clone for the Amiga, it was soon ported to other platforms and eventually grew to become the most popular vi-compatible text editor. It is still actively developed and widely used across several operating systems.</p>
+<p>In this article, we will take a brief look back at the history of vi and its descendants, leading up to the creation of Vim. We will also explore some of the compelling technical features that continue to make Vim relevant today.</p>
+<h2>Prehistory</h2>
+<p>The vi text editor was originally created in the late ’70s by Bill Joy, an early BSD developer who later went on to cofound Sun Microsystems. The original implementation of vi was conceived as an interactive “visual” mode for an ed-like line editor called ex. It was developed at first on an old ADM-3A terminal, about a decade before computer mice became ubiquitous. Users relied on commands and keyboard-based navigation to interact with the editor.</p>
+<p>The limitations and idiosyncrasies of the ADM-3A influenced some of vi’s most distinctive characteristics. For example, vi was programmed to use the h, j, k, and l keys for directional navigation because the ADM-3A keyboard had arrows printed on the keys with those letters. Although it was an accident of history, the hjkl navigation model in vi proved to be enormously efficient. The combination of those letters has become practically iconic among vi users. The navigation scheme is used today in a variety of other applications, including Gmail and the official Twitter client for Mac OS X.</p>
+<p>The vi editor became an inseparable part of the UNIX landscape. Joy bundled it with BSD and ATT incorporated it into System V. The core functionality and behavior of vi was later specified in the POSIX standard, which led to the inclusion of the text editor in many of the major UNIX systems.</p>
+<p>The vi clones, which began to emerge in the late ’80s and early ’90s, were widely adopted due to more permissive licensing. Joy’s vi implementation was based on the original ATT version of ed, which meant that the code was not freely redistributable. It could only be used by parties that had a UNIX license from ATT.</p>
+<p>The first two prominent vi clones were Stevie and Elvis. Stevie, the ST Editor for vi Enthusiasts, was originally developed for the Atari ST in 1987 and ported to UNIX the next year. It was somewhat primitive but attracted a modest following. Elvis, which was first released in 1990, was more sophisticated and was designed to offer more functionality. Elvis was the first vi clone to introduce support for syntax highlighting.</p>
+<p>Although Elvis still has some users and remains popular in the Slackware community, it hasn’t seen a major update since 2003. Elvis replaced Joy’s vi in the original 386 port of BSD, but the BSD developers later produced a new clone called nvi that was intended to more closely match the behavior of Joy’s implementation. The nvi editor is still shipped today by the BSD family of operating systems.</p>
+<h2>History</h2>
+<p>The earliest version of Vim was developed on the Amiga by Bram Moolenaar in 1988. Moolenaar was dissatisfied with the vi clones that were available for the Amiga platform and set out to make one that came closer to matching vi’s feature set. He based his new editor on Stevie, which he has said was the best Amiga-compatible vi clone at the time.</p>
+<p>The first version of Vim that was released to the general public was 1.14, which was published on November 2, 1991. It was distributed on Fish Disk #591, one of the disks in Fred Fish’s Amiga freeware collection. Following its public debut, users began contributing patches.</p>
+<p>“A long time ago I got myself an Amiga computer. Since I was used to editing with Vi, I looked around for a program like Vi for the Amiga. I did find a few so-called ‘clones’, but none of them was good enough; so I took the best one, and started improving it. At first the main goal was to be able to do all that Vi could do. Gradually I added some additional features, like multi-level undo,” Moolenaar wrote in the first issue of Free Software Magazine, back in 2001. “When I started working on Vim it was just for my own use. After some time I got the impression it was useful for others, and sent it out into the world. Since then I’m working more and more on making the program work well for a large audience. It’s fun to create something useful. Also, there is a nice group of co-authors and power users, which is very inspiring.”</p>
+<p>Moolenaar drafted his own loose copyleft license for the software. The license grants the user broad freedom to use, distribute, and repurpose the code, but gives the maintainer the right to ask for improvements to be contributed back to the project. Some clarifications were added to Vim’s license in the version 6.0 release to ensure compatibility with GNU’s General Public License (GPL).</p>
+<p>Vim is an open source software project, but it’s also charityware. Moolenaar helped establish a foundation called ICCF Holland that works to support to a children’s center in Uganda. He encourages users to consider making a donation to ICCF Holland or the Kibaale Children’s Fund. He serves as treasurer of the foundation and visits the site in Uganda nearly every year to monitor the center’s progress.</p>
+<p>The name “Vim” originally stood for Vi IMitation, but it later became Vi IMproved. The name was changed in 1992 when version 1.22 was released with compelling new features and a UNIX port. It gained support for multiple buffers in version 3.0, which was released in 1994. Version 4.0 in 1996 introduced a graphical user interface, version 5.0 in 1998 added syntax highlighting capabilities, and version 6.0 in 2001 added support for vertical window splits and a plugin system that simplified script loading.</p>
+<p>Many, many other features were added along the way. Vim has been ported to numerous other platforms, including Linux, BeOS, Windows, Mac OS X, and QNX. Although Vim was originally designed to be used in a terminal, there are several graphical frontends built with various user interface toolkits that add conventional menus, toolbars, and scrollbars.</p>
+<p>The latest major release of Vim was version 7, which was released in 2006. It introduced some particularly significant features, including native support for spellchecking, an autocompletion system, a tab interface, and undo branches. The most recent minor version update was version 7.3, released last year, which introduced a persistent undo feature and support for Python 3.</p>
+<h2>Vim today</h2>
+<p>Due to the popularity of the clones, the name “vi” has become a general term that is used colloquially to describe any member of the family of vi-compatible editors that more-or-less support the features that are specified in the POSIX standard. Today, direct derivatives of Joy’s vi are generally only used in a handful of commercial UNIX environments. All modern BSD and Linux systems include a clone rather than the original.</p>
+<p>The BSD distributions still mostly ship nvi, but Mac OS X and the vast majority of Linux systems come with Vim. In most cases, the vi command has been configured as a symlink that launches Vim directly, or a script that launches Vim with strict vi-compatibility enabled. If you have used the vi command on a Linux system at any time in the past decade, it’s very likely that you were using Vim.</p>
+<p>Unlike the other prominent vi clones, Vim is still actively developed and has a large base of contributors. New features are still being developed and added to the text editor every year, making it even more powerful. Moolenaar also still serves as the chief maintainer and does much of the work to make sure that contributed patches function well and are integrated properly.</p>
+<h2>Why people still use Vim</h2>
+<p>The notion of using a modal command-oriented editor may seem a bit anachronistic at first glance, but Vim’s rich feature set and deep extensibility have made it an enduring choice among advanced computer users. It’s still a highly popular editor, especially among computer programmers, Web developers, scientists, and system administrators.</p>
+<p>The full scope of Vim’s advantages are difficult to articulate to users who are unfamiliar with the editor. Although a full explanation of how Vim works is beyond the scope of this article, the following is a small assortment of useful features:</p>
+<ul>
+<li>
+<p><strong>Flexible multiple document interface</strong>: In Vim, your files and unsaved documents are referred to as buffers. The editor gives you a tremendous amount of control over how your buffers are displayed on the screen. You can horizontally and vertically split the window as many times as you want so that you can view many buffers at the same time. You can even have the same buffer displayed in multiple splits, which lets you view separate parts of the same document simultaneously. You can also optionally organize sets of split layouts into tabs. Layouts and state can be preserved by saving a “session” and restoring it later.</p>
+</li>
+<li>
+<p><strong>Modal editing with sophisticated keyboard shortcuts</strong>: Vim has separate interaction modes for text input and text editing. Insert mode behaves largely as you would expect a regular text editor to work—commands are performed with conventional keyboard shortcuts and characters are appended to the buffer as you press the associated keys. In the “normal” mode, however, sequences of key presses perform commands. The most useful commands allow you to quickly navigate and manipulate the text in the buffer. You can extensively customize the behavior of the bindings to create custom shortcuts and commands.</p>
+</li>
+<li>
+<p><strong>Multiple clipboards</strong>: Instead of a conventional clipboard, Vim stores copied text with a mechanism that it calls registers. There is a default register that is used to store text that is copied by the standard yank and delete operations, but the user can also indicate a specific register in which they want to store text when they cut or copy. This effectively acts like a clipboard multiplexer. The contents of the registers persist between uses of Vim, which means that they are preserved when you quit and will still be there when you open the editor again.</p>
+</li>
+<li>
+<p><strong>Macros</strong>: Vim has a macro system that allows you to record keypresses for later playback. Macros are trivially easy to create from the keyboard and can consist of operations across multiple Vim modes. Macros are stored in registers, just like the clipboard items. As such, they can also persist across uses of the application.</p>
+</li>
+<li>
+<p><strong>Extremely powerful search capabilities</strong>: Vim has some very sophisticated tools for automated search and replace, including extensive support for regular expressions. It also has a built-in version of the grep command, which integrates with Vim’s enormously convenient quickfix feature—a special buffer that shows you a list of results and allows you to conveniently jump between them.</p>
+</li>
+<li>
+<p><strong>Extremely rich extensibility</strong>: Vim is prodigiously scriptable and highly conducive to automation. It has its own native scripting language with container types, a unique variable scoping model, and a bunch of useful Vim-specific functionality. It also has built-in scripting engines and bindings that allow it to be customized via numerous mainstream programming languages, including Perl, Python, Ruby, Tcl, and Lua. Vim can also be extended to add syntax highlighting for additional languages or create custom color schemes. Users widely share their scripts through various online repositories and package them into plugins. As we have previously demonstrated, installing a few simple plugins and scripts can give Vim many of the advanced capabilities of an integrated development environment.</p>
+</li>
+<li>
+<p><strong>Portability</strong>: Vim will work almost everywhere that you do. Vim is widely used on Windows, Linux, and Mac OS X and is available for many other platform. Users can run it from the terminal or operate it with a native graphical interface on all three major operating systems. Many system administrators value Vim because it gives them a productive text editing environment on practically any remote Linux or Mac OS X system that they access through the terminal via ssh.</p>
+</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Vim has been my editor of choice since 1998, about a year after I started using Linux as my main desktop operating system. I’ve used it to write several thousand articles and many, many lines of code. Although I’ve experimented with a lot of conventional modern text editors, I haven’t found any that match Vim’s efficiency. After using Vim nearly every day for so many years, I’m still discovering new features, capabilities, and useful behaviors that further improve my productivity.</p>
+<p>Vim has aged well over the past 20 years. It’s not just a greybeard relic—the editor is still as compelling as ever and continues to attract new users. The learning curve is steep, but the productivity gains are well worth the effort.</p>
+<p>Do you remember your first experience with vi or Vim? In honor of the venerable text editor’s 20th anniversary, share your memories and favorite features in the discussion thread.</p>
+<hr>
+<p>转载自：<a href="http://arstechnica.com/open-source/news/2011/11/two-decades-of-productivity-vims-20th-anniversary.ars" target="_blank" rel="external">arstechnica.com</a></p>
+<blockquote>
+<p>2017-08-27 整理</p>
+</blockquote>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/14/总结过去展望2017/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2012/01/13/blogger/在命令行下导出PostgreSQL数据库/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
+
+				
+				
+					<!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay "></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
+	<div id="sidebar-main">
+	    <!-- Sidebar Header -->
+		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+    <i class="material-icons">clear_all</i>
+    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="在路上's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        521scm#gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+		<!-- Sidebar Navigation  -->
+		<ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+			
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+             主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+<!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+-->
+
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/01/">一月 2012<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2011/12/">十二月 2011<span class="sidebar_archives-count">18</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+             文章总数
+             <span class="sidebar-badge">29</span>
+        </a>
+    </li>
+</ul>
+
+
+		<!-- Sidebar Divider -->
+		<div class="sidebar-divider"></div>
+
+		<!-- Sidebar Footer -->
+		<!-- 
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :) 
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		主题 - Material
+		<span class="sidebar-badge badge-circle">i</span>
+	</div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+		sidebar.help
+		<span class="mdl-button__ripple-container">
+			<span class="mdl-ripple"></span>
+		</span>
+	</div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+	</div>
+    
+    <!-- Sidebar Sponsor -->
+    
+
+
+</aside>
+
+				
+				
+				
+					<!-- Footer Top Button -->
+					<div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+				
+				
+				<!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+	
+	
+		<!-- Paradox Footer Left Section -->
+		<div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+    <a href="https://twitter.com/twitter" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+        <span class="visuallyhidden">Twitter</span>
+    </button></a>
+    
+
+    <!-- Facebook -->
+    
+    <a href="https://www.facebook.com/facebook" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+        <span class="visuallyhidden">Facebook</span>
+    </button></a>
+    
+
+    <!-- Google + -->
+    
+    <a href="https://www.google.com/" target="_blank"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+        <span class="visuallyhidden">Google Plus</span>
+    </button></a>
+    
+
+    <!-- Weibo -->
+    
+    
+
+    <!-- Instagram -->
+    
+    
+
+    <!-- Tumblr -->
+    
+    
+
+    <!-- Github -->
+    
+    
+
+    <!-- LinkedIn -->
+    
+    
+
+    <!-- Zhihu -->
+    
+    
+</div>
+
+
+		<!--Copyright-->
+		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;静悟猿</div>
+
+		<!-- Paradox Footer Right Section -->
+
+		<!-- 
+		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+		It will not impact the appearance and can give developers a lot of support :)
+
+		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+		它不会影响美观并可以给开发者很大的支持。 :) 
+		-->
+
+		<div class="mdl-mini-footer--right-section">
+			<div>
+				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+			</div>
+		</div>
+	
+    
+</footer>
+                
+				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+    });
+</script>
+
+<!-- MathJax Load-->
+
+            </main>
+        </div>
+		
+    </body>
+		
+	
+</html>
